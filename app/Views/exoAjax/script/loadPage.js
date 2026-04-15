@@ -1,0 +1,3 @@
+loadPage(srcText, id) {
+
+}
