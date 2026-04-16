@@ -10,14 +10,52 @@ $routes->get('/', 'Home::index');
 $routes->get('/login', 'Authentificator::loginPage');
 $routes->post('/login', 'Authentificator::toLogIn');
 $routes->get('/register', 'Authentificator::registerPage');
-$routes->get('/register', 'Authentificator::toRegister');
+$routes->post('/register', 'Authentificator::toRegister');
+$routes->get('/formations', 'Formation::index');
+$routes->get('/formations/search', 'Formation::search');
+$routes->get('/formations/(:num)', 'Formation::details/$1');
+$routes->get('/logout', 'Authentificator::logout');
 //routes for logged in user who needs it's history depending on if it's a teach or a student
 $routes->get('/dashboard', 'Dashboard::index');
 $routes->get('/history', 'History::index');
 //routes for a student to subscribe to a session
-$routes->get('/session/registration', 'Session::registerPage');
-$routes->post('/session/registration', 'Session::toRegister');
-$routes->post('/session/unsubscribe', 'Session::unsubscribe');
+$routes->get('/session/registration/(:num)', 'Session::registerPage/$1');
+$routes->post('/session/registration/(:num)', 'Session::toRegister/$1');
+$routes->post('/session/unsubscribe/(:num)', 'Session::unsubscribe/$1');
 //students payment pages
-$routes->get('/payment/(:sessionId)', 'Payment::paymentPage/$sessionId');
-$routes->post('/payment/(:sessionId)', 'Payment::confirmPayment/$sessionId');
+$routes->get('/payment/(:num)', 'Payment::paymentPage/$1');
+$routes->post('/payment/(:num)', 'Payment::confirmPayment/$1');
+//admin actions
+$routes->get('/admin/student', 'Admin::studentAdmin');
+$routes->post('/admin/student/create', 'Admin::createStudent');
+$routes->post('/admin/student/update', 'Admin::updateStudent');
+$routes->post('/admin/student/delete', 'Admin::deleteStudent');
+
+$routes->get('/admin/session', 'Admin::sessionAdmin');
+$routes->post('/admin/session/create', 'Admin::createSession');
+$routes->post('/admin/session/update', 'Admin::updateSession');
+$routes->post('/admin/session/delete', 'Admin::deleteSession');
+
+$routes->get('/admin/teacher', 'Admin::teacherAdmin');
+$routes->post('/admin/teacher/create', 'Admin::createTeacher');
+$routes->post('/admin/teacher/update', 'Admin::updateTeacher');
+$routes->post('/admin/teacher/delete', 'Admin::deleteTeacher');
+
+$routes->get('/admin/course', 'Admin::courseAdmin');
+$routes->post('/admin/course/create', 'Admin::createCourse');
+$routes->post('/admin/course/update', 'Admin::updateCourse');
+$routes->post('/admin/course/delete', 'Admin::deleteCourse');
+
+$routes->get('/admin/payment', 'Admin::paymentAdmin');
+$routes->post('/admin/payment/confirmPayment', 'Admin::confirmPayment');
+$routes->post('/admin/payment/confirmRefund', 'Admin::confirmRefund');
+//routes for grades
+$routes->get('/my-grades', 'Grades::index');
+$routes->get('/my-grades/(:num)','Grades::getGrade/$1');
+$routes->post('/grades/create/(:num)/(:num)', 'Grades::createGrade/$1/$2');
+$routes->post('/grades/update/(:num)/(:num)', 'Grades::updateGrade/$1/$2');
+$routes->post('/grades/delete/(:num)/(:num)', 'Grades::deleteGrade/$1/$2');
+//routes for session links to give
+$routes->post('/session/link/add-link/(:any)','Session::createLink');
+$routes->post('/session/link/modify-link/(:any)','Session::updateLink');
+$routes->post('/session/link/delete-link/(:any)','Session::deleteLink');
