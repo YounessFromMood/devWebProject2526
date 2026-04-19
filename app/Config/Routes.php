@@ -7,17 +7,20 @@ use CodeIgniter\Router\RouteCollection;
  */
 //routes when a user clicks on the website link
 $routes->get('/', 'Home::index');
+
 $routes->get('/login', 'Authentificator::loginPage');
 $routes->post('/login', 'Authentificator::toLogIn');
 $routes->get('/register', 'Authentificator::registerPage');
 $routes->post('/register', 'Authentificator::toRegister');
+
 $routes->get('/formations', 'Formation::index');
 $routes->get('/formations/search', 'Formation::search');
 $routes->get('/formations/(:num)', 'Formation::details/$1');
+
 $routes->get('/logout', 'Authentificator::logout');
 //routes for logged in user who needs it's history depending on if it's a teach or a student
 $routes->get('/dashboard', 'Dashboard::index');
-$routes->get('/history', 'History::index');
+$routes->get('/history/(:num)', 'History::index/$1');
 //routes for a student to subscribe to a session
 $routes->get('/session/registration/(:num)', 'Session::registerPage/$1');
 $routes->post('/session/registration/(:num)', 'Session::toRegister/$1');
