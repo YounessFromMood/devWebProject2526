@@ -14,15 +14,15 @@ class Grades extends BaseController {
         //return view('');
     }
 
-    function createGrades() :void {
+    function createGrade() :void {
         //return view('');
     }
 
-    function updateGrades() :void {
+    function updateGrade() :void {
         //return view('');
     }
 
-    function deleteGrades() :void {
+    function deleteGrade() :void {
         //return view('');
     }
 }
