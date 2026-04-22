@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\ControllersTeacher;
+namespace App\Controllers\Teacher;
 
 use App\Controllers\BaseController;
 
