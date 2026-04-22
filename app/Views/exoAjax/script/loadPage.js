@@ -1,3 +1,0 @@
-loadPage(srcText, id) {
-
-}

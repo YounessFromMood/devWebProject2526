@@ -19,8 +19,12 @@ $routes->get('/formations/(:num)', 'Formation::details/$1');
 
 $routes->get('/logout', 'Authentificator::logout');
 //routes for logged in user who needs it's history depending on if it's a teach or a student
-$routes->get('/dashboard', 'Dashboard::index');
-$routes->get('/history/(:num)', 'History::index/$1');
+$routes->get('/dashboard/(:num)', 'Student\Dashboard::index/$1');
+$routes->get('/dashboard/(:num)', 'Admin\Dashboard::index/$1');
+$routes->get('/dashboard/(:num)', 'Teacher\Dashboard::index/$1');
+
+$routes->get('/history/(:num)', 'Student\History::index/$1');
+$routes->get('/history/(:num)', 'Teacher\History::index/$1');
 //routes for a student to subscribe to a session
 $routes->get('/session/registration/(:num)', 'Session::registerPage/$1');
 $routes->post('/session/registration/(:num)', 'Session::toRegister/$1');
