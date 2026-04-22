@@ -35,7 +35,7 @@ $routes->post('/admin/student/update', 'Admin::updateStudent');
 $routes->post('/admin/student/delete', 'Admin::deleteStudent');
 
 $routes->get('/admin/session', 'Admin::sessionAdmin');
-$routes->post('/admin/session/create', 'Admin::createSession');
+$routes->post('/admin/session/create', 'Admin\Student::createSession');
 $routes->post('/admin/session/update', 'Admin::updateSession');
 $routes->post('/admin/session/delete', 'Admin::deleteSession');
 
@@ -44,10 +44,10 @@ $routes->post('/admin/teacher/create', 'Admin::createTeacher');
 $routes->post('/admin/teacher/update', 'Admin::updateTeacher');
 $routes->post('/admin/teacher/delete', 'Admin::deleteTeacher');
 
-$routes->get('/admin/course', 'Admin::courseAdmin');
-$routes->post('/admin/course/create', 'Admin::createCourse');
-$routes->post('/admin/course/update', 'Admin::updateCourse');
-$routes->post('/admin/course/delete', 'Admin::deleteCourse');
+$routes->get('/admin/formation', 'Admin::formationAdmin');
+$routes->post('/admin/formation/create', 'Admin\Formation::createFormation');
+$routes->post('/admin/formation/update', 'Admin\Formation::updateFormation');
+$routes->post('/admin/formation/delete', 'Admin\Formation::deleteFormation');
 
 $routes->get('/admin/payment', 'Admin::paymentAdmin');
 $routes->post('/admin/payment/confirmPayment', 'Admin::confirmPayment');

@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 class Dashboard extends BaseController {
 
-    function () :index {
+    function index() :void {
         //return view('');
     }
     

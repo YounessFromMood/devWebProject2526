@@ -15,16 +15,4 @@ class Session extends BaseController {
     function unsubscribe() :void {
         //return view('');
     }
-
-    function createSession() :void {
-        //return view('');
-    }
-
-    function updateSession() :void {
-        //return view('');
-    }
-
-    function deleteSession() :void {
-        //return view('');
-    }
 }
