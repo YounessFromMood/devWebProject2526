@@ -1,6 +1,8 @@
 <?php 
 
-namespace App\Controllers;
+namespace App\ControllersTeacher;
+
+use App\Controllers\BaseController;
 
 class Grades extends BaseController {
 

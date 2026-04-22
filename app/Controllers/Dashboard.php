@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Controllers\Student;
-
-use App\Controllers\BaseController;
+namespace App\Controllers;
 
 class Dashboard extends BaseController {
 

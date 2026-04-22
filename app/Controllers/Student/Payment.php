@@ -1,6 +1,8 @@
 <?php 
 
-namespace App\Controllers;
+namespace App\Controllers\Student;
+
+use App\Controllers\BaseController;
 
 class Payment extends BaseController {
      
