@@ -2,17 +2,94 @@
 
 namespace App\Controllers;
 
+use App\Models\SessionModel;
+use App\Models\InscriptionModel;
+
 class Session extends BaseController {
 
-    function registerPage() :void {
-        //return view('');
+//TODO faire un join dans formation pour récuperer juste les dates de session
+//ici ça gère uniquement quand tu cliques sur une session en particulier
+
+    function registerPage(int $id) :string {
+
+        $session = new SessionModel()->find($id);
+        
+        return view('session_index', $session);
+    }
+    /**
+     * Permet l'enregistrement d'un élève a une session si:
+     * - la date d'inscription est antérieur a la date de début de session
+     * - reste de la place dans la session
+     * @param integer $idSession l'id de la sesssion souhaité par l'élève
+     * @return \CodeIgniter\HTTP\RedirectResponse 
+     * Soit 
+     */
+    function toRegister(int $idSession) :\CodeIgniter\HTTP\RedirectResponse {
+        $idEleve = session()->get('user_id');
+
+        if(!$idEleve) {
+            return redirect()->to('/login/($idSession)');
+        }
+
+        //TODO check la date de début + nombre de place restante
+        
+
+        $data = [
+            'session_id' => $idSession,
+            'eleve_id' => $idEleve,
+        ];
+
+        $inscriptionModel = new InscriptionModel();
+        $inscriptionModel->insert($data);
+        
+        return redirect()->to('/payment/$idSession');
     }
 
-    function toRegister():void {
-        //return view('');
-    }
+    /**
+     * Gère la desinscription d'un élève si
+     * - La date de début de session est ultérieure 
+     *   à la date de demande de désinscription
+     *
+     * @param integer $idSession la session dont l'élève veut se désinscrire
+     * @return \CodeIgniter\HTTP\RedirectResponse retourne sur la page d'accueil si désinscription
+     */
+    function unsubscribe(int $idSession) :\CodeIgniter\HTTP\RedirectResponse {
+       $idEleve = session()->get('user_id');
 
-    function unsubscribe() :void {
-        //return view('');
+        if(!$idEleve) {
+            return redirect()->to('/login/$idSession');
+        }
+
+         //TODO faire la gestion des dates + les places restantes dans la session
+        $sessionModel = new SessionModel();
+        $sessionDate = $sessionModel->find($idSession);
+
+        $today = new \DateTime();
+        $dateDebut = new \DateTime($sessionDate['date_debut']);
+        $diff = $today->diff($dateDebut);
+        $joursRestants = (int) $diff->days;
+
+        //TODO gérer les paliers de remboursement + le redirect si $today est ultérieur a $dateDebut
+        if($today >= $dateDebut) {
+            return redirect()->to('/')->with('error', "Désinscription impossible. Cette session à déjà débuté.");
+        }
+
+        $inscriptionModel = new InscriptionModel();
+        $inscriptionModel->where('id_eleve', $idEleve)
+                         ->where('id_eleve', $idSession)
+                         ->delete();
+        
+        //TODO gérer les remboursement par date
+        if ($joursRestants >= 30) {
+            $remboursement = 100;
+        } elseif ($joursRestants >= 14) {
+            $remboursement = 75;
+        } elseif ($joursRestants >= 7) {
+            $remboursement = 50;
+        } else {
+            $remboursement = 25;
+        }
+
+        return redirect()->to('/')->with('success', "Vous avez bien été désinscrit. Vous allez recevoir un remboursement de $remboursement %"); 
     }
 }

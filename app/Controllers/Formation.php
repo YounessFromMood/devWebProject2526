@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\FormationModel;
+
 class Formation extends BaseController {
     /**
      * Retourne a la vue toutes les données de mes formations trié par id croissant
@@ -17,14 +19,23 @@ class Formation extends BaseController {
         trouvés dans ma bdd*/
         $data['listeFormation'] = $formations;
         //y'a plus qu'a tout régurgiter a la view
-        return view('formation_index', $data);
+        return view('formation/index', $data);
     }
 
     function search() :void {
         //return view('');
     }
 
-    function details() :void {
-        //return view('');
+    function details(int $id) :string {
+        $formationModel = new FormationModel();
+        $formation = $formationModel->find($id);
+
+        if($formation === null) {
+            //TODO créer une exception
+
+        }
+        $data['formation'] = $formation;
+
+        return view('formation/details', $data);
     }
 }

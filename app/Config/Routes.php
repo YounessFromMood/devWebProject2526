@@ -9,6 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 $routes->get('/login', 'Authentificator::loginPage');
+$routes->get('/login/(:num)', 'Authentificator::toLogInAndRedirect\$1');
 $routes->post('/login', 'Authentificator::toLogIn');
 $routes->get('/register', 'Authentificator::registerPage');
 $routes->post('/register', 'Authentificator::toRegister');
