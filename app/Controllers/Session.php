@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\SessionModel;
 use App\Models\InscriptionModel;
+use App\Models\ModaliteModel;
 
 class Session extends BaseController {
 
@@ -27,13 +28,32 @@ class Session extends BaseController {
     function toRegister(int $idSession) :\CodeIgniter\HTTP\RedirectResponse {
         $idEleve = session()->get('user_id');
 
+        $sessionModel = new SessionModel();
+        $sessionData = $sessionModel->find($idSession);
+
         if(!$idEleve) {
             return redirect()->to('/login/($idSession)');
         }
 
         //TODO check la date de début + nombre de place restante
-        
+        //check date de la session
+        $today = new \DateTime();
+        $dateDebut = new \DateTime($sessionData['date_Debut']);
 
+        if($today >= $dateDebut) {
+            return redirect()->to('/')->with('error', "Cette session à déjà commencé.");
+        }
+        //check nb places restantes
+        $modaliteModel = new ModaliteModel();
+        $modalite = $modaliteModel->find($sessionData['id_modalite']);
+        $placesMax = $modalite['nb_etudiant_max'];
+
+        $inscrits = new InscriptionModel()->where('id_session', $idSession)->countAllResults();
+
+        if($inscrits >= $placesMax) {
+            return redirect()->to('/')->with('error', 'Cette session est complète.');
+        }
+        //ajout du goy quand tout est ok
         $data = [
             'session_id' => $idSession,
             'eleve_id' => $idEleve,
