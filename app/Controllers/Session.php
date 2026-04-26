@@ -32,16 +32,16 @@ class Session extends BaseController {
         $sessionData = $sessionModel->find($idSession);
 
         if(!$idEleve) {
-            return redirect()->to('/login/($idSession)');
+            return redirect()->to("/login/$idSession");
         }
 
         //TODO check la date de début + nombre de place restante
         //check date de la session
         $today = new \DateTime();
-        $dateDebut = new \DateTime($sessionData['date_Debut']);
+        $dateDebut = new \DateTime($sessionData['date_debut']);
 
         if($today >= $dateDebut) {
-            return redirect()->to('/')->with('error', "Cette session à déjà commencé.");
+            return redirect()->to("/")->with('error', "Cette session à déjà commencé.");
         }
         //check nb places restantes
         $modaliteModel = new ModaliteModel();
@@ -51,18 +51,18 @@ class Session extends BaseController {
         $inscrits = new InscriptionModel()->where('id_session', $idSession)->countAllResults();
 
         if($inscrits >= $placesMax) {
-            return redirect()->to('/')->with('error', 'Cette session est complète.');
+            return redirect()->to("/")->with('error', "Cette session est complète.");
         }
         //ajout du goy quand tout est ok
         $data = [
-            'session_id' => $idSession,
-            'eleve_id' => $idEleve,
+            'id_session' => $idSession,
+            'id_eleve' => $idEleve,
         ];
 
         $inscriptionModel = new InscriptionModel();
         $inscriptionModel->insert($data);
         
-        return redirect()->to('/payment/$idSession');
+        return redirect()->to("/payment/$idSession");
     }
 
     /**
@@ -77,7 +77,7 @@ class Session extends BaseController {
        $idEleve = session()->get('user_id');
 
         if(!$idEleve) {
-            return redirect()->to('/login/$idSession');
+            return redirect()->to("/login/$idSession");
         }
 
          //TODO faire la gestion des dates + les places restantes dans la session
@@ -91,12 +91,12 @@ class Session extends BaseController {
 
         //TODO gérer les paliers de remboursement + le redirect si $today est ultérieur a $dateDebut
         if($today >= $dateDebut) {
-            return redirect()->to('/')->with('error', "Désinscription impossible. Cette session à déjà débuté.");
+            return redirect()->to("/")->with('error', "Désinscription impossible. Cette session à déjà débuté.");
         }
 
         $inscriptionModel = new InscriptionModel();
         $inscriptionModel->where('id_eleve', $idEleve)
-                         ->where('id_eleve', $idSession)
+                         ->where('id_session', $idSession)
                          ->delete();
         
         //TODO gérer les remboursement par date
@@ -110,6 +110,6 @@ class Session extends BaseController {
             $remboursement = 25;
         }
 
-        return redirect()->to('/')->with('success', "Vous avez bien été désinscrit. Vous allez recevoir un remboursement de $remboursement %"); 
+        return redirect()->to("/")->with('success', "Vous avez bien été désinscrit. Vous allez recevoir un remboursement de $remboursement %"); 
     }
 }
