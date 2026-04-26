@@ -15,7 +15,7 @@ class Session extends BaseController {
 
         $session = new SessionModel()->find($id);
         
-        return view('session_index', $session);
+        return view('session_index', ['session' => $session]);
     }
     /**
      * Permet l'enregistrement d'un élève a une session si:
@@ -80,26 +80,19 @@ class Session extends BaseController {
             return redirect()->to("/login/$idSession");
         }
 
-         //TODO faire la gestion des dates + les places restantes dans la session
         $sessionModel = new SessionModel();
         $sessionDate = $sessionModel->find($idSession);
 
         $today = new \DateTime();
         $dateDebut = new \DateTime($sessionDate['date_debut']);
-        $diff = $today->diff($dateDebut);
-        $joursRestants = (int) $diff->days;
 
-        //TODO gérer les paliers de remboursement + le redirect si $today est ultérieur a $dateDebut
         if($today >= $dateDebut) {
             return redirect()->to("/")->with('error', "Désinscription impossible. Cette session à déjà débuté.");
         }
 
-        $inscriptionModel = new InscriptionModel();
-        $inscriptionModel->where('id_eleve', $idEleve)
-                         ->where('id_session', $idSession)
-                         ->delete();
-        
-        //TODO gérer les remboursement par date
+        $diff = $today->diff($dateDebut);
+        $joursRestants = (int) $diff->days;
+
         if ($joursRestants >= 30) {
             $remboursement = 100;
         } elseif ($joursRestants >= 14) {
@@ -109,6 +102,11 @@ class Session extends BaseController {
         } else {
             $remboursement = 25;
         }
+
+        $inscriptionModel = new InscriptionModel();
+        $inscriptionModel->where('id_eleve', $idEleve)
+                         ->where('id_session', $idSession)
+                         ->delete();
 
         return redirect()->to("/")->with('success', "Vous avez bien été désinscrit. Vous allez recevoir un remboursement de $remboursement %"); 
     }
