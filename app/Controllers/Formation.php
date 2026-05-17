@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\FormationModel;
+use App\Models\TypeFormationModel;
 
 class Formation extends BaseController {
     /**
@@ -22,8 +23,36 @@ class Formation extends BaseController {
         return view('formation/index', $data);
     }
 
-    function search() :void {
-        //return view('');
+    function search() :string {
+        $rules = [
+            'titre' => 'permit_empty|string|max_length[200]',
+            'langue' => 'permit_empty|string|max_length[50]',
+            'prix_max' => 'permit_empty|numeric',
+            'duree' => 'permit_empty|string|max_length[50]',
+            'id_type_formation' => 'permit_empty|integer',
+        ];
+        /*garde-fou si les données encodées ne respecte pas les
+         règles pré-citées*/
+        if (!$this->validate($rules)) {
+            return $this->index();
+        }
+        //On recup ce qu'on envoie avec le get
+        $filtres = [
+            $titre    = $this->request->getGet('titre');
+            $langue   = $this->request->getGet('langue');
+            $prixMax  = $this->request->getGet('prix_max');
+            $duree    = $this->request->getGet('duree');
+            //faire jointure 
+            $idType   = $this->request->getGet('id_type_formation');
+        ];
+
+        $formationModel = new FormationModel();
+        $typeModel = new TypeFormationModel();
+
+        $data['listeFormation'] = $formationModel->search($filtres);
+        $data['types']          = $typeModel->findAll();
+
+        return view('formation/index', $data);
     }
 
     function details(int $id) :string {
