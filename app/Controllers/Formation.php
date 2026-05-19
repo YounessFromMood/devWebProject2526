@@ -22,7 +22,12 @@ class Formation extends BaseController {
         //y'a plus qu'a tout régurgiter a la view
         return view('formation/index', $data);
     }
-
+    /**
+     * Une fonction de recherche selon des critères prédisposé à l'utilisateur
+     * Le titre, La langue, Le prix maximum, La durée et le type de formation (Cybersec, Programmation, etc)
+     *
+     * @return string la liste de toutes les formations correspondants aux critères exigés
+     */
     function search() :string {
         $rules = [
             'titre' => 'permit_empty|string|max_length[200]',
