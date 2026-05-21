@@ -43,12 +43,12 @@ class Formation extends BaseController {
         }
         //On recup ce qu'on envoie avec le get
         $filtres = [
-            $titre    = $this->request->getGet('titre');
-            $langue   = $this->request->getGet('langue');
-            $prixMax  = $this->request->getGet('prix_max');
-            $duree    = $this->request->getGet('duree');
+            $titre    = $this->request->getGet('titre'),
+            $langue   = $this->request->getGet('langue'),
+            $prixMax  = $this->request->getGet('prix_max'),
+            $duree    = $this->request->getGet('duree'),
             //faire jointure 
-            $idType   = $this->request->getGet('id_type_formation');
+            $idType   = $this->request->getGet('id_type_formation')
         ];
 
         $formationModel = new FormationModel();
@@ -65,7 +65,7 @@ class Formation extends BaseController {
         $formation = $formationModel->find($id);
 
         if($formation === null) {
-            //TODO créer une exception
+            //TODO: créer une exception
 
         }
         $data['formation'] = $formation;

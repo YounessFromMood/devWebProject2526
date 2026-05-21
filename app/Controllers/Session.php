@@ -8,12 +8,12 @@ use App\Models\ModaliteModel;
 
 class Session extends BaseController {
 
-//TODO faire un join dans formation pour récuperer juste les dates de session
+//TODO: faire un join dans formation pour récuperer juste les dates de session
 //ici ça gère uniquement quand tu cliques sur une session en particulier
 
     function registerPage(int $id) :string {
 
-        $session = new SessionModel()->find($id);
+        $session = (new SessionModel())->find($id);
         
         return view('session_index', ['session' => $session]);
     }
@@ -35,7 +35,7 @@ class Session extends BaseController {
             return redirect()->to("/login/$idSession");
         }
 
-        //TODO check la date de début + nombre de place restante
+        //TODO: check la date de début + nombre de place restante
         //check date de la session
         $today = new \DateTime();
         $dateDebut = new \DateTime($sessionData['date_debut']);
@@ -48,7 +48,7 @@ class Session extends BaseController {
         $modalite = $modaliteModel->find($sessionData['id_modalite']);
         $placesMax = $modalite['nb_etudiant_max'];
 
-        $inscrits = new InscriptionModel()->where('id_session', $idSession)->countAllResults();
+        $inscrits = (new InscriptionModel())->where('id_session', $idSession)->countAllResults();
 
         if($inscrits >= $placesMax) {
             return redirect()->to("/")->with('error', "Cette session est complète.");
