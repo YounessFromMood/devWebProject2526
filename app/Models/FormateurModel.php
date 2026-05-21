@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class FormateurModel {
+class FormateurModel extends UserModel {
     protected $table = 'formateur';
     protected $primaryKey = 'id_formateur';
     protected $returnType = 'array';

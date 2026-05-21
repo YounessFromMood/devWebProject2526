@@ -10,6 +10,6 @@ namespace App\Models;
 class InscriptionModel extends UserModel{
     protected $table = 'S_inscrire';
     protected $returnType = 'array';
-    protected $allowedFields = ['id_eleve, id_session, paiement_recu'];
+    protected $allowedFields = ['id_eleve', 'id_session', 'paiement_recu'];
     protected $useAutoIncrement = false;
 }
