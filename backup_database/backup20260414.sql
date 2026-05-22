@@ -10,7 +10,7 @@ CREATE TABLE eleve(
 	prenom VARCHAR(50) NOT NULL,
 	email VARCHAR(70) NOT NULL UNIQUE,
 	mdp VARCHAR(255) NOT NULL,
-	num_tel VARCHAR(15) UNIQUE,
+	num_tel VARCHAR(20) UNIQUE,
 	PRIMARY KEY(id_eleve)
 ) ENGINE=INNODB;
 
@@ -20,7 +20,7 @@ CREATE TABLE formateur(
    prenom VARCHAR(50) NOT NULL,
    email VARCHAR(70) NOT NULL UNIQUE,
    mdp VARCHAR(255) NOT NULL,
-   num_tel VARCHAR(15) UNIQUE, 
+   num_tel VARCHAR(20) UNIQUE, 
    PRIMARY KEY(id_formateur)
 )ENGINE=INNODB;
 
@@ -30,7 +30,7 @@ CREATE TABLE administrateur(
    prenom VARCHAR(50) NOT NULL,
    email VARCHAR(70) NOT NULL UNIQUE,
    mdp VARCHAR(255) NOT NULL,
-   num_tel VARCHAR(15) UNIQUE,
+   num_tel VARCHAR(20) UNIQUE,
    PRIMARY KEY(id_administrateur)
 )ENGINE=INNODB;
 
