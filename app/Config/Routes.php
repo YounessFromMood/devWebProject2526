@@ -20,14 +20,14 @@ $routes->get('/formations/(:num)', 'Formation::details/$1');
 
 $routes->get('/logout', 'Authentificator::logout');
 //routes for logged in user who needs it's dashboard depending on it's role
-$routes->get('/dashboard/(:num)', 'Dashboard::index/$1');
-$routes->get('student/dashboard/(:num)', 'Student\Dashboard::index/$1');
-$routes->get('admin/dashboard/(:num)', 'Admin\Dashboard::index/$1');
-$routes->get('teacher/dashboard/(:num)', 'Teacher\Dashboard::index/$1');
+$routes->get('/dashboard', 'Dashboard::index');
+$routes->get('/student/dashboard/', 'Student\Dashboard::index/');
+$routes->get('/admin/dashboard/', 'Admin\Dashboard::index/');
+$routes->get('/teacher/dashboard/', 'Teacher\Dashboard::index/');
 //routes for logged in user who needs it's history depending on if it's a teach or a student
 $routes->get('/history/(:num)', 'History::index/$1');
-$routes->get('student/history/(:num)', 'Student\History::index/$1');
-$routes->get('teacher/history/(:num)', 'Teacher\History::index/$1');
+$routes->get('/student/history/(:num)', 'Student\History::index/$1');
+$routes->get('/teacher/history/(:num)', 'Teacher\History::index/$1');
 //routes for a student to subscribe to a session
 $routes->get('/session/registration/(:num)', 'Session::registerPage/$1');
 $routes->post('/session/registration/(:num)', 'Session::toRegister/$1');
