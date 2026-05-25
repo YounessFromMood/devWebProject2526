@@ -8,9 +8,13 @@ use App\Models\ModaliteModel;
 
 class Session extends BaseController {
 
-//TODO: faire un join dans formation pour récuperer juste les dates de session
 //ici ça gère uniquement quand tu cliques sur une session en particulier
-
+    /**
+     * Undocumented function
+     * Charge la page d'inscription et les informations de la session 
+     * @param integer $id la session sur laquelle l'élève a cliqué dessus
+     * @return string la vue adéquate
+     */
     function registerPage(int $id) :string {
 
         $session = (new SessionModel())->find($id);
@@ -22,7 +26,7 @@ class Session extends BaseController {
      * - la date d'inscription est antérieur a la date de début de session
      * - reste de la place dans la session
      * @param integer $idSession l'id de la sesssion souhaité par l'élève
-     * @return \CodeIgniter\HTTP\RedirectResponse 
+     * @return \CodeIgniter\HTTP\RedirectResponse redirige vers la page de paiement
      * Soit 
      */
     function toRegister(int $idSession) :\CodeIgniter\HTTP\RedirectResponse {
@@ -34,8 +38,6 @@ class Session extends BaseController {
         if(!$idEleve) {
             return redirect()->to("/login/$idSession");
         }
-
-        //TODO: check la date de début + nombre de place restante
         //check date de la session
         $today = new \DateTime();
         $dateDebut = new \DateTime($sessionData['date_debut']);
@@ -64,14 +66,15 @@ class Session extends BaseController {
         
         return redirect()->to("/payment/$idSession");
     }
-
     /**
      * Gère la desinscription d'un élève si
      * - La date de début de session est ultérieure 
      *   à la date de demande de désinscription
      *
      * @param integer $idSession la session dont l'élève veut se désinscrire
-     * @return \CodeIgniter\HTTP\RedirectResponse retourne sur la page d'accueil si désinscription
+     * @return \CodeIgniter\HTTP\RedirectResponse retourne sur:
+     * - la page d'accueil si désinscription avec un message personnalisé
+     * - le login si l'utilisateur n'est pas connecté ou n'est pas un eleve
      */
     function unsubscribe(int $idSession) :\CodeIgniter\HTTP\RedirectResponse {
        $idEleve = session()->get('user_id');
