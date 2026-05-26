@@ -62,6 +62,5 @@ class Dashboard extends BaseController {
         return view('student/dashboard/planning', 
                     ['planning' => $inscriptionModel
                     ->getPlanningEtudiant($this->studentId)]);
-    }
-    
+    }  
 }

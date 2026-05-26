@@ -10,7 +10,16 @@ class Session extends BaseController {
 
 //ici ça gère uniquement quand tu cliques sur une session en particulier
     /**
-     * Undocumented function
+     * 
+     *
+     * @param integer $id
+     * @return string
+     */
+    function index(int $id) :string {
+        $session = (new SessionModel())->find($id);
+        
+        return view('session_index', ['session' => $session]);
+    /**
      * Charge la page d'inscription et les informations de la session 
      * @param integer $id la session sur laquelle l'élève a cliqué dessus
      * @return string la vue adéquate
@@ -36,14 +45,14 @@ class Session extends BaseController {
         $sessionData = $sessionModel->find($idSession);
 
         if(!$idEleve) {
-            return redirect()->to("/login/$idSession");
+            return redirect()->back()->with('error', "Vous devez être connecté pour vous inscrire à une session.");
         }
         //check date de la session
         $today = new \DateTime();
         $dateDebut = new \DateTime($sessionData['date_debut']);
 
         if($today >= $dateDebut) {
-            return redirect()->to("/")->with('error', "Cette session à déjà commencé.");
+            return redirect()->back()->with('error', "Cette session à déjà commencé.");
         }
         //check nb places restantes
         $modaliteModel = new ModaliteModel();
@@ -53,7 +62,7 @@ class Session extends BaseController {
         $inscrits = (new InscriptionModel())->where('id_session', $idSession)->countAllResults();
 
         if($inscrits >= $placesMax) {
-            return redirect()->to("/")->with('error', "Cette session est complète.");
+            return redirect()->back()->with('error', "Cette session est complète.");
         }
         //ajout du goy quand tout est ok
         $data = [
@@ -80,7 +89,7 @@ class Session extends BaseController {
        $idEleve = session()->get('user_id');
 
         if(!$idEleve) {
-            return redirect()->to("/login/$idSession");
+            return redirect()->back()->with('error', "Vous devez être connecté pour vous désinscrire d'une session.");
         }
 
         $sessionModel = new SessionModel();
@@ -90,7 +99,7 @@ class Session extends BaseController {
         $dateDebut = new \DateTime($sessionDate['date_debut']);
 
         if($today >= $dateDebut) {
-            return redirect()->to("/")->with('error', "Désinscription impossible. Cette session à déjà débuté.");
+            return redirect()->back()->with('error', "Désinscription impossible. Cette session à déjà débuté.");
         }
 
         $diff = $today->diff($dateDebut);
@@ -108,7 +117,7 @@ class Session extends BaseController {
 
         $inscriptionModel = new InscriptionModel();
         $inscriptionModel->deleteRegistration($idEleve, $idSession);
-        
+
         return redirect()->to("/")->with('success', "Vous avez bien été désinscrit. Vous allez recevoir un remboursement de $remboursement %"); 
     }
 }

@@ -3,26 +3,87 @@
 namespace App\Controllers\Teacher;
 
 use App\Controllers\BaseController;
+use App\Models\SessionModel;
+use \App\Models\NotifierModel;
 
 class Grades extends BaseController {
 
-    function index() :void {
-        //return view('');
+    public function index() :string{
+        $sessionModel = new SessionModel();
+        $sessions = $sessionModel->getAllTeacherSessions(session()->get('user_id'));
+
+        return view('teacher/grades', ['sessions' => $sessions]);
     }
 
-    function getGrades() :void {
-        //return view('');
+    public function getListStudentForSession(int $sessionId) :\CodeIgniter\HTTP\RedirectResponse {
+        if (!session()->get('user_role') === 'teacher' || !session()->get('user_id')) {
+            return redirect()->back()->with('error', "Accès refusé.");
+        }
+        $students = $this->getStudentList($sessionId);
+
+        return redirect()->to('/teacher/grades/list_students/' . $sessionId)->with('students', $students);
+    }
+    /**
+     * Attribue une note a un élève s'il n'en possède pas déjà une
+     *
+     * @param integer $studentId l'id de l'élève à qui on veut attribuer une note
+     * @param integer $sessionId l'id de la session pour laquelle on veut attribuer une note à un élève
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
+    public function createGrade(int $studentId, int $sessionId, string $grade) :\CodeIgniter\HTTP\RedirectResponse {   
+        $notifierModel = new NotifierModel();
+        $result = $notifierModel->addGrade($studentId, $sessionId, $grade);
+        if(!$result) {
+            return redirect()->back()->with('error', "Une note existe déjà pour cet élève ou une erreur s'est produite.");
+        }
+
+        $students = $this->getStudentList($sessionId);
+        return redirect()->to('/teacher/grades/list_students/' . $sessionId)->with('students', $students)->with('success', "La note a été attribuée avec succès.");
+    }
+    /**
+     * Met à jour la note d'un élève pour une session donnée s'il en possède déjà une
+     *
+     * @param integer $studentId l'id de l'élève dont on veut mettre à jour la note
+     * @param integer $sessionId l'id de la session pour laquelle on veut mettre à jour la note d'un élève
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
+    public function updateGrade(int $studentId, int $sessionId, string $grade) :\CodeIgniter\HTTP\RedirectResponse {
+        $notifierModel = new NotifierModel();
+        $result = $notifierModel->updateGrade($studentId, $sessionId, $grade);
+        if(!$result) {
+            return redirect()->back()->with('error', "Une erreur s'est produite.");
+        }
+
+        $students = $this->getStudentList($sessionId);
+        return redirect()->to('/teacher/grades/list_students/' . $sessionId)->with('students', $students)->with('success', "La note a été mise à jour avec succès.");
+    }
+    /**
+     * Supprime la note d'un élève pour une session donnée s'il en possède déjà une
+     *
+     * @param integer $studentId l'id de l'élève dont on veut supprimer la note
+     * @param integer $sessionId l'id de la session pour laquelle on veut supprimer la note d'un élève
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
+    public function deleteGrade(int $studentId, int $sessionId, string $grade) :\CodeIgniter\HTTP\RedirectResponse {
+        $notifierModel = new NotifierModel();
+        $result = $notifierModel->deleteGrade($studentId, $sessionId, $grade);
+        if(!$result) {
+            return redirect()->back()->with('error', "Une erreur s'est produite.");
+        }
+
+        $students = $this->getStudentList($sessionId);
+        return redirect()->to('/teacher/grades/list_students/' . $sessionId)->with('students', $students)->with('success', "La note a été supprimée avec succès.");
+    }
+    /**
+     * Fonction qui récupère la liste de tous les étudiants d'une session
+     * 
+     * @param integer $sessionId l'id de la session
+     * @return array
+     */
+    private function getStudentList(int $sessionId) :array {
+        
+        $sessionModel = new SessionModel();
+        return $sessionModel->getStudentsForSession($sessionId);
     }
 
-    function createGrade() :void {
-        //return view('');
-    }
-
-    function updateGrade() :void {
-        //return view('');
-    }
-
-    function deleteGrade() :void {
-        //return view('');
-    }
 }

@@ -16,4 +16,36 @@ class NotifierModel extends UserModel {
             ->where('notifier.id_eleve', $studentId)
             ->findAll();
     }
+
+    public function addGrade(int $studentId, int $sessionId, string $grade) : bool {
+        $gradeRecord = $this->db->table('note_reussite')->where('libelle', $grade)->get()->getRowArray();
+        if (!$gradeRecord) {
+            return false; // Note non trouvée
+        }
+
+        $data = [
+            'id_eleve' => $studentId,
+            'id_session' => $sessionId,
+            'id_note_reussite' => $gradeRecord['id_note_reussite']
+        ];
+
+        return $this->insert($data);
+    }
+
+    public function updateGrade(int $studentId, int $sessionId, string $grade) : bool {
+        $gradeRecord = $this->db->table('note_reussite')->where('libelle', $grade)->get()->getRowArray();
+        if (!$gradeRecord) {
+            return false; // Note non trouvée
+        }
+
+        $data = [
+            'id_note_reussite' => $gradeRecord['id_note_reussite']
+        ];
+
+        return $this->where('id_eleve', $studentId)->where('id_session', $sessionId)->update($data);
+    }
+
+    public function deleteGrade(int $studentId, int $sessionId, string $grade) : bool {
+        return $this->where('id_eleve', $studentId)->where('id_session', $sessionId)->delete();
+    }
 }

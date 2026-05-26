@@ -68,6 +68,7 @@ CREATE TABLE `session`(
    date_debut DATE NOT NULL,
    date_fin DATE NOT NULL,
    prix DECIMAL(10,2),
+   lieu_session VARCHAR(100),
    id_formateur INT NOT NULL,
    id_formation INT NOT NULL,
    id_modalite INT NOT NULL,

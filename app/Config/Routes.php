@@ -17,6 +17,8 @@ $routes->get('/logout', 'Authentificator::logout');                          //c
 $routes->get('/formations', 'Formation::index');                             //controller: done
 $routes->get('/formations/search', 'Formation::search');                     //controller: done
 $routes->get('/formations/(:num)', 'Formation::details/$1');                 //controller: exception missing + sessions dates
+
+$routes->get('/session/(:num)', 'Session::index/$1');
 //routes for logged in user who needs it's dashboard depending on it's role
 $routes->get('/dashboard', 'Dashboard::index');                              //controller: done
 //routes for logged in user who needs it's history depending on if it's a teach or a student
@@ -49,13 +51,13 @@ $routes->group('teacher', function($routes){
     $routes->get('/teacher/history/(:num)', 'Teacher\History::index/$1');
     //CRUDs
     //grades
-    $routes->post('/grades/create/(:num)/(:num)', 'Teacher\Grades::createGrade/$1/$2');
-    $routes->post('/grades/update/(:num)/(:num)', 'Teacher\Grades::updateGrade/$1/$2');
-    $routes->post('/grades/delete/(:num)/(:num)', 'Teacher\Grades::deleteGrade/$1/$2');
+    $routes->post('/grades/create/(:num)/(:num)/(:any)', 'Teacher\Grades::createGrade/$1/$2/$3');
+    $routes->post('/grades/update/(:num)/(:num)/(:any)', 'Teacher\Grades::updateGrade/$1/$2/$3');
+    $routes->post('/grades/delete/(:num)/(:num)/(:any)', 'Teacher\Grades::deleteGrade/$1/$2/$3');
     //sessions
-    $routes->post('/session/link/add-link/(:any)','Teacher\Session::createLink');
-    $routes->post('/session/link/modify-link/(:any)','Teacher\Session::updateLink');
-    $routes->post('/session/link/delete-link/(:any)','Teacher\Session::deleteLink');
+    $routes->post('/session/link/add-link/(:num)/(:any)/','Teacher\Session::createLink/$1/$2');
+    $routes->post('/session/link/modify-link/(:num)/(:any)','Teacher\Session::updateLink/$1/$2');
+    $routes->post('/session/link/delete-link/(:num)/(:any)','Teacher\Session::deleteLink/$1/$2');
 });
 //ADMIN
 $routes->group('admin', function($routes){

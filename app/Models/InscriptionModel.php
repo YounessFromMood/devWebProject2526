@@ -45,4 +45,15 @@ class InscriptionModel extends UserModel{
     public function deleteRegistration(int $studentId, int $sessionId) : bool {
         return $this->where(['id_eleve' => $studentId, 'id_session' => $sessionId])->delete();
     }
+
+    public function getPlanningFormateur(int $teacherId) : array {
+        return $this
+            ->select('session.*, formation.titre')
+            ->join('session', 'session.id_session = S_inscrire.id_session')
+            ->join('formation', 'formation.id_formation = session.id_formation')
+            ->where('session.id_formateur', $teacherId)
+            ->where('session.date_debut >=', date('Y-m-d'))
+            ->orderBy('session.date_debut', 'ASC')
+            ->findAll();
+    }
 }
