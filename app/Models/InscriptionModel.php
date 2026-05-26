@@ -33,5 +33,12 @@ class InscriptionModel extends UserModel{
         ->where('session.date_debut >=', date('Y-m-d'))
         ->orderBy('session.date_debut', 'ASC')
         ->findAll();
-}
+    }
+
+    public function confirmPayment(int $studentId, int $sessionId) : bool {
+        $data = [
+            'paiement_recu' => true
+        ];
+        return $this->update(['id_eleve' => $studentId, 'id_session' => $sessionId], $data);
+    }
 }
