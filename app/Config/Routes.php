@@ -30,7 +30,7 @@ $routes->group('student', function($routes){
     //concerning dashboard
     $routes->get('dashboard', 'Student\Dashboard::index/');
     $routes->get('dashboard/planning', 'Student\Dashboard::planning/');
-    $routes->get('dashboard/my-course', 'Student\Dashboard::studentCourses/');
+    $routes->get('dashboard/my-course', 'Student\Dashboard::courses/');
     //concerning history
     $routes->get('history', 'Student\History::index');
     //concerning grades
