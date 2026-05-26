@@ -28,9 +28,9 @@ $routes->post('/session/registration/(:num)', 'Session::toRegister/$1');  //cont
 //STUDENT
 $routes->group('student', function($routes){
     //concerning dashboard
-    $routes->get('dashboard', 'Student\Dashboard::index/');
-    $routes->get('dashboard/planning', 'Student\Dashboard::planning/');
-    $routes->get('dashboard/my-course', 'Student\Dashboard::courses/');
+    $routes->get('dashboard', 'Student\Dashboard::index/');               //controller: done
+    $routes->get('dashboard/planning', 'Student\Dashboard::planning/');   //controller: done
+    $routes->get('dashboard/my-course', 'Student\Dashboard::courses/');   //controller: done
     //concerning history
     $routes->get('history', 'Student\History::index');
     //concerning grades
