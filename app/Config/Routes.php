@@ -22,7 +22,7 @@ $routes->get('/session/(:num)', 'Session::index/$1');
 //routes for logged in user who needs it's dashboard depending on it's role
 $routes->get('/dashboard', 'Dashboard::index');                              //controller: done
 //routes for logged in user who needs it's history depending on if it's a teach or a student
-$routes->get('/history', 'History::index/');                                 //controller: missing
+$routes->get('/history', 'History::index');                                 //controller: missing
 //routes for a student to subscribe to a session
 $routes->get('/session/registration/(:num)', 'Session::registerPage/$1');    //controller: done
 $routes->post('/session/registration/(:num)', 'Session::toRegister/$1');     //controller: done
@@ -48,7 +48,7 @@ $routes->group('student', function($routes){
 //TEACHER
 $routes->group('teacher', function($routes){
     $routes->get('/teacher/dashboard/', 'Teacher\Dashboard::index/');
-    $routes->get('/teacher/history/(:num)', 'Teacher\History::index/$1');
+    $routes->get('/teacher/history', 'Teacher\History::index');
     //CRUDs
     //grades
     $routes->post('/grades/create/(:num)/(:num)/(:any)', 'Teacher\Grades::createGrade/$1/$2/$3');
