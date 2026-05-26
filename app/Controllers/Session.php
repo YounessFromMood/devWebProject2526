@@ -107,10 +107,8 @@ class Session extends BaseController {
         }
 
         $inscriptionModel = new InscriptionModel();
-        $inscriptionModel->where('id_eleve', $idEleve)
-                         ->where('id_session', $idSession)
-                         ->delete();
-
+        $inscriptionModel->deleteRegistration($idEleve, $idSession);
+        
         return redirect()->to("/")->with('success', "Vous avez bien été désinscrit. Vous allez recevoir un remboursement de $remboursement %"); 
     }
 }

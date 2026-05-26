@@ -8,40 +8,40 @@ use CodeIgniter\Router\RouteCollection;
 //routes when a user clicks on the website link
 $routes->get('/', 'Home::index');
 
-$routes->get('/login', 'Authentificator::loginPage');                     //controller: done
-$routes->post('/login', 'Authentificator::toLogIn');                      //controller: done
-$routes->get('/register', 'Authentificator::registerPage');               //controller: done
-$routes->post('/register', 'Authentificator::toRegister');                //controller: done
-$routes->get('/logout', 'Authentificator::logout');                       //controller: done
+$routes->get('/login', 'Authentificator::loginPage');                        //controller: done
+$routes->post('/login', 'Authentificator::toLogIn');                         //controller: done
+$routes->get('/register', 'Authentificator::registerPage');                  //controller: done
+$routes->post('/register', 'Authentificator::toRegister');                   //controller: done
+$routes->get('/logout', 'Authentificator::logout');                          //controller: done
 
-$routes->get('/formations', 'Formation::index');                          //controller: done
-$routes->get('/formations/search', 'Formation::search');                  //controller: done
-$routes->get('/formations/(:num)', 'Formation::details/$1');              //controller: exception missing + sessions dates
+$routes->get('/formations', 'Formation::index');                             //controller: done
+$routes->get('/formations/search', 'Formation::search');                     //controller: done
+$routes->get('/formations/(:num)', 'Formation::details/$1');                 //controller: exception missing + sessions dates
 //routes for logged in user who needs it's dashboard depending on it's role
-$routes->get('/dashboard', 'Dashboard::index');                           //controller: done
+$routes->get('/dashboard', 'Dashboard::index');                              //controller: done
 //routes for logged in user who needs it's history depending on if it's a teach or a student
-$routes->get('/history', 'History::index/');                              //controller: missing
+$routes->get('/history', 'History::index/');                                 //controller: missing
 //routes for a student to subscribe to a session
-$routes->get('/session/registration/(:num)', 'Session::registerPage/$1'); //controller: done
-$routes->post('/session/registration/(:num)', 'Session::toRegister/$1');  //controller: done
+$routes->get('/session/registration/(:num)', 'Session::registerPage/$1');    //controller: done
+$routes->post('/session/registration/(:num)', 'Session::toRegister/$1');     //controller: done
 
 //STUDENT
 $routes->group('student', function($routes){
     //concerning dashboard
-    $routes->get('dashboard', 'Student\Dashboard::index/');               //controller: done
-    $routes->get('dashboard/planning', 'Student\Dashboard::planning/');   //controller: done
-    $routes->get('dashboard/my-course', 'Student\Dashboard::courses/');   //controller: done
+    $routes->get('dashboard', 'Student\Dashboard::index/');                  //controller: done
+    $routes->get('dashboard/planning', 'Student\Dashboard::planning/');      //controller: done
+    $routes->get('dashboard/my-course', 'Student\Dashboard::courses/');      //controller: done
     //concerning history
-    $routes->get('history', 'Student\History::index');
+    $routes->get('history', 'Student\History::index');                       //controller: done
     //concerning grades
-    $routes->get('grades', 'Student\Grades::index');
+    $routes->get('grades', 'Student\Grades::index');                         //controller: done
     //routes for student to check it's grades
-    $routes->get('/my-grades', 'Student\Grades::index');
+    $routes->get('/my-grades', 'Student\Grades::index');                     //controller: done 
     //unsubscribe to a session
-    $routes->post('/session/unsubscribe/(:num)', 'Session::unsubscribe/$1');
+    $routes->post('/session/unsubscribe/(:num)', 'Session::unsubscribe/$1'); //controller: done
     //students payment pages
-    $routes->get('/payment/(:num)', 'Student\Payment::paymentPage/$1');
-    $routes->post('/payment/(:num)', 'Student\Payment::confirmPayment/$1');
+    $routes->get('/payment/(:num)', 'Student\Payment::paymentPage/$1');      //controller: done
+    $routes->post('/payment/(:num)', 'Student\Payment::confirmPayment/$1');  //controller: done
 });
 //TEACHER
 $routes->group('teacher', function($routes){

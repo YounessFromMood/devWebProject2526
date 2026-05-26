@@ -41,4 +41,8 @@ class InscriptionModel extends UserModel{
         ];
         return $this->update(['id_eleve' => $studentId, 'id_session' => $sessionId], $data);
     }
+
+    public function deleteRegistration(int $studentId, int $sessionId) : bool {
+        return $this->where(['id_eleve' => $studentId, 'id_session' => $sessionId])->delete();
+    }
 }
