@@ -45,16 +45,9 @@ class Dashboard extends BaseController {
      */
     function courses() :string {
         $inscriptionModel = new InscriptionModel();
-
-        $data['cours'] = $inscriptionModel
-            ->select('session.*, formation.titre, formation.description')
-            ->join('session', 'session.id_session = S_inscrire.id_session')
-            ->join('formation', 'formation.id_formation = session.id_formation')
-            ->where('S_inscrire.id_eleve', $this->studentId)
-            ->where('session.date_fin >=', date('Y-m-d'))
-            ->findAll();
-            
-        return view('student/dashboard/courses', $data);
+        return view('student/dashboard/courses',
+                    ['cours' => $inscriptionModel
+                    ->getCurrentCourses($this->studentId)]);
     }
     /** Affiche le planning de l'étudiant
      * -> Correspond a toute l'étendue qu'une session dure
@@ -66,16 +59,9 @@ class Dashboard extends BaseController {
     function planning() :string {
         $inscriptionModel = new InscriptionModel();
 
-        $data['planning'] = $inscriptionModel
-            ->select('session.*, formation.titre')
-            ->join('session', 'session.id_session = S_inscrire.id_session')
-            ->join('formation', 'formation.id_formation = session.id_formation')
-            ->where('S_inscrire.id_eleve', $this->studentId)
-            ->where('session.date_debut >=', date('Y-m-d')) // uniquement les cours à venir
-            ->orderBy('session.date_debut', 'ASC') // du plus proche au plus lointain
-            ->findAll();
-
-        return view('student/dashboard/planning');
+        return view('student/dashboard/planning', 
+                    ['planning' => $inscriptionModel
+                    ->getPlanningEtudiant($this->studentId)]);
     }
     
 }
