@@ -7,7 +7,7 @@ use App\Controllers\BaseController;
 class Payment extends BaseController {
 
     function confirmPayment() :void {
-        //return view();
+        //return view(); 
     }
 
     function confirmRefund() :void {

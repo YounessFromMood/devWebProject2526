@@ -29,7 +29,12 @@ class Dashboard extends BaseController {
      * @return string la vue du dashboard du formateur
      */
     function index() :string {
-        return view('teacher/dashboard');
+        $data = [
+            'nom' => session()->get('nom'),
+            'prenom' => session()->get('prenom'),
+            'email' => session()->get('email'),
+        ];
+        return view('teacher/dashboard', $data);
     }
 
     /** Affiche le planning du formateur
@@ -41,7 +46,6 @@ class Dashboard extends BaseController {
      */
     function planning() :string {
         $inscriptionModel = new InscriptionModel();
-
         return view('teacher/dashboard/planning', 
                     ['planning' => $inscriptionModel
                     ->getPlanningFormateur($this->teacherId)]);

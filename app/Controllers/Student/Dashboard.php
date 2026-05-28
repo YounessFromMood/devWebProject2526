@@ -58,7 +58,6 @@ class Dashboard extends BaseController {
      */
     function planning() :string {
         $inscriptionModel = new InscriptionModel();
-
         return view('student/dashboard/planning', 
                     ['planning' => $inscriptionModel
                     ->getPlanningEtudiant($this->studentId)]);

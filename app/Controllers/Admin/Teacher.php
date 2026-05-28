@@ -6,7 +6,7 @@ use App\Controllers\BaseController;
 
 class Teacher extends BaseController{
     function createTeacher() :void {
-
+ 
     }
 
     function updateTeacher() :void {

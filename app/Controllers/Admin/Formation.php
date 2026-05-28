@@ -8,7 +8,7 @@ class Formation extends BaseController{
 
 
     function createFormation() :void {
-
+ 
     }
 
     function updateFormation() :void {
