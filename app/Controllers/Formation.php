@@ -63,9 +63,8 @@ class Formation extends BaseController {
         $formationModel = new FormationModel();
         $formation = $formationModel->find($id);
 
-        if($formation === null) {
-            //TODO: créer une exception
-
+        if ($formation === null) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Formation non trouvée.');
         }
         $data['formation'] = $formation;
 

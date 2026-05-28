@@ -36,9 +36,9 @@ CREATE TABLE administrateur(
 
 CREATE TABLE formation(
    id_formation INT AUTO_INCREMENT NOT NULL,
-   titre VARCHAR(150) NOT NULL,
+   titre VARCHAR(300) NOT NULL,
    DESCRIPTION VARCHAR(2500) NOT NULL,
-   duree VARCHAR(50),
+   duree VARCHAR(150),
    prix DECIMAL(10,2),
    langue VARCHAR(50),
    PRIMARY KEY(id_formation)

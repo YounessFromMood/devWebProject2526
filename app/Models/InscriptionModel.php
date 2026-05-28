@@ -56,4 +56,14 @@ class InscriptionModel extends UserModel{
             ->orderBy('session.date_debut', 'ASC')
             ->findAll();
     }
+
+    public function getPendingPayments() : array {
+        return $this
+            ->select('S_inscrire.*, session.prix, formation.titre, eleve.nom AS nom_eleve')
+            ->join('session', 'session.id_session = S_inscrire.id_session')
+            ->join('formation', 'formation.id_formation = session.id_formation')
+            ->join('eleve', 'eleve.id_eleve = S_inscrire.id_eleve')
+            ->where('S_inscrire.paiement_recu', false)
+            ->findAll();
+    }
 }
