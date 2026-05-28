@@ -34,7 +34,7 @@ class Dashboard extends BaseController {
             'prenom' => session()->get('prenom'),
             'email' => session()->get('email'),
         ];
-        return view('teacher/dashboard', $data);
+        return view('teacher/dashboard/index', $data);
     }
 
     /** Affiche le planning du formateur

@@ -52,7 +52,7 @@ class Dashboard extends BaseController {
      */
     function goToStudentsPanel() :\CodeIgniter\HTTP\RedirectResponse {
 
-        return redirect()->to('/admin/student');
+        return redirect()->to('/admin/student/index');
     }
     /**
      * Lorsque l'administrateur souhaite I/U/D un formateur, 
@@ -61,7 +61,7 @@ class Dashboard extends BaseController {
      * @return \CodeIgniter\HTTP\RedirectResponse
      */
     function goToTeachersPanel() :\CodeIgniter\HTTP\RedirectResponse {
-        return redirect()->to('/admin/teacher');
+        return redirect()->to('/admin/teacher/index');
     }
     /**
      * Lorsque l'administrateur souhaite I/U/D une formation, 
@@ -70,7 +70,7 @@ class Dashboard extends BaseController {
      * @return \CodeIgniter\HTTP\RedirectResponse
      */
     function goToFormationsPanel() :\CodeIgniter\HTTP\RedirectResponse {
-        return redirect()->to('/admin/formation');
+        return redirect()->to('/admin/formation/index');
     }
     /**
      * Lorsque l'administrateur souhaite check les paiements 
@@ -81,5 +81,4 @@ class Dashboard extends BaseController {
     function goToPaymentsPanel() :\CodeIgniter\HTTP\RedirectResponse {
         return redirect()->to('/admin/payment');
     }
-    
 }

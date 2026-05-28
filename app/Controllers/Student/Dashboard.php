@@ -34,7 +34,7 @@ class Dashboard extends BaseController {
             'prenom' => session()->get('prenom'),
             'email' => session()->get('email'),
         ];
-        return view('student/dashboard', $data);
+        return view('student/dashboard/index', $data);
     }
     /** Affiche tous les cours que l'étudiant suit 
      *  et qui ne sont pas terminés
