@@ -31,17 +31,20 @@ class Dashboard extends BaseController
     {
         parent::initController($request, $response, $logger);
         $this->adminId =(int) session()->get('user_id');
+
+        if (session()->get('role') !== 'admin') {
+            session()->destroy();
+            header('Location: /login');
+            exit();
+        }
     }
     /**
      * Point d'entrée pour le dashboard de l'administrateur
      *
      * @return string La vue du dashboard administrateur
      */
-    function index(): string|RedirectResponse
+    function index(): string
     {
-        if (session()->get('role') !== 'admin') {
-            return redirect()->to('/login');
-        }
         $data = [
             'nom' => session()->get('nom'),
             'prenom' => session()->get('prenom'),

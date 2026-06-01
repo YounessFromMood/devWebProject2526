@@ -59,7 +59,7 @@ class Teacher extends BaseController{
         $rules = [
             'nom' => 'required|string|min_length[2]|max_length[50]',
             'prenom' => 'required|string|min_length[2]|max_length[50]',
-            'email' => 'required|valid_email|is_unique[formateur.email,id_eleve,{id_eleve}]',
+            'email' => 'required|valid_email|is_unique[formateur.email,id_formateur,{id_teacher}]',
             'mdp' => 'permit_empty|string|min_length[6]|max_length[255]',
         ];
         if(!$this->validate($rules)){
@@ -88,7 +88,7 @@ class Teacher extends BaseController{
      */
     function deleteTeacher() : RedirectResponse {
         $teacherModel = new FormateurModel();
-        $teacherModel->delete($this->request->getPost('id_eleve'));
+        $teacherModel->delete($this->request->getPost('id_teacher'));
 
         return redirect()->to('/admin/teacher/index');
     }

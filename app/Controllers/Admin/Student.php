@@ -68,7 +68,7 @@ class Student extends BaseController{
         }
 
         $eleveModel = new EleveModel();
-        $eleveModel->update($data, ['id_eleve' => $this->request->getPost('id_eleve')]);
+        $eleveModel->update($this->request->getPost('id_eleve'), $data);
         
         return redirect()->to('/admin/student/index');
     }

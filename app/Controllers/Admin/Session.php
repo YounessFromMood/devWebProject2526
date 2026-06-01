@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\SessionModel;
+use CodeIgniter\HTTP\RedirectResponse;
 
 class Session extends BaseController{
 
@@ -27,9 +28,9 @@ class Session extends BaseController{
      * dans la base de données avec ces données
      *
      * @param integer $id_formation
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
-    function createSession(int $id_formation) :\CodeIgniter\HTTP\RedirectResponse {
+    function createSession(int $id_formation) : RedirectResponse {
         $rules = [
             'date_debut' => 'required|valid_date',
             'date_fin' => 'required|valid_date',
@@ -62,9 +63,9 @@ class Session extends BaseController{
      * dans la base de données
      *
      * @param integer $id_formation
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
-    function updateSession(int $id_formation) :\CodeIgniter\HTTP\RedirectResponse {
+    function updateSession(int $id_formation) : RedirectResponse {
         $rules = [
             'date_debut' => 'required|valid_date',
             'date_fin' => 'required|valid_date',
@@ -97,11 +98,11 @@ class Session extends BaseController{
      * Côté JS la vue lui demande confirmation avant de faire la requete de suppression
      *
      * @param integer $id_formation l'id de la formation où se trouve la session à supprimer
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
-    function deleteSession(int $id_formation) :\CodeIgniter\HTTP\RedirectResponse {
+    function deleteSession(int $id_formation) : RedirectResponse {
         $sessionModel = new SessionModel();
-        $sessionModel->delete($this->request->getPost('id'));
+        $sessionModel->delete($this->request->getPost('id_session'));
 
         return redirect()->to("/admin/session/index/$id_formation");
     }

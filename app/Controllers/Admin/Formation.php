@@ -54,7 +54,7 @@ class Formation extends BaseController{
         $formationModel->insert($data);
 
 
-        return redirect()->to('/index');
+        return redirect()->to('/admin/formation/index');
     }
     /**
      * Récupère les données du formulaire de mise à jour d'une formation et
