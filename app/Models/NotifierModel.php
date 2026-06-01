@@ -10,8 +10,9 @@ class NotifierModel extends UserModel {
 
     public function getGradesForStudent(int $studentId) : array {
         return $this
-            ->select('notifier.*, session.titre as session_titre, note_reussite.libelle as note_libelle')
+            ->select('notifier.*, formation.titre as session_titre, note_reussite.libelle as note_libelle')
             ->join('session', 'session.id_session = notifier.id_session')
+            ->join('formation', 'formation.id_formation = session.id_formation')
             ->join('note_reussite', 'note_reussite.id_note_reussite = notifier.id_note_reussite')
             ->where('notifier.id_eleve', $studentId)
             ->findAll();
@@ -45,7 +46,7 @@ class NotifierModel extends UserModel {
         return $this->where('id_eleve', $studentId)->where('id_session', $sessionId)->update($data);
     }
 
-    public function deleteGrade(int $studentId, int $sessionId, string $grade) : bool {
+    public function deleteGrade(int $studentId, int $sessionId) : bool {
         return $this->where('id_eleve', $studentId)->where('id_session', $sessionId)->delete();
     }
 }

@@ -81,7 +81,8 @@ CREATE TABLE `session`(
 CREATE TABLE S_inscrire(
    id_eleve INT,
    id_session INT,
-   paiement_recu VARCHAR(50),
+   paiement_recu BOOLEAN DEFAULT FALSE,
+   date_inscription DATE,
    PRIMARY KEY(id_eleve, id_session),
    FOREIGN KEY(id_eleve) REFERENCES eleve(id_eleve),
    FOREIGN KEY(id_session) REFERENCES SESSION(id_session)

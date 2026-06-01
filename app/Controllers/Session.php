@@ -19,6 +19,7 @@ class Session extends BaseController {
         $session = (new SessionModel())->find($id);
         
         return view('session_index', ['session' => $session]);
+    }
     /**
      * Charge la page d'inscription et les informations de la session 
      * @param integer $id la session sur laquelle l'élève a cliqué dessus

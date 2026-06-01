@@ -16,7 +16,7 @@ class Grades extends BaseController {
     }
 
     public function getListStudentForSession(int $sessionId) :\CodeIgniter\HTTP\RedirectResponse {
-        if (!session()->get('user_role') === 'teacher' || !session()->get('user_id')) {
+        if (session()->get('role') !== 'teacher' || !session()->get('user_id')) {
             return redirect()->back()->with('error', "Accès refusé.");
         }
         $students = $this->getStudentList($sessionId);
@@ -64,9 +64,9 @@ class Grades extends BaseController {
      * @param integer $sessionId l'id de la session pour laquelle on veut supprimer la note d'un élève
      * @return \CodeIgniter\HTTP\RedirectResponse
      */
-    public function deleteGrade(int $studentId, int $sessionId, string $grade) :\CodeIgniter\HTTP\RedirectResponse {
+    public function deleteGrade(int $studentId, int $sessionId) :\CodeIgniter\HTTP\RedirectResponse {
         $notifierModel = new NotifierModel();
-        $result = $notifierModel->deleteGrade($studentId, $sessionId, $grade);
+        $result = $notifierModel->deleteGrade($studentId, $sessionId);
         if(!$result) {
             return redirect()->back()->with('error', "Une erreur s'est produite.");
         }
@@ -83,7 +83,7 @@ class Grades extends BaseController {
     private function getStudentList(int $sessionId) :array {
         
         $sessionModel = new SessionModel();
-        return $sessionModel->getStudentsForSession($sessionId);
+        return $sessionModel->getAllStudentsFromSession($sessionId);
     }
 
 }

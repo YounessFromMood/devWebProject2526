@@ -28,12 +28,32 @@ class SessionModel extends UserModel {
             ->findAll();
     }
 
-    public function getAllStudentFromSession(int $sessionId) : array {
+    public function getAllStudentsFromSession(int $sessionId) : array {
         return $this
             ->select('eleve.*, inscription.date_inscription')
             ->join('S_inscrire as inscription', 'inscription.id_session = session.id_session')
             ->join('eleve', 'eleve.id_eleve = inscription.id_eleve')
             ->where('session.id_session', $sessionId)
             ->findAll();
+    }
+
+    public function updateLink(int $sessionId, string $location) : bool {
+        $session = $this->find($sessionId);
+        if (!$session) {
+            return false;
+        }
+
+        $session['lieu_session'] = $location;
+        return $this->update($sessionId, $session);
+    }
+
+    public function deleteLink(int $sessionId) : bool {
+        $session = $this->find($sessionId);
+        if (!$session) {
+            return false;
+        }
+
+        $session['lieu_session'] = null;
+        return $this->update($sessionId, $session);
     }
 }
