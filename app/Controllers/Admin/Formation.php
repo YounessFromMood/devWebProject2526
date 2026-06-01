@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\FormationModel;
+use CodeIgniter\HTTP\RedirectResponse;
 
 class Formation extends BaseController{
     /**
@@ -27,15 +28,15 @@ class Formation extends BaseController{
      * Récupère les données du formulaire de création d'une formation et
      * crée une nouvelle formation dans la base de données avec ces données
      *
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
-    function createFormation() :\CodeIgniter\HTTP\RedirectResponse {
+    function createFormation() : RedirectResponse {
         $rules = [
             'titre' => 'required|string|min_length[2]|max_length[300]',
             'description' => 'required|string|min_length[2]|max_length[2500]',
             'duree' => 'required|string|min_length[2]|max_length[150]',
             'prix' => 'required|regex_match[/^\d+(\.\d{1,2})?$/]|greater_than[0]',
-            'langue' => 'required|string|min_length[2]|max_length [50]',
+            'langue' => 'required|string|min_length[2]|max_length[50]',
         ];
         if(!$this->validate($rules)){
             return redirect()->back()->withInput()->with('error', 'Données invalides.');
@@ -53,21 +54,21 @@ class Formation extends BaseController{
         $formationModel->insert($data);
 
 
-        return redirect()->to('/admin/formation/index');
+        return redirect()->to('/index');
     }
     /**
      * Récupère les données du formulaire de mise à jour d'une formation et
      * met à jour la formation correspondante dans la base de données
      *
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
-    function updateFormation() :\CodeIgniter\HTTP\RedirectResponse {
+    function updateFormation() : RedirectResponse {
         $rules = [
             'titre' => 'required|string|min_length[2]|max_length[300]',
             'description' => 'required|string|min_length[2]|max_length[2500]',
             'duree' => 'required|string|min_length[2]|max_length[150]',
             'prix' => 'required|regex_match[/^\d+(\.\d{1,2})?$/]|greater_than[0]',
-            'langue' => 'required|string|min_length[2]|max_length [50]',
+            'langue' => 'required|string|min_length[2]|max_length[50]',
         ];
         if(!$this->validate($rules)){
             return redirect()->back()->withInput()->with('error', 'Données invalides.');
@@ -82,7 +83,7 @@ class Formation extends BaseController{
         ];
 
         $formationModel = new FormationModel();
-        $formationModel->update($data, ['id' => $this->request->getPost('id')]);
+        $formationModel->update($this->request->getPost('id_formation'), $data);
 
         return redirect()->to('/admin/formation/index');
     }
@@ -92,11 +93,11 @@ class Formation extends BaseController{
      * 
      * Côté JS la vue lui demande confirmation avant de faire la requete de suppression
      *
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
-    function deleteFormation() :\CodeIgniter\HTTP\RedirectResponse {
+    function deleteFormation() : RedirectResponse {
         $formationModel = new FormationModel();
-        $formationModel->delete($this->request->getPost('id'));
+        $formationModel->delete($this->request->getPost('id_formation'));
 
         return redirect()->to('/admin/formation/index');
     }
@@ -105,9 +106,9 @@ class Formation extends BaseController{
      * redirige vers le panel de gestion des sessions de cette formation
      *
      * @param int $id_formation L'identifiant de la formation dont on veut gérer les sessions
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
-    function manageSessions($id_formation) :\CodeIgniter\HTTP\RedirectResponse {
+    function manageSessions($id_formation) : RedirectResponse {
         return redirect()->to("/admin/session/index/$id_formation");
     }
 }

@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use \App\Models\InscriptionModel;
+use CodeIgniter\HTTP\RedirectResponse;
 
 class Payment extends BaseController {
     /**
@@ -20,16 +21,23 @@ class Payment extends BaseController {
     /**
      * Confirme un paiement en mettant à jour le statut de paiement dans la base de données
      *
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
-    function confirmPayment() :\CodeIgniter\HTTP\RedirectResponse {
+    function confirmPayment() : RedirectResponse {
         $studentId = $this->request->getPost('student_id');
         $sessionId = $this->request->getPost('session_id');
 
+        if (!$studentId || !$sessionId) {
+            return redirect()->to('/admin/payment')->with('error', 'Données manquantes.');
+        }
+
         $inscriptionsModel = new InscriptionModel();
-        $inscriptionsModel->confirmPayment($studentId, $sessionId);
+        $result = $inscriptionsModel->confirmPayment((int)$studentId, (int)$sessionId);
 
-        return redirect()->to('/admin/payment/index');
+        if (!$result) {
+            return redirect()->to('/admin/payment')->with('error', 'Une erreur est survenue.');
+        }
+
+        return redirect()->to('/admin/payment')->with('success', 'Paiement confirmé.');
     }
-
 }

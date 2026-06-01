@@ -30,9 +30,9 @@ $routes->post('/session/registration/(:num)', 'Session::toRegister/$1');     //c
 //STUDENT
 $routes->group('student', function($routes){
     //concerning dashboard
-    $routes->get('dashboard', 'Student\Dashboard::index/');                  //controller: done
-    $routes->get('dashboard/planning', 'Student\Dashboard::planning/');      //controller: done
-    $routes->get('dashboard/my-course', 'Student\Dashboard::courses/');      //controller: done
+    $routes->get('dashboard', 'Student\Dashboard::index');                  //controller: done
+    $routes->get('dashboard/planning', 'Student\Dashboard::planning');      //controller: done
+    $routes->get('dashboard/my-course', 'Student\Dashboard::courses');      //controller: done
     //concerning history
     $routes->get('history', 'Student\History::index');                       //controller: done
     //concerning grades
@@ -47,7 +47,7 @@ $routes->group('student', function($routes){
 });
 //TEACHER
 $routes->group('teacher', function($routes){
-    $routes->get('/teacher/dashboard/', 'Teacher\Dashboard::index/');
+    $routes->get('/teacher/dashboard', 'Teacher\Dashboard::index');
     $routes->get('/teacher/history', 'Teacher\History::index');
     //CRUDs
     //grades
@@ -61,30 +61,29 @@ $routes->group('teacher', function($routes){
 });
 //ADMIN
 $routes->group('admin', function($routes){
-    $routes->get('dashboard/', 'Admin\Dashboard::index/');
+    $routes->get('dashboard', 'Admin\Dashboard::index');
     //CRUDs
     //student
-    $routes->get('student', 'Admin\Student::studentAdmin');
+    $routes->get('student/index', 'Admin\Student::index');
     $routes->post('student/create', 'Admin\Student::createStudent');
     $routes->post('student/update', 'Admin\Student::updateStudent');
     $routes->post('student/delete', 'Admin\Student::deleteStudent');
     //teacher
-    $routes->get('teacher', 'Admin\Teacher::teacherAdmin');
+    $routes->get('teacher/index', 'Admin\Teacher::index');
     $routes->post('teacher/create', 'Admin\Teacher::createTeacher');
     $routes->post('teacher/update', 'Admin\Teacher::updateTeacher');
     $routes->post('teacher/delete', 'Admin\Teacher::deleteTeacher');
     //session
-    $routes->get('session', 'Admin\Session::sessionAdmin');
+    $routes->get('session', 'Admin\Session::index');
     $routes->post('session/create', 'Admin\Session::createSession');
     $routes->post('session/update', 'Admin\Session::updateSession');
     $routes->post('session/delete', 'Admin\Session::deleteSession');
     //formation
-    $routes->get('formation', 'Admin\Formation::formationAdmin');
+    $routes->get('formation/index', 'Admin\Formation::index');
     $routes->post('formation/create', 'Admin\Formation::createFormation');
     $routes->post('formation/update', 'Admin\Formation::updateFormation');
     $routes->post('formation/delete', 'Admin\Formation::deleteFormation');
     //payments management
-    $routes->get('payment', 'Admin\Payment::paymentAdmin');
+    $routes->get('payment', 'Admin\Payment::index');
     $routes->post('payment/confirmPayment', 'Admin\Payment::confirmPayment');
-    $routes->post('payment/confirmRefund', 'Admin\Payment::confirmRefund');
 });

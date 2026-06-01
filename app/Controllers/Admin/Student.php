@@ -24,7 +24,7 @@ class Student extends BaseController{
             'nom' => 'required|string|min_length[2]|max_length[50]',
             'prenom' => 'required|string|min_length[2]|max_length[50]',
             'email' => 'required|valid_email|is_unique[eleve.email]',
-            'password' => 'required|string|min_length[6]|max_length[255]',
+            'mdp' => 'required|string|min_length[6]|max_length[255]',
         ];
         if(!$this->validate($rules)){
             return redirect()->back()->withInput()->with('error', 'Données invalides.');
@@ -34,7 +34,7 @@ class Student extends BaseController{
             'nom' => $this->request->getPost('nom'),
             'prenom' => $this->request->getPost('prenom'),
             'email' => $this->request->getPost('email'),
-            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            'mdp' => password_hash($this->request->getPost('mdp'), PASSWORD_DEFAULT),
         ];
         $eleveModel = new EleveModel();
         $eleveModel->insert($data);
@@ -51,8 +51,8 @@ class Student extends BaseController{
         $rules = [
             'nom' => 'required|string|min_length[2]|max_length[50]',
             'prenom' => 'required|string|min_length[2]|max_length[50]',
-            'email' => 'required|valid_email|is_unique[eleve.email,id,{id}]',
-            'password' => 'nullable|string|min_length[6]|max_length[255]',
+            'email' => 'required|valid_email|is_unique[eleve.email,id_eleve,{id_eleve}]',
+            'mdp' => 'permit_empty|string|min_length[6]|max_length[255]',
         ];
         if(!$this->validate($rules)){
             return redirect()->back()->withInput()->with('error', 'Données invalides.');
@@ -63,12 +63,12 @@ class Student extends BaseController{
             'prenom' => $this->request->getPost('prenom'),
             'email' => $this->request->getPost('email'),
         ];
-        if($this->request->getPost('password')){
-            $data['password'] = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+        if($this->request->getPost('mdp')){
+            $data['mdp'] = password_hash($this->request->getPost('mdp'), PASSWORD_DEFAULT);
         }
 
         $eleveModel = new EleveModel();
-        $eleveModel->update($data, ['id' => $this->request->getPost('id')]);
+        $eleveModel->update($data, ['id_eleve' => $this->request->getPost('id_eleve')]);
         
         return redirect()->to('/admin/student/index');
     }
@@ -81,7 +81,7 @@ class Student extends BaseController{
      */
     function deleteStudent() :\CodeIgniter\HTTP\RedirectResponse {
         $eleveModel = new EleveModel();
-        $eleveModel->delete($this->request->getPost('id'));
+        $eleveModel->delete($this->request->getPost('id_eleve'));
 
         return redirect()->to('/admin/student/index');
     }

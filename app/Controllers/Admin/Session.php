@@ -36,7 +36,7 @@ class Session extends BaseController{
             'prix' => 'required|regex_match[/^\d+(\.\d{1,2})?$/]|greater_than[0]',
             'id_formateur' => 'required|integer',
             'id_formation' => 'required|integer',
-            'modalites' => 'required|integer',
+            'id_modalite' => 'required|integer',
         ];
         if(!$this->validate($rules)){
             return redirect()->back()->withInput()->with('error', 'Données invalides.');
@@ -48,7 +48,7 @@ class Session extends BaseController{
             'prix' => $this->request->getPost('prix'),
             'id_formateur' => $this->request->getPost('id_formateur'),
             'id_formation' => $id_formation,
-            'modalites' => $this->request->getPost('modalites'),
+            'id_modalite' => $this->request->getPost('id_modalite'),
         ];
 
         $sessionModel = new SessionModel();
@@ -71,7 +71,7 @@ class Session extends BaseController{
             'prix' => 'required|regex_match[/^\d+(\.\d{1,2})?$/]|greater_than[0]',
             'id_formateur' => 'required|integer',
             'id_formation' => 'required|integer',
-            'modalites' => 'required|integer',
+            'id_modalite' => 'required|integer',
         ];
         if(!$this->validate($rules)){
             return redirect()->back()->withInput()->with('error', 'Données invalides.');
@@ -83,11 +83,11 @@ class Session extends BaseController{
             'prix' => $this->request->getPost('prix'),
             'id_formateur' => $this->request->getPost('id_formateur'),
             'id_formation' => $id_formation,
-            'modalites' => $this->request->getPost('modalites'),
+            'id_modalite' => $this->request->getPost('id_modalite'),
         ];
 
         $sessionModel = new SessionModel();
-        $sessionModel->update($data, ['id' => $this->request->getPost('id')]);
+        $sessionModel->update($this->request->getPost('id_session'), $data);
 
         return redirect()->to("/admin/session/index/$id_formation");
     }

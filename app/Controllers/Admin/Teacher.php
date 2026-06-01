@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\FormateurModel;
+use CodeIgniter\HTTP\RedirectResponse;
 
 class Teacher extends BaseController{
 
@@ -23,14 +24,14 @@ class Teacher extends BaseController{
      * Récupère les données du formulaire de création d'un formateur et
      * crée un nouveau formateur dans la base de données avec ces données
      *
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
-    function createTeacher() :\CodeIgniter\HTTP\RedirectResponse {
+    function createTeacher() : RedirectResponse {
         $rules = [
             'nom' => 'required|string|min_length[2]|max_length[50]',
             'prenom' => 'required|string|min_length[2]|max_length[50]',
             'email' => 'required|valid_email|is_unique[formateur.email]',
-            'password' => 'required|string|min_length[6]|max_length[255]',
+            'mdp' => 'required|string|min_length[6]|max_length[255]',
         ];
         if(!$this->validate($rules)){
             return redirect()->back()->withInput()->with('error', 'Données invalides.');
@@ -40,7 +41,7 @@ class Teacher extends BaseController{
             'nom' => $this->request->getPost('nom'),
             'prenom' => $this->request->getPost('prenom'),
             'email' => $this->request->getPost('email'),
-            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            'mdp' => password_hash($this->request->getPost('mdp'), PASSWORD_DEFAULT),
         ];
         $teacherModel = new FormateurModel();
         $teacherModel->insert($data);
@@ -52,14 +53,14 @@ class Teacher extends BaseController{
      * Récupère les données du formulaire de mise à jour d'un formateur et
      * met à jour le formateur correspondant dans la base de données
      *
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
-    function updateTeacher() :\CodeIgniter\HTTP\RedirectResponse {
+    function updateTeacher() : RedirectResponse {
         $rules = [
             'nom' => 'required|string|min_length[2]|max_length[50]',
             'prenom' => 'required|string|min_length[2]|max_length[50]',
-            'email' => 'required|valid_email|is_unique[formateur.email,id,{id}]',
-            'password' => 'nullable|string|min_length[6]|max_length[255]',
+            'email' => 'required|valid_email|is_unique[formateur.email,id_eleve,{id_eleve}]',
+            'mdp' => 'permit_empty|string|min_length[6]|max_length[255]',
         ];
         if(!$this->validate($rules)){
             return redirect()->back()->withInput()->with('error', 'Données invalides.');
@@ -70,11 +71,11 @@ class Teacher extends BaseController{
             'prenom' => $this->request->getPost('prenom'),
             'email' => $this->request->getPost('email'),
         ];
-        if($this->request->getPost('password')){
-            $data['password'] = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+        if($this->request->getPost('mdp')){
+            $data['mdp'] = password_hash($this->request->getPost('mdp'), PASSWORD_DEFAULT);
         }
         $teacherModel = new FormateurModel();
-        $teacherModel->update($this->request->getPost('id'), $data);
+        $teacherModel->update($this->request->getPost('id_teacher'), $data);
 
         return redirect()->to('/admin/teacher/index');
     }
@@ -83,11 +84,11 @@ class Teacher extends BaseController{
      * 
      * Côté JS la vue lui demande confirmation avant de faire la requete de suppression
      *
-     * @return \CodeIgniter\HTTP\RedirectResponse
+     * @return RedirectResponse
      */
-    function deleteTeacher() :\CodeIgniter\HTTP\RedirectResponse {
+    function deleteTeacher() : RedirectResponse {
         $teacherModel = new FormateurModel();
-        $teacherModel->delete($this->request->getPost('id'));
+        $teacherModel->delete($this->request->getPost('id_eleve'));
 
         return redirect()->to('/admin/teacher/index');
     }
