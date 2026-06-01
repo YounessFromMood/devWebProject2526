@@ -2,8 +2,8 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>En Formation!</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title><?= isset($pageTitle) ? esc($pageTitle) . ' - En Formation!' : 'En Formation!' ?></title>
+        <link rel="stylesheet" type="text/css" href="<?= base_url('css/style.css') ?>>
     </head>
     <body>
         <header>
