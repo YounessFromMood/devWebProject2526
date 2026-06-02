@@ -14,8 +14,10 @@ declare(strict_types=1);
 namespace CodeIgniter\Database\SQLSRV;
 
 use CodeIgniter\Database\BaseBuilder;
+use CodeIgniter\Database\BaseResult;
 use CodeIgniter\Database\Exceptions\DatabaseException;
 use CodeIgniter\Database\Exceptions\DataException;
+use CodeIgniter\Database\Query;
 use CodeIgniter\Database\RawSql;
 use CodeIgniter\Database\ResultInterface;
 use Config\Feature;
@@ -269,7 +271,7 @@ class Builder extends BaseBuilder
         if ($this->castTextToInt) {
             $values = [$column => "CONVERT(VARCHAR(MAX),CONVERT(INT,CONVERT(VARCHAR(MAX), {$column})) - {$value})"];
         } else {
-            $values = [$column => "{$column} + {$value}"];
+            $values = [$column => "{$column} - {$value}"];
         }
 
         $sql = $this->_update($this->QBFrom[0], $values);
@@ -321,7 +323,7 @@ class Builder extends BaseBuilder
     }
 
     /**
-     * Add permision statements for index value inserts
+     * Add permission statements for index value inserts
      */
     private function addIdentity(string $fullTable, string $insert): string
     {
@@ -337,7 +339,7 @@ class Builder extends BaseBuilder
         // DatabaseException:
         //   [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The number of
         //   rows provided for a FETCH clause must be greater then zero.
-        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true;
+        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true; // @phpstan-ignore nullCoalesce.property
         if (! $limitZeroAsAll && $this->QBLimit === 0) {
             return "SELECT * \nFROM " . $this->_fromTables() . ' WHERE 1=0 ';
         }
@@ -358,7 +360,7 @@ class Builder extends BaseBuilder
     /**
      * Compiles a replace into string and runs the query
      *
-     * @return mixed
+     * @return BaseResult|false|Query|string
      *
      * @throws DatabaseException
      */
@@ -462,7 +464,7 @@ class Builder extends BaseBuilder
      *
      * Handle float return value
      *
-     * @return BaseBuilder
+     * @return $this
      */
     protected function maxMinAvgSum(string $select = '', string $alias = '', string $type = 'MAX')
     {
@@ -538,7 +540,7 @@ class Builder extends BaseBuilder
      *
      * @param mixed $where
      *
-     * @return mixed
+     * @return bool|string
      *
      * @throws DatabaseException
      */
@@ -584,7 +586,7 @@ class Builder extends BaseBuilder
         if ($selectOverride !== false) {
             $sql = $selectOverride;
         } else {
-            $sql = (! $this->QBDistinct) ? 'SELECT ' : 'SELECT DISTINCT ';
+            $sql = $this->QBDistinct ? 'SELECT DISTINCT ' : 'SELECT ';
 
             // SQL Server can't work with select * if group by is specified
             if (empty($this->QBSelect) && $this->QBGroupBy !== [] && is_array($this->QBGroupBy)) {
@@ -624,7 +626,7 @@ class Builder extends BaseBuilder
             . $this->compileOrderBy(); // ORDER BY
 
         // LIMIT
-        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true;
+        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true; // @phpstan-ignore nullCoalesce.property
         if ($limitZeroAsAll) {
             if ($this->QBLimit) {
                 $sql = $this->_limit($sql . "\n");
@@ -644,7 +646,7 @@ class Builder extends BaseBuilder
      */
     public function get(?int $limit = null, int $offset = 0, bool $reset = true)
     {
-        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true;
+        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true; // @phpstan-ignore nullCoalesce.property
         if ($limitZeroAsAll && $limit === 0) {
             $limit = null;
         }

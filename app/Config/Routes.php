@@ -20,7 +20,7 @@ $routes->get('/formations/(:num)', 'Formation::details/$1');                 //c
 
 $routes->get('/session/(:num)', 'Session::index/$1');
 //routes for logged in user who needs it's dashboard depending on it's role
-$routes->get('/dashboard', 'Dashboard::index');                              //controller: done
+$routes->get('/dashboard', 'Dashboard::redirector');                              //controller: done
 //routes for logged in user who needs it's history depending on if it's a teach or a student
 $routes->get('/history', 'History::index');                                 //controller: missing
 //routes for a student to subscribe to a session

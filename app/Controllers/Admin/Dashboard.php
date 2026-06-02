@@ -34,7 +34,7 @@ class Dashboard extends BaseController
 
         if (session()->get('role') !== 'admin') {
             session()->destroy();
-            header('Location: /login');
+            header('Location: ' . site_url('/login'));
             exit();
         }
     }

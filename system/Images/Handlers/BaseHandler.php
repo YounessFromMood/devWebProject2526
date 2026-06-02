@@ -242,7 +242,7 @@ abstract class BaseHandler implements ImageHandlerInterface
      *
      * @param bool $maintainRatio If true, will get the closest match possible while keeping aspect ratio true.
      *
-     * @return BaseHandler
+     * @return $this
      */
     public function resize(int $width, int $height, bool $maintainRatio = false, string $masterDim = 'auto')
     {
@@ -536,7 +536,7 @@ abstract class BaseHandler implements ImageHandlerInterface
      *  - bottom
      *  - bottom-right
      *
-     * @return BaseHandler
+     * @return $this
      */
     public function fit(int $width, ?int $height = null, string $position = 'center')
     {
@@ -768,5 +768,15 @@ abstract class BaseHandler implements ImageHandlerInterface
     public function getHeight()
     {
         return ($this->resource !== null) ? $this->_getHeight() : $this->height;
+    }
+
+    /**
+     * Placeholder method for implementing metadata clearing logic.
+     *
+     * This method should be implemented to remove or reset metadata as needed.
+     */
+    public function clearMetadata(): static
+    {
+        return $this;
     }
 }

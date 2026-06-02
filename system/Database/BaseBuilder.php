@@ -41,7 +41,7 @@ class BaseBuilder
     /**
      * QB SELECT data
      *
-     * @var array
+     * @var list<string>
      */
     protected $QBSelect = [];
 
@@ -310,9 +310,7 @@ class BaseBuilder
             throw new DatabaseException('A table must be specified when creating a new Query Builder.');
         }
 
-        /**
-         * @var BaseConnection $db
-         */
+        /** @var BaseConnection $db */
         $this->db = $db;
 
         if ($tableName instanceof TableName) {
@@ -947,8 +945,8 @@ class BaseBuilder
      * @used-by whereNotIn()
      * @used-by orWhereNotIn()
      *
-     * @param non-empty-string|null                                      $key
-     * @param array|BaseBuilder|(Closure(BaseBuilder): BaseBuilder)|null $values The values searched on, or anonymous function with subquery
+     * @param non-empty-string|null                                            $key
+     * @param BaseBuilder|(Closure(BaseBuilder): BaseBuilder)|list<mixed>|null $values The values searched on, or anonymous function with subquery
      *
      * @return $this
      *
@@ -1152,7 +1150,7 @@ class BaseBuilder
             return $this;
         }
 
-        $keyValue = ! is_array($field) ? [$field => $match] : $field;
+        $keyValue = is_array($field) ? $field : [$field => $match];
 
         foreach ($keyValue as $k => $v) {
             if ($insensitiveSearch) {
@@ -1513,7 +1511,7 @@ class BaseBuilder
      */
     public function limit(?int $value = null, ?int $offset = 0)
     {
-        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true;
+        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true; // @phpstan-ignore nullCoalesce.property
         if ($limitZeroAsAll && $value === 0) {
             $value = null;
         }
@@ -1635,7 +1633,7 @@ class BaseBuilder
      */
     public function get(?int $limit = null, int $offset = 0, bool $reset = true)
     {
-        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true;
+        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true; // @phpstan-ignore nullCoalesce.property
         if ($limitZeroAsAll && $limit === 0) {
             $limit = null;
         }
@@ -1773,7 +1771,7 @@ class BaseBuilder
             $this->where($where);
         }
 
-        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true;
+        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true; // @phpstan-ignore nullCoalesce.property
         if ($limitZeroAsAll && $limit === 0) {
             $limit = null;
         }
@@ -2113,7 +2111,7 @@ class BaseBuilder
             if (is_string($set)) {
                 $set = explode(',', $set);
 
-                $set = array_map(static fn ($key): string => trim($key), $set);
+                $set = array_map(trim(...), $set);
             }
 
             if ($set instanceof RawSql) {
@@ -2157,7 +2155,7 @@ class BaseBuilder
         if (is_string($query)) {
             if ($columns !== null && is_string($columns)) {
                 $columns = explode(',', $columns);
-                $columns = array_map(static fn ($key): string => trim($key), $columns);
+                $columns = array_map(trim(...), $columns);
             }
 
             $columns = (array) $columns;
@@ -2500,7 +2498,7 @@ class BaseBuilder
             $this->where($where);
         }
 
-        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true;
+        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true; // @phpstan-ignore nullCoalesce.property
         if ($limitZeroAsAll && $limit === 0) {
             $limit = null;
         }
@@ -2547,7 +2545,7 @@ class BaseBuilder
             $valStr[] = $key . ' = ' . $val;
         }
 
-        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true;
+        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true; // @phpstan-ignore nullCoalesce.property
         if ($limitZeroAsAll) {
             return 'UPDATE ' . $this->compileIgnore('update') . $table . ' SET ' . implode(', ', $valStr)
                 . $this->compileWhereHaving('QBWhere')
@@ -2591,6 +2589,13 @@ class BaseBuilder
      */
     public function updateBatch($set = null, $constraints = null, int $batchSize = 100)
     {
+        if ($this->QBWhere !== []) {
+            throw new DatabaseException(
+                'updateBatch() cannot be safely combined with existing Query Builder WHERE conditions. '
+                . 'Use updateBatch($data, $constraints), onConstraint(), or include all required constraint fields in the batch data.',
+            );
+        }
+
         $this->onConstraint($constraints);
 
         if (isset($this->QBOptions['setQueryAsData'])) {
@@ -2824,7 +2829,7 @@ class BaseBuilder
 
         $sql = $this->_delete($this->removeAlias($table));
 
-        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true;
+        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true; // @phpstan-ignore nullCoalesce.property
         if ($limitZeroAsAll && $limit === 0) {
             $limit = null;
         }
@@ -3065,7 +3070,7 @@ class BaseBuilder
         if ($selectOverride !== false) {
             $sql = $selectOverride;
         } else {
-            $sql = (! $this->QBDistinct) ? 'SELECT ' : 'SELECT DISTINCT ';
+            $sql = $this->QBDistinct ? 'SELECT DISTINCT ' : 'SELECT ';
 
             if (empty($this->QBSelect)) {
                 $sql .= '*';
@@ -3099,7 +3104,7 @@ class BaseBuilder
             . $this->compileWhereHaving('QBHaving')
             . $this->compileOrderBy();
 
-        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true;
+        $limitZeroAsAll = config(Feature::class)->limitZeroAsAll ?? true; // @phpstan-ignore nullCoalesce.property
         if ($limitZeroAsAll) {
             if ($this->QBLimit) {
                 $sql = $this->_limit($sql . "\n");
@@ -3257,6 +3262,9 @@ class BaseBuilder
     {
         if (is_array($this->QBOrderBy) && $this->QBOrderBy !== []) {
             foreach ($this->QBOrderBy as &$orderBy) {
+                if (is_string($orderBy)) {
+                    continue;
+                }
                 if ($orderBy['escape'] !== false && ! $this->isLiteral($orderBy['field'])) {
                     $orderBy['field'] = $this->db->protectIdentifiers($orderBy['field']);
                 }
@@ -3264,11 +3272,7 @@ class BaseBuilder
                 $orderBy = $orderBy['field'] . $orderBy['direction'];
             }
 
-            return $this->QBOrderBy = "\nORDER BY " . implode(', ', $this->QBOrderBy);
-        }
-
-        if (is_string($this->QBOrderBy)) {
-            return $this->QBOrderBy;
+            return "\nORDER BY " . implode(', ', $this->QBOrderBy);
         }
 
         return '';
