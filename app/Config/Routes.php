@@ -26,7 +26,6 @@ $routes->get('/history', 'History::index');                                 //co
 //routes for a student to subscribe to a session
 $routes->get('/session/registration/(:num)', 'Session::registerPage/$1');    //controller: done
 $routes->post('/session/registration/(:num)', 'Session::toRegister/$1');     //controller: done
-//REALISER UNE ROUTE POUR LE PROFIL ET DONC SES CONTROLLEURS
 
 //STUDENT
 $routes->group('student', function($routes){
@@ -48,8 +47,8 @@ $routes->group('student', function($routes){
 });
 //TEACHER
 $routes->group('teacher', function($routes){
-    $routes->get('/teacher/dashboard', 'Teacher\Dashboard::index');
-    $routes->get('/teacher/history', 'Teacher\History::index');
+    $routes->get('dashboard', 'Teacher\Dashboard::index');
+    $routes->get('history', 'Teacher\History::index');
     //CRUDs
     //grades
     $routes->post('/grades/create/(:num)/(:num)/(:any)', 'Teacher\Grades::createGrade/$1/$2/$3');

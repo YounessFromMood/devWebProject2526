@@ -166,8 +166,20 @@ INSERT INTO type_formation (libelle) VALUES
 ('Bureautique');
 
 -- Administrateur de départ (aucun moyen d'en créer un via le site)
--- Email    : admin@formation.be
+-- Email    : admin@enformation.be
 -- Password : Admin1234   (hash bcrypt ci-dessous)
 INSERT INTO administrateur (nom, prenom, email, mdp, num_tel) VALUES
-('Admin', 'Principal', 'admin@formation.be',
+('Admin', 'Principal', 'admin@enformation.be',
  '$2b$10$EIV9Va5PubCNLCMZl6JWI.wcQy/jk23uG7qHhqZvRTMg4Mo0FPyNC', NULL);
+
+-- Formateur de test
+-- Email    : jack.frost@enformation.be
+-- Password : Formateur1234
+INSERT INTO formateur (nom, prenom, email, mdp, num_tel) VALUES
+(
+    'Frost',
+    'Jack',
+    'jack.frost@enformation.be',
+    '$2y$10$tPVmT.KlqwFGF7QsWhvjk.vqp7rSTgE0Y51wUos5yCOGJ8CUmpwZG',
+    '+32 470 12 34 56'
+);

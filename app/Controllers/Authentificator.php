@@ -84,6 +84,7 @@ class Authentificator extends BaseController {
             'email' => 'required|valid_email|max_length[200]',
             'mdp' => 'required|string|min_length[8]|max_length[72]',
             'num_tel' => 'permit_empty|string|min_length[8]|max_length[20]',
+            'mdp_confirm' => 'required|matches[mdp]',
         ];
 
         if(!$this->validate($rules)){

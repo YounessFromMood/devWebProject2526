@@ -21,7 +21,13 @@ class Dashboard extends BaseController {
                                     LoggerInterface $logger)
     {
         parent::initController($request, $response, $logger);
-        $this->teacherId = session()->get('user_id');
+        $this->teacherId = (int) session()->get('user_id');
+
+        if (session()->get('role') !== 'formateur') {
+            session()->destroy();
+            header('Location: ' . site_url('/login'));
+            exit();
+        }
     }
     /**
      * Point d'entrée pour le dashboard du formateur

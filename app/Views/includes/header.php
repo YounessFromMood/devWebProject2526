@@ -39,9 +39,6 @@
                                     <a class="nav-link text-white" href="<?= base_url('/dashboard') ?>">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="<?= base_url('/') ?>">Profil</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link text-white" href="<?= base_url('/logout') ?>">Déconnexion</a>
                                 </li>
                             <?php else : ?>

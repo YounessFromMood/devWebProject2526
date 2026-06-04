@@ -21,7 +21,13 @@ class Dashboard extends BaseController {
                                     LoggerInterface $logger)
     {
         parent::initController($request, $response, $logger);
-        $this->studentId = session()->get('user_id');
+        $this->studentId = (int) session()->get('user_id');
+
+        if (session()->get('role') !== 'eleve') {
+            session()->destroy();
+            header('Location: ' . site_url('/login'));
+            exit();
+        }
     }
     /**
      * Point d'entrée pour le dashboard de l'étudiant 
