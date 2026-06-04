@@ -41,8 +41,5 @@
         </div>
     </div>
 </footer>
-<script src="<?= base_url('js/jquery.min.js') ?>"></script>
-<script src="<?= base_url('js/jquery.dataTables.min.js') ?>"></script>
-<script src="<?= base_url('js/dataTables.min.js') ?>"></script>
 </body>
 </html>

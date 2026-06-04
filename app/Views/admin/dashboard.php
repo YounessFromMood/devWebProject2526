@@ -115,8 +115,7 @@
     </main>
 
 </div>
-
-<?= $this->include('includes/footer') ?>
+<script src="<?= base_url('js/datatables.min.js') ?>"></script>
 <script>
     const BASE_URL = "<?= base_url() ?>";
 </script>

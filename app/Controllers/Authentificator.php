@@ -99,12 +99,14 @@ class Authentificator extends BaseController {
         
         $userModel = new EleveModel();
 
+        $numTel = $this->request->getPost('num_tel');
+
         $newStudentDatas = [
             'nom' => $this->request->getPost('nom'),
             'prenom' => $this->request->getPost('prenom'),
             'email' => $email,
             'mdp' => password_hash($this->request->getPost('mdp'), PASSWORD_DEFAULT),
-            'num_tel' => $this->request->getPost('num_tel'),
+            'num_tel' => ($numTel === '' || $numTel === null) ? null : $numTel,
         ];
 
         if(!$userModel->insert($newStudentDatas)){

@@ -3972,3 +3972,986 @@ Can't find a route for 'GET: js/jquery.dataTables.min.js'.
 [Method: GET, Route: js/jquery.dataTables.min.js]
 in SYSTEMPATH\Format\JSONFormatter.php on line 44.
  1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 16:51:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 16:51:02 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 16:51:02 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 16:51:02 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 16:53:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 16:53:15 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 16:53:15 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 16:53:15 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 16:54:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 16:54:39 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 16:54:39 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 16:55:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 16:55:00 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 16:55:00 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 16:55:00 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 16:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 16:56:10 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 16:56:10 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 16:56:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 16:56:29 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 16:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 16:56:57 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 16:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 16:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 17:00:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 17:00:21 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 17:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 17:00:37 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 17:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 17:35:18 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 17:35:19 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 17:35:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 17:35:37 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 17:35:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 17:35:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 17:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 17:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 17:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 17:41:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 17:43:11 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: css/bootstrap.min.css.map'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: css/bootstrap.min.css.map]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 17:44:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 17:48:08 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/payment/index.php"
+[Method: GET, Route: admin/payment]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/payment/index.php')
+ 2 SYSTEMPATH\Common.php(1254): CodeIgniter\View\View->render('admin/payment/index', [], true)
+ 3 APPPATH\Controllers\Admin\Payment.php(19): view('admin/payment/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Payment->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Payment))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:48:08 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format('')
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format('')
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond('', 500)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\View\Exceptions\ViewException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\View\Exceptions\ViewException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\View\Exceptions\ViewException
+Invalid file: "admin/payment/index.php"
+#0 C:\xampp\htdocs\devWebProject2526\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/payment/i...')
+#1 C:\xampp\htdocs\devWebProject2526\system\Common.php(1254): CodeIgniter\View\View->render('admin/payment/i...', Array, true)
+#2 C:\xampp\htdocs\devWebProject2526\app\Controllers\Admin\Payment.php(19): view('admin/payment/i...', Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(974): App\Controllers\Admin\Payment->index()
+#4 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Payment))
+#5 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#8 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#9 {main}
+[Method: GET, Route: admin/payment]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2026-06-04 17:49:09 --> Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$3qg2E7dLzFfdjSDEL2tp3.Ehqrcim.v43eQRKil9bz2fKnW/QmIcW\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$3qg2E7dLzFfdjSDEL2tp3.Ehqrcim.v43eQRKil9bz2fKnW/QmIcW\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$3qg2E7dLzFfdjSDEL2tp3.Ehqrcim.v43eQRKil9bz2fKnW/QmIcW\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:49:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 2 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:49:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$3qg2E7dLzFfdjSDEL2tp3.Ehqrcim.v43eQRKil9bz2fKnW/QmIcW\', \'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$3qg2E7dLzFfdjSDEL2tp3.Ehqrcim.v43eQRKil9bz2fKnW/QmIcW\', \'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 4 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:49:09 --> [Caused by] mysqli_sql_exception: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$3qg2E7dLzFfdjSDEL2tp3.Ehqrcim.v43eQRKil9bz2fKnW/QmIcW\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$3qg2E7dLzFfdjSDEL2tp3.Ehqrcim.v43eQRKil9bz2fKnW/QmIcW\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$3qg2E7dLzFfdjSDEL2tp3.Ehqrcim.v43eQRKil9bz2fKnW/QmIcW\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-04 17:49:26 --> Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$HLVIRUv62hphXdcKyhRPeeC9P0.5PIR395uwr1C.kO/V.wpXJrnvW\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$HLVIRUv62hphXdcKyhRPeeC9P0.5PIR395uwr1C.kO/V.wpXJrnvW\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$HLVIRUv62hphXdcKyhRPeeC9P0.5PIR395uwr1C.kO/V.wpXJrnvW\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:49:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 2 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:49:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$HLVIRUv62hphXdcKyhRPeeC9P0.5PIR395uwr1C.kO/V.wpXJrnvW\', \'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$HLVIRUv62hphXdcKyhRPeeC9P0.5PIR395uwr1C.kO/V.wpXJrnvW\', \'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 4 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:49:26 --> [Caused by] mysqli_sql_exception: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$HLVIRUv62hphXdcKyhRPeeC9P0.5PIR395uwr1C.kO/V.wpXJrnvW\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$HLVIRUv62hphXdcKyhRPeeC9P0.5PIR395uwr1C.kO/V.wpXJrnvW\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'blackfrost@heeho.atlus\', \'$2y$10$HLVIRUv62hphXdcKyhRPeeC9P0.5PIR395uwr1C.kO/V.wpXJrnvW\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-04 17:50:03 --> Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Blac\', \'blackfrost@heeho.atlus\', \'$2y$10$9kAacMcWOvCFE6NFcC154ePMIPnqf3bcX/NTR1wk2GP3IGAeGdLkq\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Blac\', \'blackfrost@heeho.atlus\', \'$2y$10$9kAacMcWOvCFE6NFcC154ePMIPnqf3bcX/NTR1wk2GP3IGAeGdLkq\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Blac\', \'blackfrost@heeho.atlus\', \'$2y$10$9kAacMcWOvCFE6NFcC154ePMIPnqf3bcX/NTR1wk2GP3IGAeGdLkq\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:50:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 2 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:50:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Blac\', \'blackfrost@heeho.atlus\', \'$2y$10$9kAacMcWOvCFE6NFcC154ePMIPnqf3bcX/NTR1wk2GP3IGAeGdLkq\', \'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Blac\', \'blackfrost@heeho.atlus\', \'$2y$10$9kAacMcWOvCFE6NFcC154ePMIPnqf3bcX/NTR1wk2GP3IGAeGdLkq\', \'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 4 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:50:03 --> [Caused by] mysqli_sql_exception: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Blac\', \'blackfrost@heeho.atlus\', \'$2y$10$9kAacMcWOvCFE6NFcC154ePMIPnqf3bcX/NTR1wk2GP3IGAeGdLkq\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Blac\', \'blackfrost@heeho.atlus\', \'$2y$10$9kAacMcWOvCFE6NFcC154ePMIPnqf3bcX/NTR1wk2GP3IGAeGdLkq\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Blac\', \'blackfrost@heeho.atlus\', \'$2y$10$9kAacMcWOvCFE6NFcC154ePMIPnqf3bcX/NTR1wk2GP3IGAeGdLkq\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-04 17:50:52 --> Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$tUONfFaEvwLbbyXrWH8lF.n061A4p610X1gcCzZ1m31K8T/DEuLJi\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$tUONfFaEvwLbbyXrWH8lF.n061A4p610X1gcCzZ1m31K8T/DEuLJi\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$tUONfFaEvwLbbyXrWH8lF.n061A4p610X1gcCzZ1m31K8T/DEuLJi\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:50:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 2 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:50:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$tUONfFaEvwLbbyXrWH8lF.n061A4p610X1gcCzZ1m31K8T/DEuLJi\', \'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$tUONfFaEvwLbbyXrWH8lF.n061A4p610X1gcCzZ1m31K8T/DEuLJi\', \'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 4 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:50:52 --> [Caused by] mysqli_sql_exception: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$tUONfFaEvwLbbyXrWH8lF.n061A4p610X1gcCzZ1m31K8T/DEuLJi\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$tUONfFaEvwLbbyXrWH8lF.n061A4p610X1gcCzZ1m31K8T/DEuLJi\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$tUONfFaEvwLbbyXrWH8lF.n061A4p610X1gcCzZ1m31K8T/DEuLJi\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-04 17:51:39 --> Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$mdc1SPwoXuRcRVk01M9ATO1N2SoIcmkM0vkcN5E46Ghx7TzVeTTUi\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$mdc1SPwoXuRcRVk01M9ATO1N2SoIcmkM0vkcN5E46Ghx7TzVeTTUi\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$mdc1SPwoXuRcRVk01M9ATO1N2SoIcmkM0vkcN5E46Ghx7TzVeTTUi\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:51:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 2 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:51:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$mdc1SPwoXuRcRVk01M9ATO1N2SoIcmkM0vkcN5E46Ghx7TzVeTTUi\', \'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$mdc1SPwoXuRcRVk01M9ATO1N2SoIcmkM0vkcN5E46Ghx7TzVeTTUi\', \'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 4 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:51:39 --> [Caused by] mysqli_sql_exception: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$mdc1SPwoXuRcRVk01M9ATO1N2SoIcmkM0vkcN5E46Ghx7TzVeTTUi\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$mdc1SPwoXuRcRVk01M9ATO1N2SoIcmkM0vkcN5E46Ghx7TzVeTTUi\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$mdc1SPwoXuRcRVk01M9ATO1N2SoIcmkM0vkcN5E46Ghx7TzVeTTUi\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-04 17:53:21 --> Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$2XfI0taxqXWFclbOxGUF3OOPZr5K7NR54VfrdsUsA6FwsfoMqSGr.\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$2XfI0taxqXWFclbOxGUF3OOPZr5K7NR54VfrdsUsA6FwsfoMqSGr.\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$2XfI0taxqXWFclbOxGUF3OOPZr5K7NR54VfrdsUsA6FwsfoMqSGr.\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:53:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 2 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:53:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$2XfI0taxqXWFclbOxGUF3OOPZr5K7NR54VfrdsUsA6FwsfoMqSGr.\', \'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$2XfI0taxqXWFclbOxGUF3OOPZr5K7NR54VfrdsUsA6FwsfoMqSGr.\', \'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 4 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:53:21 --> [Caused by] mysqli_sql_exception: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$2XfI0taxqXWFclbOxGUF3OOPZr5K7NR54VfrdsUsA6FwsfoMqSGr.\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$2XfI0taxqXWFclbOxGUF3OOPZr5K7NR54VfrdsUsA6FwsfoMqSGr.\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$2XfI0taxqXWFclbOxGUF3OOPZr5K7NR54VfrdsUsA6FwsfoMqSGr.\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-04 17:53:25 --> Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$FT10vvionEjjTr/sHqz9ueaj.piW9JJOEL3Cs5hI6kBM4OELOX5IS\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$FT10vvionEjjTr/sHqz9ueaj.piW9JJOEL3Cs5hI6kBM4OELOX5IS\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$FT10vvionEjjTr/sHqz9ueaj.piW9JJOEL3Cs5hI6kBM4OELOX5IS\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:53:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 2 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:53:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$FT10vvionEjjTr/sHqz9ueaj.piW9JJOEL3Cs5hI6kBM4OELOX5IS\', \'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$FT10vvionEjjTr/sHqz9ueaj.piW9JJOEL3Cs5hI6kBM4OELOX5IS\', \'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 4 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 17:53:25 --> [Caused by] mysqli_sql_exception: Duplicate entry '' for key 'num_tel'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$FT10vvionEjjTr/sHqz9ueaj.piW9JJOEL3Cs5hI6kBM4OELOX5IS\', \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$FT10vvionEjjTr/sHqz9ueaj.piW9JJOEL3Cs5hI6kBM4OELOX5IS\', \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (\'Frost\', \'Black\', \'black.frost@atlus.be\', \'$2y$10$FT10vvionEjjTr/sHqz9ueaj.piW9JJOEL3Cs5hI6kBM4OELOX5IS\', \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2343): CodeIgniter\Database\BaseConnection->query('INSERT INTO `eleve` (`nom`, `prenom`, `email`, `mdp`, `num_tel`) VALUES (:nom:, :prenom:, :email:, :mdp:, :num_tel:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Authentificator.php(110): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Authentificator->toRegister()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Authentificator))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-04 17:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 17:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 17:55:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 17:56:11 --> ParseError: syntax error, unexpected token "=>", expecting "]"
+[Method: GET, Route: register]
+in APPPATH\Controllers\Authentificator.php on line 109.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(320): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\devWebProject2526\\app\\Controllers\\Authentificator.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Authentificator')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Authentificator')
+ 4 SYSTEMPATH\Router\Router.php(790): class_exists('\\App\\Controllers\\Authentificator')
+ 5 SYSTEMPATH\Router\Router.php(228): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(852): CodeIgniter\Router\Router->handle('register')
+ 7 SYSTEMPATH\CodeIgniter.php(464): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-04 17:57:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 17:57:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 17:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 17:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 17:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:00:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:01:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:01:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
