@@ -26,6 +26,7 @@ $routes->get('/history', 'History::index');                                 //co
 //routes for a student to subscribe to a session
 $routes->get('/session/registration/(:num)', 'Session::registerPage/$1');    //controller: done
 $routes->post('/session/registration/(:num)', 'Session::toRegister/$1');     //controller: done
+//REALISER UNE ROUTE POUR LE PROFIL ET DONC SES CONTROLLEURS
 
 //STUDENT
 $routes->group('student', function($routes){
