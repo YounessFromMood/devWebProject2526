@@ -1,4 +1,5 @@
-<footer style="background-color: #e8630a;" class="py-3 mt-auto">
+</main>
+<footer style="background-color: #e8630a;" class="py-3">
     <div class="container-fluid px-3">
         <div class="d-flex justify-content-between align-items-center">
 
@@ -40,5 +41,7 @@
         </div>
     </div>
 </footer>
+<script src="<?= base_url('js/jquery.dataTables.min.js') ?>"></script>
+<script src="<?= base_url('js/dataTables.min.js') ?>"></script>
 </body>
 </html>

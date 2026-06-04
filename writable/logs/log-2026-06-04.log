@@ -104,3 +104,613 @@ FROM `formation`', [], false)
  9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 11:11:19 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "formation/index.php"
+[Method: GET, Route: formations]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('formation/index.php')
+ 2 SYSTEMPATH\Common.php(1254): CodeIgniter\View\View->render('formation/index', [], true)
+ 3 APPPATH\Controllers\Formation.php(23): view('formation/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Formation->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Formation))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-04 11:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 11:12:11 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "formation/index.php"
+[Method: GET, Route: formations]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('formation/index.php')
+ 2 SYSTEMPATH\Common.php(1254): CodeIgniter\View\View->render('formation/index', [], true)
+ 3 APPPATH\Controllers\Formation.php(23): view('formation/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Formation->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Formation))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-06-04 11:13:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:14:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:21:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:21:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:22:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 11:25:05 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: css/bootstrap.min.css.map'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: css/bootstrap.min.css.map]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 11:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 11:26:09 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: css/bootstrap.min.css.map'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: css/bootstrap.min.css.map]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 11:26:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 11:26:52 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: css/bootstrap.min.css.map'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: css/bootstrap.min.css.map]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 11:27:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:27:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:29:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:31:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 11:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 11:33:20 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: css/bootstrap.min.css.map'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: css/bootstrap.min.css.map]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 11:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:24:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:24:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:24:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:25:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:25:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:28:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:28:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:28:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:28:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:28:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:28:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:29:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:29:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:31:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:31:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:31:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 12:32:35 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/dataTables.bootstrap5.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/dataTables.bootstrap5.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:32:35 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:32:36 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/dataTables.bootstrap5.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/dataTables.bootstrap5.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:32:36 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:32:36 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/dataTables.bootstrap5.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/dataTables.bootstrap5.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 12:33:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:33:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 12:33:31 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: css/dataTables.bootstrap5.min.css'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: css/dataTables.bootstrap5.min.css]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:33:31 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/dataTables.bootstrap5.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/dataTables.bootstrap5.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:33:31 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:33:32 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/dataTables.bootstrap5.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/dataTables.bootstrap5.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:33:32 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: css/dataTables.bootstrap5.min.css'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: css/dataTables.bootstrap5.min.css]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:33:32 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/dataTables.bootstrap5.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/dataTables.bootstrap5.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:33:32 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:33:32 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/dataTables.bootstrap5.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/dataTables.bootstrap5.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 12:38:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:38:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 12:38:27 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/dataTables.bootstrap5.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/dataTables.bootstrap5.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:38:27 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:38:28 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/dataTables.bootstrap5.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/dataTables.bootstrap5.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:38:28 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:38:28 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/dataTables.bootstrap5.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/dataTables.bootstrap5.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 12:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 12:38:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 12:38:40 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-04 12:38:40 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/jquery.dataTables.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/jquery.dataTables.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

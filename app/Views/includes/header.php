@@ -8,8 +8,9 @@
 
         <link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>">
         <link rel="stylesheet" type="text/css" href="<?= base_url('css/style.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('css/dataTables.min.css') ?>">
     </head>
-    <body>
+    <body body class="d-flex flex-column min-vh-100">
         <header>
             <nav id="top" class="navbar navbar-expand-lg px-3" style="background-color: #e8630a;">
                 <div class="container-fluid">
@@ -58,3 +59,4 @@
             </nav>
 
         </header>
+        <main class="flex-grow-1">
