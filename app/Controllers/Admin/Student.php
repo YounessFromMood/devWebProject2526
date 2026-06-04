@@ -7,12 +7,16 @@ use App\Models\EleveModel;
 
 class Student extends BaseController{
 
-    function index() :string {
-        $eleveModel = new EleveModel();
-        $students = $eleveModel->findAll();
-        
+    function index() {
+    $eleveModel = new EleveModel();
+    $students = $eleveModel->findAll();
+
+    if ($this->request->isAJAX()) {
         return view('admin/student/index', ['students' => $students]);
     }
+
+    return redirect()->to('/admin/dashboard');
+}
     /**
      * Récupère les données du formulaire de création d'un élève et
      * crée un nouvel élève dans la base de données avec ces données
