@@ -4955,3 +4955,129 @@ DEBUG - 2026-06-04 18:01:16 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2026-06-04 18:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-06-04 18:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-06-04 18:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 18:04:57 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/payment/index.php"
+[Method: GET, Route: admin/payment]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/payment/index.php')
+ 2 SYSTEMPATH\Common.php(1254): CodeIgniter\View\View->render('admin/payment/index', [], true)
+ 3 APPPATH\Controllers\Admin\Payment.php(19): view('admin/payment/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Payment->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Payment))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-04 18:04:57 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 500)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\View\Exceptions\ViewException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\View\Exceptions\ViewException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\View\Exceptions\ViewException
+Invalid file: "admin/payment/index.php"
+#0 C:\xampp\htdocs\devWebProject2526\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/payment/i...')
+#1 C:\xampp\htdocs\devWebProject2526\system\Common.php(1254): CodeIgniter\View\View->render('admin/payment/i...', Array, true)
+#2 C:\xampp\htdocs\devWebProject2526\app\Controllers\Admin\Payment.php(19): view('admin/payment/i...', Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(974): App\Controllers\Admin\Payment->index()
+#4 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Payment))
+#5 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#8 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#9 {main}
+[Method: GET, Route: admin/payment]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 18:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:05:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:14:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 18:16:26 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: css/bootstrap.min.css.map'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: css/bootstrap.min.css.map]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 18:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:16:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:20:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:20:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:20:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:25:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:26:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:26:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 18:26:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 19:43:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 19:43:42 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/bootstrap.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/bootstrap.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 19:45:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-04 19:45:17 --> ErrorException: Uncaught ErrorException: Undefined property: Config\Format::$jsonEncodeDepth in C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php:44
+Stack trace:
+#0 C:\xampp\htdocs\devWebProject2526\system\Format\JSONFormatter.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(352): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\devWebProject2526\system\API\ResponseTrait.php(111): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\devWebProject2526\system\Debug\ExceptionHandler.php(95): CodeIgniter\Debug\ExceptionHandler->respond(Array, 404)
+#4 C:\xampp\htdocs\devWebProject2526\system\Debug\Exceptions.php(151): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Exceptions\PageNotFoundException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 404, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#6 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\PageNotFoundException
+Can't find a route for 'GET: js/bootstrap.min.js'.
+#0 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(1024): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Can't find a ro...')
+#1 C:\xampp\htdocs\devWebProject2526\system\CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+#2 C:\xampp\htdocs\devWebProject2526\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\devWebProject2526\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#4 C:\xampp\htdocs\devWebProject2526\public\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#5 {main}
+[Method: GET, Route: js/bootstrap.min.js]
+in SYSTEMPATH\Format\JSONFormatter.php on line 44.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-06-04 19:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-04 19:46:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
