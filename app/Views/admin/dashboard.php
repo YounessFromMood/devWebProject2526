@@ -2,16 +2,13 @@
 
 <div class="d-flex" style="min-height: calc(100vh - 56px);">
 
-    <!-- ===================== SIDEBAR ===================== -->
     <nav id="adminSidebar" class="d-flex flex-column p-3 text-white" 
          style="width: 240px; min-width: 240px; background-color: #1e1e2e;">
 
-        <!-- Titre sidebar -->
         <div class="mb-4 mt-2">
             <span class="fw-bold fs-5" style="color: #e8630a;">&#9679; Administration</span>
         </div>
 
-        <!-- Menu de navigation -->
         <ul class="nav flex-column gap-1">
             <li class="nav-item">
                 <a href="#" class="nav-link sidebar-link active" data-section="profil"
@@ -45,7 +42,6 @@
             </li>
         </ul>
 
-        <!-- Bouton déconnexion en bas -->
         <div class="mt-auto">
             <a href="<?= base_url('/logout') ?>" 
                class="btn btn-sm w-100 text-white"
@@ -57,12 +53,9 @@
     </nav>
 
     <main class="flex-grow-1 p-4 bg-light">
-    <!-- ===================== SIDEBAR ===================== -->
 
-        <!-- Zone de chargement AJAX — par défaut : profil user -->
         <div id="mainContent">
 
-            <!-- ---- SECTION PROFIL ---- -->
             <div id="section-profil">
 
                 <h2 class="fw-bold mb-4">Mon profil</h2>
@@ -106,7 +99,6 @@
                 </div>
 
             </div>
-            <!-- ---- FIN SECTION PROFIL ---- -->
 
             <div id="section-ajax" style="display: none;"></div>
 
@@ -115,8 +107,12 @@
     </main>
 
 </div>
+
+<?= $this->include('admin/teacher/modals') ?>
+
 <script src="<?= base_url('js/datatables.min.js') ?>"></script>
 <script>
     const BASE_URL = "<?= base_url() ?>";
 </script>
 <script src="<?= base_url('js/dashboard/admin_dashboard.js') ?>"></script>
+<script src="<?= base_url('js/admin/teacher.js') ?>"></script>

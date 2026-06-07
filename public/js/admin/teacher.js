@@ -1,6 +1,4 @@
-const sectionAjax = document.getElementById('section-ajax');
-
-sectionAjax.addEventListener('click', function (e) {
+document.addEventListener('click', function (e) {
 
     if (e.target.closest('.btn-edit-teacher')) {
         const btn = e.target.closest('.btn-edit-teacher');
