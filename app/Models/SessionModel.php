@@ -7,6 +7,8 @@ class SessionModel extends UserModel {
     protected $primaryKey = 'id_session';
     protected $returnType = 'array';
     protected $allowedFields = ['id_formateur', 'id_formation','id_modalite', 'date_debut', 'date_fin', 'prix', 'lieu_session'];
+    protected $useSoftDeletes = true;
+    protected $deletedField = 'deleted_at';
 
     public function getAllStudentSessions(int $studentId) : array {
         return $this

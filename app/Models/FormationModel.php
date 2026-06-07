@@ -10,6 +10,8 @@ class FormationModel extends UserModel {
     protected $primaryKey = 'id_formation';
     protected $returnType = 'array';
     protected $allowedFields = ['titre', 'description', 'duree', 'prix', 'langue'];
+    protected $useSoftDeletes = true;
+    protected $deletedField = 'deleted_at';
     
     public function search(array $filtres) {
     $builder = $this->db->table('formation');

@@ -68,21 +68,29 @@ $routes->group('admin', function($routes){
     $routes->post('student/create', 'Admin\Student::createStudent');
     $routes->post('student/update', 'Admin\Student::updateStudent');
     $routes->post('student/delete', 'Admin\Student::deleteStudent');
+    $routes->get('student/deleted', 'Admin\Student::getDeleted');
+    $routes->post('student/restore', 'Admin\Student::restoreStudent');
     //teacher
     $routes->get('teacher/index', 'Admin\Teacher::index');
     $routes->post('teacher/create', 'Admin\Teacher::createTeacher');
     $routes->post('teacher/update', 'Admin\Teacher::updateTeacher');
     $routes->post('teacher/delete', 'Admin\Teacher::deleteTeacher');
+    $routes->get('teacher/deleted', 'Admin\Teacher::getDeleted');
+    $routes->post('teacher/restore', 'Admin\Teacher::restoreTeacher');
     //session
     $routes->get('session', 'Admin\Session::index');
     $routes->post('session/create', 'Admin\Session::createSession');
     $routes->post('session/update', 'Admin\Session::updateSession');
     $routes->post('session/delete', 'Admin\Session::deleteSession');
+    $routes->get('session/deleted', 'Admin\Session::getDeleted');
+    $routes->post('session/restore', 'Admin\Session::restoreSession');
     //formation
     $routes->get('formation/index', 'Admin\Formation::index');
     $routes->post('formation/create', 'Admin\Formation::createFormation');
     $routes->post('formation/update', 'Admin\Formation::updateFormation');
     $routes->post('formation/delete', 'Admin\Formation::deleteFormation');
+    $routes->get('formation/deleted', 'Admin\Formation::getDeleted');
+    $routes->post('formation/restore', 'Admin\Formation::restoreFormation');
     //payments management
     $routes->get('payment', 'Admin\Payment::index');
     $routes->post('payment/confirmPayment', 'Admin\Payment::confirmPayment');

@@ -109,10 +109,12 @@
 </div>
 
 <?= $this->include('admin/teacher/modals') ?>
+<?= $this->include('admin/student/modals') ?>
 
 <script src="<?= base_url('js/datatables.min.js') ?>"></script>
 <script>
     const BASE_URL = "<?= base_url() ?>";
 </script>
 <script src="<?= base_url('js/dashboard/admin_dashboard.js') ?>"></script>
+<script src="<?= base_url('js/admin/student.js') ?>"></script>
 <script src="<?= base_url('js/admin/teacher.js') ?>"></script>

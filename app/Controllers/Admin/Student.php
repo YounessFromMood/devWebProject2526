@@ -5,45 +5,37 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\EleveModel;
 
-class Student extends BaseController{
+class Student extends BaseController {
 
     function index() {
-    $eleveModel = new EleveModel();
-    $students = $eleveModel->findAll();
+        $eleveModel = new EleveModel();
+        $students = $eleveModel->findAll();
 
-    if ($this->request->isAJAX()) {
-        return view('admin/student/index', ['students' => $students]);
+        if ($this->request->isAJAX()) {
+            return view('admin/student/index', ['students' => $students]);
+        }
+
+        return redirect()->to('/admin/dashboard');
     }
-
-    return redirect()->to('/admin/dashboard');
-}
     /**
      * Récupère les données du formulaire de création d'un élève et
      * crée un nouvel élève dans la base de données avec ces données
      *
      * @return \CodeIgniter\HTTP\RedirectResponse
      */
-    function createStudent() :\CodeIgniter\HTTP\RedirectResponse {
-        $rules = [
-            'nom' => 'required|string|min_length[2]|max_length[50]',
-            'prenom' => 'required|string|min_length[2]|max_length[50]',
-            'email' => 'required|valid_email|is_unique[eleve.email]',
-            'mdp' => 'required|string|min_length[6]|max_length[255]',
-        ];
-        if(!$this->validate($rules)){
-            return redirect()->back()->withInput()->with('error', 'Données invalides.');
-        }
+    function createStudent() {
+        $data = $this->request->getJSON(true);
 
-        $data = [
-            'nom' => $this->request->getPost('nom'),
-            'prenom' => $this->request->getPost('prenom'),
-            'email' => $this->request->getPost('email'),
-            'mdp' => password_hash($this->request->getPost('mdp'), PASSWORD_DEFAULT),
-        ];
         $eleveModel = new EleveModel();
-        $eleveModel->insert($data);
+        $eleveModel->insert([
+            'nom'    => $data['nom'],
+            'prenom' => $data['prenom'],
+            'email'  => $data['email'],
+            'mdp'    => password_hash($data['mdp'], PASSWORD_DEFAULT),
+            'num_tel' => !empty($data['num_tel']) ? $data['num_tel'] : null,
+        ]);
 
-        return redirect()->to('/admin/student/index');
+        return $this->response->setJSON(['success' => true]);
     }
     /**
      * Récupère les données du formulaire de mise à jour d'un élève et
@@ -51,30 +43,24 @@ class Student extends BaseController{
      *
      * @return \CodeIgniter\HTTP\RedirectResponse
      */
-    function updateStudent() :\CodeIgniter\HTTP\RedirectResponse {
-        $rules = [
-            'nom' => 'required|string|min_length[2]|max_length[50]',
-            'prenom' => 'required|string|min_length[2]|max_length[50]',
-            'email' => 'required|valid_email|is_unique[eleve.email,id_eleve,{id_eleve}]',
-            'mdp' => 'permit_empty|string|min_length[6]|max_length[255]',
-        ];
-        if(!$this->validate($rules)){
-            return redirect()->back()->withInput()->with('error', 'Données invalides.');
-        }
+    function updateStudent() {
+        $data = $this->request->getJSON(true);
 
-        $data = [
-            'nom' => $this->request->getPost('nom'),
-            'prenom' => $this->request->getPost('prenom'),
-            'email' => $this->request->getPost('email'),
+        $update = [
+            'nom'    => $data['nom'],
+            'prenom' => $data['prenom'],
+            'email'  => $data['email'],
+            'num_tel' => !empty($data['num_tel']) ? $data['num_tel'] : null,
         ];
-        if($this->request->getPost('mdp')){
-            $data['mdp'] = password_hash($this->request->getPost('mdp'), PASSWORD_DEFAULT);
+
+        if (!empty($data['mdp'])) {
+            $update['mdp'] = password_hash($data['mdp'], PASSWORD_DEFAULT);
         }
 
         $eleveModel = new EleveModel();
-        $eleveModel->update($this->request->getPost('id_eleve'), $data);
-        
-        return redirect()->to('/admin/student/index');
+        $eleveModel->update($data['id_eleve'], $update);
+
+        return $this->response->setJSON(['success' => true]);
     }
     /**
      * Supprime un élève spécifique de la base de données
@@ -83,10 +69,35 @@ class Student extends BaseController{
      *
      * @return \CodeIgniter\HTTP\RedirectResponse
      */
-    function deleteStudent() :\CodeIgniter\HTTP\RedirectResponse {
-        $eleveModel = new EleveModel();
-        $eleveModel->delete($this->request->getPost('id_eleve'));
+    function deleteStudent() {
+        $data = $this->request->getJSON(true);
 
-        return redirect()->to('/admin/student/index');
+        $eleveModel = new EleveModel();
+        $eleveModel->delete($data['id_eleve']);
+
+        return $this->response->setJSON(['success' => true]);
+    }
+    /**
+     * Affiche la liste des étudiants ayant une date non null dans deleted_at
+     *
+     * @return
+     */
+    function getDeleted() {
+    $eleveModel = new EleveModel();
+    $students = $eleveModel->onlyDeleted()->findAll();
+    return $this->response->setJSON(['success' => true, 'data' => $students]);
+    }
+    /**
+     * Restaure un étudiant supprimé en mettant deleted_at à null
+     *
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
+    function restoreStudent() {
+        $data = $this->request->getJSON(true);
+        $eleveModel = new EleveModel();
+        $eleveModel->db->table('eleve')
+            ->where('id_eleve', $data['id_eleve'])
+            ->update(['deleted_at' => null]);
+        return $this->response->setJSON(['success' => true]);
     }
 }

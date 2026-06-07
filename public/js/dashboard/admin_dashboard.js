@@ -44,10 +44,18 @@ function loadSection(section, link) {
     .then(html => {
         sectionAjax.innerHTML = html;
 
-        if ($.fn.DataTable && $('#dataTable').length) {
+        if ($.fn.DataTable) {
+        if ($('#dataTableStudents').length) {
+            $('#dataTableStudents').DataTable();
+        }
+        if ($('#dataTableTeachers').length) {
+            $('#dataTableTeachers').DataTable();
+        }
+        if ($('#dataTable').length) {
             $('#dataTable').DataTable();
         }
-    })
+    }
+})
     .catch(error => {
         sectionAjax.innerHTML = `<div class="alert alert-danger">Impossible de charger la section. (${error.message})</div>`;
     });
