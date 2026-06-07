@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 07 juin 2026 à 10:15
+-- Généré le : dim. 07 juin 2026 à 16:37
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.31
 
@@ -76,7 +76,8 @@ CREATE TABLE `eleve` (
 
 INSERT INTO `eleve` (`id_eleve`, `nom`, `prenom`, `email`, `mdp`, `num_tel`, `deleted_at`) VALUES
 (1, 'El', 'Yo', 'emaildeyou@gmail.com', '$2y$10$oo8CAWylyFyNAitGXJxumecjgGNO.FVyi1AHYjPrwqgNg4JzWrYl6', NULL, NULL),
-(9, 'Frost', 'Black', 'blackfrost@heeho.atlus', '$2y$10$ItISooj1WvRp8xKqluQHFejYFY6xWqTE7fbMs4EEwxx8GdPIXZ.Pq', NULL, NULL);
+(9, 'Frost', 'Black', 'blackfrost@heeho.atlus', '$2y$10$ItISooj1WvRp8xKqluQHFejYFY6xWqTE7fbMs4EEwxx8GdPIXZ.Pq', '', NULL),
+(11, 'Shiomi', 'Kotone', 'k.shiomi@atlus.com', '$2y$10$SgKbAwry5WgnP1QleVI6yeq5u1Sd5lfKF05NcbwEOHFzqtwpnVeP.', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -371,7 +372,7 @@ ALTER TABLE `administrateur`
 -- AUTO_INCREMENT pour la table `eleve`
 --
 ALTER TABLE `eleve`
-  MODIFY `id_eleve` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_eleve` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `formateur`
