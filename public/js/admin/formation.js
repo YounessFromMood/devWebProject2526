@@ -79,8 +79,9 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalCreateFormation')).hide();
-                showToast('Formation créée avec succès.');
-                loadSection('formations', document.querySelector('[data-section="formations"]'));
+                showToast('Formation créée avec succès.', 'success', () => {
+                    loadSection('formations', document.querySelector('[data-section="formations"]'));
+                });
             } else {
                 errDiv.textContent = res.message ?? 'Une erreur est survenue.';
                 errDiv.classList.remove('d-none');
@@ -119,8 +120,9 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalEditFormation')).hide();
-                showToast('Formation mise à jour avec succès.');
-                loadSection('formations', document.querySelector('[data-section="formations"]'));
+                showToast('Formation mise à jour avec succès.', 'success', () => {
+                    loadSection('formations', document.querySelector('[data-section="formations"]'));
+                });
             } else {
                 errDiv.textContent = res.message ?? 'Une erreur est survenue.';
                 errDiv.classList.remove('d-none');
@@ -144,8 +146,9 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalDeleteFormation')).hide();
-                showToast('Formation supprimée avec succès.');
-                loadSection('formations', document.querySelector('[data-section="formations"]'));
+                showToast('Formation supprimée avec succès.', 'success', () => {
+                    loadSection('formations', document.querySelector('[data-section="formations"]'));
+                });
             }
         });
     }
@@ -156,10 +159,12 @@ document.addEventListener('click', function (e) {
         })
         .then(r => r.json())
         .then(res => {
+            if (res.data.length === 0) {
+                showToast('Aucune formation n\'a été supprimée pour le moment.', 'danger');
+                return;
+            }
             const tbody = document.getElementById('deletedFormationsList');
             tbody.innerHTML = '';
-            if (res.data.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">Aucune formation supprimée.</td></tr>';
                 return;
             }
             res.data.forEach(f => {
@@ -191,8 +196,9 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 btn.closest('tr').remove();
-                showToast('Formation rétablie avec succès.');
-                loadSection('formations', document.querySelector('[data-section="formations"]'));
+                showToast('Formation rétablie avec succès.', 'success', () => {
+                    loadSection('formations', document.querySelector('[data-section="formations"]'));
+                });
             }
         });
     }

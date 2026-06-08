@@ -1,8 +1,15 @@
 <?= $this->include('includes/header') ?>
 
+<!--
+    ✅ FIX TOAST : Le conteneur de toasts DOIT être ici, directement dans le body,
+    PAS à l'intérieur de #section-ajax. Sinon loadSection() l'écrase en rechargeant le HTML.
+    L'id "toast-container-fixed" est utilisé par showToast() dans admin_dashboard.js
+-->
+<div id="toast-container-fixed" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
 <div class="d-flex" style="min-height: calc(100vh - 56px);">
 
-    <nav id="adminSidebar" class="d-flex flex-column p-3 text-white" 
+    <nav id="adminSidebar" class="d-flex flex-column p-3 text-white"
          style="width: 240px; min-width: 240px; background-color: #1e1e2e;">
 
         <div class="mb-4 mt-2">
@@ -43,7 +50,7 @@
         </ul>
 
         <div class="mt-auto">
-            <a href="<?= base_url('/logout') ?>" 
+            <a href="<?= base_url('/logout') ?>"
                class="btn btn-sm w-100 text-white"
                style="background-color: #e8630a;">
                 Déconnexion

@@ -48,8 +48,9 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalCreateStudent')).hide();
-                showToast('Étudiant créé avec succès.');
-                loadSection('etudiants', document.querySelector('[data-section="etudiants"]'));
+                showToast('Étudiant créé avec succès.', 'success', () => {
+                    loadSection('etudiants', document.querySelector('[data-section="etudiants"]'));
+                });
             } else {
                 errDiv.textContent = res.message ?? 'Une erreur est survenue.';
                 errDiv.classList.remove('d-none');
@@ -87,8 +88,9 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalEditStudent')).hide();
-                showToast('Étudiant mis à jour avec succès.');
-                loadSection('etudiants', document.querySelector('[data-section="etudiants"]'));
+                showToast('Étudiant mis à jour avec succès.', 'success', () => {
+                    loadSection('etudiants', document.querySelector('[data-section="etudiants"]'));
+                });
             } else {
                 errDiv.textContent = res.message ?? 'Une erreur est survenue.';
                 errDiv.classList.remove('d-none');
@@ -112,8 +114,9 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalDeleteStudent')).hide();
-                showToast('Étudiant supprimé avec succès.');
-                loadSection('etudiants', document.querySelector('[data-section="etudiants"]'));
+                showToast('Étudiant supprimé avec succès.', 'success', () => {
+                    loadSection('etudiants', document.querySelector('[data-section="etudiants"]'));
+                });
             }
         });
     }
@@ -124,12 +127,12 @@ document.addEventListener('click', function (e) {
         })
         .then(r => r.json())
         .then(res => {
-            const tbody = document.getElementById('deletedStudentsList');
-            tbody.innerHTML = '';
             if (res.data.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">Aucun étudiant supprimé.</td></tr>';
+                showToast('Aucun étudiant n\'a été supprimé pour le moment.', 'danger');
                 return;
             }
+            const tbody = document.getElementById('deletedStudentsList');
+            tbody.innerHTML = '';
             res.data.forEach(s => {
                 tbody.innerHTML += `
                     <tr>
@@ -159,8 +162,9 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 btn.closest('tr').remove();
-                showToast('Étudiant rétabli avec succès.');
-                loadSection('etudiants', document.querySelector('[data-section="etudiants"]'));
+                showToast('Étudiant rétabli avec succès.', 'success', () => {
+                    loadSection('etudiants', document.querySelector('[data-section="etudiants"]'));
+                });
             }
         });
     }

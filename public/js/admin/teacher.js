@@ -17,7 +17,7 @@ document.addEventListener('click', function (e) {
     if (e.target.closest('.btn-delete-teacher')) {
         const btn = e.target.closest('.btn-delete-teacher');
 
-        document.getElementById('deleteId').value                = btn.dataset.id;
+        document.getElementById('deleteId').value         = btn.dataset.id;
         document.getElementById('deleteTeacherName').textContent = btn.dataset.nom;
 
         new bootstrap.Modal(document.getElementById('modalDeleteTeacher')).show();
@@ -48,8 +48,9 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalCreateTeacher')).hide();
-                showToast('Formateur créé avec succès.');
-                loadSection('formateurs', document.querySelector('[data-section="formateurs"]'));
+                showToast('Formateur créé avec succès.', 'success', () => {
+                    loadSection('formateurs', document.querySelector('[data-section="formateurs"]'));
+                });
             } else {
                 errDiv.textContent = res.message ?? 'Une erreur est survenue.';
                 errDiv.classList.remove('d-none');
@@ -87,8 +88,9 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalEditTeacher')).hide();
-                showToast('Formateur mis à jour avec succès.');
-                loadSection('formateurs', document.querySelector('[data-section="formateurs"]'));
+                showToast('Formateur mis à jour avec succès.', 'success', () => {
+                    loadSection('formateurs', document.querySelector('[data-section="formateurs"]'));
+                });
             } else {
                 errDiv.textContent = res.message ?? 'Une erreur est survenue.';
                 errDiv.classList.remove('d-none');
@@ -112,8 +114,9 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalDeleteTeacher')).hide();
-                showToast('Formateur supprimé avec succès.');
-                loadSection('formateurs', document.querySelector('[data-section="formateurs"]'));
+                showToast('Formateur supprimé avec succès.', 'success', () => {
+                    loadSection('formateurs', document.querySelector('[data-section="formateurs"]'));
+                });
             }
         });
     }
@@ -124,12 +127,12 @@ document.addEventListener('click', function (e) {
         })
         .then(r => r.json())
         .then(res => {
-            const tbody = document.getElementById('deletedTeachersList');
-            tbody.innerHTML = '';
             if (res.data.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">Aucun formateur supprimé.</td></tr>';
+                showToast('Aucun formateur n\'a été supprimé pour le moment.', 'danger');
                 return;
             }
+            const tbody = document.getElementById('deletedTeachersList');
+            tbody.innerHTML = '';
             res.data.forEach(t => {
                 tbody.innerHTML += `
                     <tr>
@@ -159,8 +162,9 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 btn.closest('tr').remove();
-                showToast('Formateur rétabli avec succès.');
-                loadSection('formateurs', document.querySelector('[data-section="formateurs"]'));
+                showToast('Formateur rétabli avec succès.', 'success', () => {
+                    loadSection('formateurs', document.querySelector('[data-section="formateurs"]'));
+                });
             }
         });
     }
