@@ -44,12 +44,15 @@ class Dashboard extends BaseController
      * @return string La vue du dashboard administrateur
      */
     function index(): string
-    {
+{
+        $typeFormationModel = new \App\Models\TypeFormationModel();
         $data = [
-            'nom' => session()->get('nom'),
-            'prenom' => session()->get('prenom'),
-            'email' => session()->get('email'),
+            'nom'              => session()->get('nom'),
+            'prenom'           => session()->get('prenom'),
+            'email'            => session()->get('email'),
+            'types_formation'  => $typeFormationModel->findAll(),
         ];
+        
         return view('admin/dashboard', $data);
     }
 }

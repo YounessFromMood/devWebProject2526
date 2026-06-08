@@ -9,5 +9,18 @@ class EleveModel extends UserModel {
     protected $allowedFields = ['nom', 'prenom', 'email', 'mdp', 'num_tel'];
     protected $useSoftDeletes = true;
     protected $deletedField = 'deleted_at';
+
+    /**
+     * Restaure un élève supprimé en mettant deleted_at à null
+     *
+     * @param int $id
+     * @return void
+     */
+    public function restore(int $id) : void {
+        $this->db->table('eleve')
+            ->where('id_eleve', $id)
+            ->update(['deleted_at' => null]);
+    }
 }
+
 

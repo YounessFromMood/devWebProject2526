@@ -17,8 +17,8 @@ document.addEventListener('click', function (e) {
     if (e.target.closest('.btn-delete-student')) {
         const btn = e.target.closest('.btn-delete-student');
 
-        document.getElementById('deleteStudentId').value          = btn.dataset.id;
-        document.getElementById('deleteStudentName').textContent  = btn.dataset.nom;
+        document.getElementById('deleteStudentId').value         = btn.dataset.id;
+        document.getElementById('deleteStudentName').textContent = btn.dataset.nom;
 
         new bootstrap.Modal(document.getElementById('modalDeleteStudent')).show();
     }
@@ -48,6 +48,7 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalCreateStudent')).hide();
+                showToast('Étudiant créé avec succès.');
                 loadSection('etudiants', document.querySelector('[data-section="etudiants"]'));
             } else {
                 errDiv.textContent = res.message ?? 'Une erreur est survenue.';
@@ -86,6 +87,7 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalEditStudent')).hide();
+                showToast('Étudiant mis à jour avec succès.');
                 loadSection('etudiants', document.querySelector('[data-section="etudiants"]'));
             } else {
                 errDiv.textContent = res.message ?? 'Une erreur est survenue.';
@@ -110,6 +112,7 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalDeleteStudent')).hide();
+                showToast('Étudiant supprimé avec succès.');
                 loadSection('etudiants', document.querySelector('[data-section="etudiants"]'));
             }
         });
@@ -156,6 +159,7 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 btn.closest('tr').remove();
+                showToast('Étudiant rétabli avec succès.');
                 loadSection('etudiants', document.querySelector('[data-section="etudiants"]'));
             }
         });

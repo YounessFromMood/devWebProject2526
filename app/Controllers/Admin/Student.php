@@ -79,13 +79,11 @@ class Student extends BaseController {
     }
     /**
      * Affiche la liste des étudiants ayant une date non null dans deleted_at
-     *
-     * @return
      */
     function getDeleted() {
-    $eleveModel = new EleveModel();
-    $students = $eleveModel->onlyDeleted()->findAll();
-    return $this->response->setJSON(['success' => true, 'data' => $students]);
+        $eleveModel = new EleveModel();
+        $students = $eleveModel->onlyDeleted()->findAll();
+        return $this->response->setJSON(['success' => true, 'data' => $students]);
     }
     /**
      * Restaure un étudiant supprimé en mettant deleted_at à null
@@ -95,9 +93,7 @@ class Student extends BaseController {
     function restoreStudent() {
         $data = $this->request->getJSON(true);
         $eleveModel = new EleveModel();
-        $eleveModel->db->table('eleve')
-            ->where('id_eleve', $data['id_eleve'])
-            ->update(['deleted_at' => null]);
+        $eleveModel->restore($data['id_eleve']);
         return $this->response->setJSON(['success' => true]);
     }
 }

@@ -54,6 +54,9 @@ function loadSection(section, link) {
         if ($('#dataTable').length) {
             $('#dataTable').DataTable();
         }
+        if ($('#dataTableFormations').length) {
+            $('#dataTableFormations').DataTable();
+        }
     }
 })
     .catch(error => {
@@ -72,4 +75,23 @@ const profilLink = document.querySelector('[data-section="profil"]');
 if (profilLink) {
     profilLink.style.backgroundColor = '#e8630a';
     profilLink.style.color = '#fff';
+}
+
+function showToast(message, type = 'success') {
+    const container = document.querySelector('.toast-container');
+    const bg = type === 'success' ? 'text-bg-success' : 'text-bg-danger';
+
+    const toastEl = document.createElement('div');
+    toastEl.className = `toast align-items-center ${bg} border-0 show`;
+    toastEl.setAttribute('role', 'alert');
+    toastEl.innerHTML = `
+        <div class="d-flex">
+            <div class="toast-body">${message}</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                    data-bs-dismiss="toast"></button>
+        </div>`;
+
+    container.appendChild(toastEl);
+    new bootstrap.Toast(toastEl, { delay: 3000 }).show();
+    toastEl.addEventListener('hidden.bs.toast', () => toastEl.remove());
 }

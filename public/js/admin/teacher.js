@@ -48,6 +48,7 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalCreateTeacher')).hide();
+                showToast('Formateur créé avec succès.');
                 loadSection('formateurs', document.querySelector('[data-section="formateurs"]'));
             } else {
                 errDiv.textContent = res.message ?? 'Une erreur est survenue.';
@@ -86,6 +87,7 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalEditTeacher')).hide();
+                showToast('Formateur mis à jour avec succès.');
                 loadSection('formateurs', document.querySelector('[data-section="formateurs"]'));
             } else {
                 errDiv.textContent = res.message ?? 'Une erreur est survenue.';
@@ -110,6 +112,54 @@ document.addEventListener('click', function (e) {
         .then(res => {
             if (res.success) {
                 bootstrap.Modal.getInstance(document.getElementById('modalDeleteTeacher')).hide();
+                showToast('Formateur supprimé avec succès.');
+                loadSection('formateurs', document.querySelector('[data-section="formateurs"]'));
+            }
+        });
+    }
+
+    if (e.target.closest('#btnShowDeletedTeachers')) {
+        fetch(BASE_URL + 'admin/teacher/deleted', {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        })
+        .then(r => r.json())
+        .then(res => {
+            const tbody = document.getElementById('deletedTeachersList');
+            tbody.innerHTML = '';
+            if (res.data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">Aucun formateur supprimé.</td></tr>';
+                return;
+            }
+            res.data.forEach(t => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${t.prenom}</td>
+                        <td>${t.nom}</td>
+                        <td>${t.email}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-success btn-restore-teacher"
+                                    data-id="${t.id_formateur}">
+                                Rétablir
+                            </button>
+                        </td>
+                    </tr>`;
+            });
+            new bootstrap.Modal(document.getElementById('modalDeletedTeachers')).show();
+        });
+    }
+
+    if (e.target.closest('.btn-restore-teacher')) {
+        const btn = e.target.closest('.btn-restore-teacher');
+        fetch(BASE_URL + 'admin/teacher/restore', {
+            method  : 'POST',
+            headers : { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+            body    : JSON.stringify({ id: btn.dataset.id })
+        })
+        .then(r => r.json())
+        .then(res => {
+            if (res.success) {
+                btn.closest('tr').remove();
+                showToast('Formateur rétabli avec succès.');
                 loadSection('formateurs', document.querySelector('[data-section="formateurs"]'));
             }
         });

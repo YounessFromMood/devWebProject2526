@@ -691,3 +691,5 @@ in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
 14 FCPATH\index.php(23): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 DEBUG - 2026-06-07 16:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-06-07 16:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-07 19:55:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

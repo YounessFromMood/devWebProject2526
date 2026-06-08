@@ -4,92 +4,98 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\FormateurModel;
-use CodeIgniter\HTTP\RedirectResponse;
 
-class Teacher extends BaseController{
+class Teacher extends BaseController {
 
-    /**
-     * Point d'entrée pour le panel de gestion des formateurs de l'administrateur
-     *
-     * @return string La vue du panel de gestion des formateurs
-     */
-    function index() :string {
-        $teacherModel = new FormateurModel();
-        $teachers = $teacherModel->findAll();
+    function index() {
+        $formateurModel = new FormateurModel();
+        $teachers = $formateurModel->findAll();
 
-        return view('admin/teacher/index', ['teachers' => $teachers]);
-        
+        if ($this->request->isAJAX()) {
+            return view('admin/teacher/index', ['teachers' => $teachers]);
+        }
+
+        return redirect()->to('/admin/dashboard');
     }
     /**
      * Récupère les données du formulaire de création d'un formateur et
      * crée un nouveau formateur dans la base de données avec ces données
      *
-     * @return RedirectResponse
+     * @return \CodeIgniter\HTTP\RedirectResponse
      */
-    function createTeacher() : RedirectResponse {
-        $rules = [
-            'nom' => 'required|string|min_length[2]|max_length[50]',
-            'prenom' => 'required|string|min_length[2]|max_length[50]',
-            'email' => 'required|valid_email|is_unique[formateur.email]',
-            'mdp' => 'required|string|min_length[6]|max_length[255]',
-        ];
-        if(!$this->validate($rules)){
-            return redirect()->back()->withInput()->with('error', 'Données invalides.');
-        }
+    function createTeacher() {
+        $data = $this->request->getJSON(true);
 
-        $data = [
-            'nom' => $this->request->getPost('nom'),
-            'prenom' => $this->request->getPost('prenom'),
-            'email' => $this->request->getPost('email'),
-            'mdp' => password_hash($this->request->getPost('mdp'), PASSWORD_DEFAULT),
-        ];
-        $teacherModel = new FormateurModel();
-        $teacherModel->insert($data);
+        $formateurModel = new FormateurModel();
+        $formateurModel->insert([
+            'nom'     => $data['nom'],
+            'prenom'  => $data['prenom'],
+            'email'   => $data['email'],
+            'mdp'     => password_hash($data['mdp'], PASSWORD_DEFAULT),
+            'num_tel' => !empty($data['num_tel']) ? $data['num_tel'] : null,
+        ]);
 
-        return redirect()->to('/admin/teacher/index');
- 
+        return $this->response->setJSON(['success' => true]);
     }
     /**
      * Récupère les données du formulaire de mise à jour d'un formateur et
      * met à jour le formateur correspondant dans la base de données
      *
-     * @return RedirectResponse
+     * @return \CodeIgniter\HTTP\RedirectResponse
      */
-    function updateTeacher() : RedirectResponse {
-        $rules = [
-            'nom' => 'required|string|min_length[2]|max_length[50]',
-            'prenom' => 'required|string|min_length[2]|max_length[50]',
-            'email' => 'required|valid_email|is_unique[formateur.email,id_formateur,{id_teacher}]',
-            'mdp' => 'permit_empty|string|min_length[6]|max_length[255]',
+    function updateTeacher() {
+        $data = $this->request->getJSON(true);
+
+        $update = [
+            'nom'     => $data['nom'],
+            'prenom'  => $data['prenom'],
+            'email'   => $data['email'],
+            'num_tel' => !empty($data['num_tel']) ? $data['num_tel'] : null,
         ];
-        if(!$this->validate($rules)){
-            return redirect()->back()->withInput()->with('error', 'Données invalides.');
+
+        if (!empty($data['mdp'])) {
+            $update['mdp'] = password_hash($data['mdp'], PASSWORD_DEFAULT);
         }
 
-        $data = [
-            'nom' => $this->request->getPost('nom'),
-            'prenom' => $this->request->getPost('prenom'),
-            'email' => $this->request->getPost('email'),
-        ];
-        if($this->request->getPost('mdp')){
-            $data['mdp'] = password_hash($this->request->getPost('mdp'), PASSWORD_DEFAULT);
-        }
-        $teacherModel = new FormateurModel();
-        $teacherModel->update($this->request->getPost('id_teacher'), $data);
+        $formateurModel = new FormateurModel();
+        $formateurModel->update($data['id'], $update);
 
-        return redirect()->to('/admin/teacher/index');
+        return $this->response->setJSON(['success' => true]);
     }
     /**
      * Supprime un formateur spécifique de la base de données
-     * 
+     *
      * Côté JS la vue lui demande confirmation avant de faire la requete de suppression
      *
-     * @return RedirectResponse
+     * @return \CodeIgniter\HTTP\RedirectResponse
      */
-    function deleteTeacher() : RedirectResponse {
-        $teacherModel = new FormateurModel();
-        $teacherModel->delete($this->request->getPost('id_teacher'));
+    function deleteTeacher() {
+        $data = $this->request->getJSON(true);
 
-        return redirect()->to('/admin/teacher/index');
+        $formateurModel = new FormateurModel();
+        $formateurModel->delete($data['id']);
+
+        return $this->response->setJSON(['success' => true]);
+    }
+    /**
+     * Affiche la liste des formateurs ayant une date non null dans deleted_at
+     *
+     * @return
+     */
+    function getDeleted() {
+        $formateurModel = new FormateurModel();
+        $teachers = $formateurModel->onlyDeleted()->findAll();
+        return $this->response->setJSON(['success' => true, 'data' => $teachers]);
+    }
+    /**
+     * Restaure un formateur supprimé en mettant deleted_at à null
+     *
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
+    function restoreTeacher() {
+        $data = $this->request->getJSON(true);
+        $formateurModel = new FormateurModel();
+        $formateurModel->restore($data['id']);
+        return $this->response->setJSON(['success' => true]);
     }
 }

@@ -4,111 +4,124 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\FormationModel;
-use CodeIgniter\HTTP\RedirectResponse;
+use App\Models\TypeFormationModel;
 
-class Formation extends BaseController{
+class Formation extends BaseController {
     /**
      * Affiche l'interface de gestion des formations, 
      * avec la liste des formations existantes et 
      * les options de I/U/D pour chaque formation
-     * 
-     * A la fin de chaque formation une option gérer session est affichée,
-     * et redirige vers le panel de gestion des sessions de cette formation
      *
-     * @return string la vue affichant la liste des formations 
-     * et les options de I/U/D pour chaque formation
+     * @return string|\CodeIgniter\HTTP\RedirectResponse
      */
-    function index() :string {
-        $formationModel = new FormationModel();
-        $formations = $formationModel->findAll();
+    function index() {
+        $formationModel     = new FormationModel();
+        $typeFormationModel = new TypeFormationModel();
 
-        return view('admin/formation/index', ['formations' => $formations]);
+        $formations = $formationModel->getAllWithTypes();
+        $types      = $typeFormationModel->findAll();
+
+        if ($this->request->isAJAX()) {
+            return view('admin/formation/index', [
+                'formations' => $formations,
+                'types'      => $types,
+            ]);
+        }
+
+        return redirect()->to('/admin/dashboard');
     }
     /**
      * Récupère les données du formulaire de création d'une formation et
      * crée une nouvelle formation dans la base de données avec ces données
      *
-     * @return RedirectResponse
+     * @return \CodeIgniter\HTTP\ResponseInterface
      */
-    function createFormation() : RedirectResponse {
-        $rules = [
-            'titre' => 'required|string|min_length[2]|max_length[300]',
-            'description' => 'required|string|min_length[2]|max_length[2500]',
-            'duree' => 'required|string|min_length[2]|max_length[150]',
-            'prix' => 'required|regex_match[/^\d+(\.\d{1,2})?$/]|greater_than[0]',
-            'langue' => 'required|string|min_length[2]|max_length[50]',
-        ];
-        if(!$this->validate($rules)){
-            return redirect()->back()->withInput()->with('error', 'Données invalides.');
-        }
-    
-        $data = [
-            'titre'  => $this->request->getPost('titre'),
-            'description' => $this->request->getPost('description'),
-            'duree' => $this->request->getPost('duree'),
-            'prix' => $this->request->getPost('prix'),
-            'langue' => $this->request->getPost('langue'),
-        ];
+    function createFormation() {
+        $data = $this->request->getJSON(true);
 
         $formationModel = new FormationModel();
-        $formationModel->insert($data);
+        $id = $formationModel->insert([
+            'titre'       => $data['titre'],
+            'DESCRIPTION' => $data['description'],
+            'duree'       => !empty($data['duree'])  ? $data['duree']  : null,
+            'prix'        => !empty($data['prix'])   ? $data['prix']   : null,
+            'langue'      => !empty($data['langue']) ? $data['langue'] : null,
+        ]);
 
+        if (!empty($data['types'])) {
+            $formationModel->syncTypes($id, $data['types']);
+        }
 
-        return redirect()->to('/admin/formation/index');
+        return $this->response->setJSON(['success' => true]);
     }
     /**
      * Récupère les données du formulaire de mise à jour d'une formation et
      * met à jour la formation correspondante dans la base de données
+     * Resynchronise également les types associés
      *
-     * @return RedirectResponse
+     * @return \CodeIgniter\HTTP\ResponseInterface
      */
-    function updateFormation() : RedirectResponse {
-        $rules = [
-            'titre' => 'required|string|min_length[2]|max_length[300]',
-            'description' => 'required|string|min_length[2]|max_length[2500]',
-            'duree' => 'required|string|min_length[2]|max_length[150]',
-            'prix' => 'required|regex_match[/^\d+(\.\d{1,2})?$/]|greater_than[0]',
-            'langue' => 'required|string|min_length[2]|max_length[50]',
-        ];
-        if(!$this->validate($rules)){
-            return redirect()->back()->withInput()->with('error', 'Données invalides.');
-        }
-    
-        $data = [
-            'titre'  => $this->request->getPost('titre'),
-            'description' => $this->request->getPost('description'),
-            'duree' => $this->request->getPost('duree'),
-            'prix' => $this->request->getPost('prix'),
-            'langue' => $this->request->getPost('langue'),
-        ];
+    function updateFormation() {
+        $data = $this->request->getJSON(true);
 
         $formationModel = new FormationModel();
-        $formationModel->update($this->request->getPost('id_formation'), $data);
+        $formationModel->update($data['id_formation'], [
+            'titre'       => $data['titre'],
+            'DESCRIPTION' => $data['description'],
+            'duree'       => !empty($data['duree'])  ? $data['duree']  : null,
+            'prix'        => !empty($data['prix'])   ? $data['prix']   : null,
+            'langue'      => !empty($data['langue']) ? $data['langue'] : null,
+        ]);
 
-        return redirect()->to('/admin/formation/index');
+        $formationModel->syncTypes($data['id_formation'], $data['types'] ?? []);
+
+        return $this->response->setJSON(['success' => true]);
     }
     /**
-     * Récupère l'identifiant de la formation à supprimer et
-     * supprime la formation correspondante de la base de données
-     * 
+     * Supprime (soft delete) une formation spécifique de la base de données
+     *
      * Côté JS la vue lui demande confirmation avant de faire la requete de suppression
      *
-     * @return RedirectResponse
+     * @return \CodeIgniter\HTTP\ResponseInterface
      */
-    function deleteFormation() : RedirectResponse {
-        $formationModel = new FormationModel();
-        $formationModel->delete($this->request->getPost('id_formation'));
+    function deleteFormation() {
+        $data = $this->request->getJSON(true);
 
-        return redirect()->to('/admin/formation/index');
+        $formationModel = new FormationModel();
+        $formationModel->delete($data['id_formation']);
+
+        return $this->response->setJSON(['success' => true]);
     }
     /**
-     * Récupère l'identifiant de la formation dont on veut gérer les sessions et
-     * redirige vers le panel de gestion des sessions de cette formation
+     * Affiche la liste des formations ayant une date non null dans deleted_at
      *
-     * @param int $id_formation L'identifiant de la formation dont on veut gérer les sessions
-     * @return RedirectResponse
+     * @return \CodeIgniter\HTTP\ResponseInterface
      */
-    function manageSessions($id_formation) : RedirectResponse {
-        return redirect()->to("/admin/session/index/$id_formation");
+    function getDeleted() {
+        $formationModel = new FormationModel();
+        $formations = $formationModel->onlyDeleted()->findAll();
+        return $this->response->setJSON(['success' => true, 'data' => $formations]);
+    }
+    /**
+     * Restaure une formation supprimée en mettant deleted_at à null
+     *
+     * @return \CodeIgniter\HTTP\ResponseInterface
+     */
+    function restoreFormation() {
+        $data = $this->request->getJSON(true);
+        $formationModel = new FormationModel();
+        $formationModel->restore($data['id_formation']);
+        return $this->response->setJSON(['success' => true]);
+    }
+    /**
+     * Retourne les types associés à une formation donnée
+     *
+     * @param int $id L'identifiant de la formation
+     * @return \CodeIgniter\HTTP\ResponseInterface
+     */
+    function getTypes(int $id) {
+        $formationModel = new FormationModel();
+        $types = $formationModel->getTypes($id);
+        return $this->response->setJSON(['success' => true, 'data' => $types]);
     }
 }

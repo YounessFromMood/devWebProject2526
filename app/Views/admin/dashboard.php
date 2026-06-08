@@ -110,11 +110,14 @@
 
 <?= $this->include('admin/teacher/modals') ?>
 <?= $this->include('admin/student/modals') ?>
+<?= $this->include('admin/formation/modals') ?>
 
 <script src="<?= base_url('js/datatables.min.js') ?>"></script>
 <script>
     const BASE_URL = "<?= base_url() ?>";
+    const TYPES_FORMATION = <?= json_encode($types_formation) ?>;
 </script>
 <script src="<?= base_url('js/dashboard/admin_dashboard.js') ?>"></script>
 <script src="<?= base_url('js/admin/student.js') ?>"></script>
 <script src="<?= base_url('js/admin/teacher.js') ?>"></script>
+<script src="<?= base_url('js/admin/formation.js') ?>"></script>

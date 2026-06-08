@@ -3,14 +3,17 @@
 <div class="card shadow-sm border-0">
     <div class="card-body p-4">
 
-        <div class="mb-3 text-end">
+        <div class="mb-3 text-end d-flex justify-content-end gap-2">
+            <button class="btn btn-sm btn-outline-secondary" id="btnShowDeletedTeachers">
+                Formateurs supprimés
+            </button>
             <button class="btn btn-sm text-white" style="background-color: #e8630a;"
                     data-bs-toggle="modal" data-bs-target="#modalCreateTeacher">
                 + Ajouter un formateur
             </button>
         </div>
 
-        <table id="dataTable" class="table table-hover w-100">
+        <table id="dataTableTeachers" class="table table-hover w-100">
             <thead>
                 <tr>
                     <th>Prénom</th>
