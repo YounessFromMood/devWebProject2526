@@ -118,6 +118,7 @@
 <?= $this->include('admin/teacher/modals') ?>
 <?= $this->include('admin/student/modals') ?>
 <?= $this->include('admin/formation/modals') ?>
+<?= $this->include('admin/session/modals') ?> 
 
 <script src="<?= base_url('js/datatables.min.js') ?>"></script>
 <script>
@@ -128,3 +129,5 @@
 <script src="<?= base_url('js/admin/student.js') ?>"></script>
 <script src="<?= base_url('js/admin/teacher.js') ?>"></script>
 <script src="<?= base_url('js/admin/formation.js') ?>"></script>
+<script src="<?= base_url('js/admin/session.js') ?>"></script>
+<script src="<?= base_url('js/admin/payment.js') ?>"></script>

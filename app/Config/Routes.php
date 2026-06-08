@@ -78,11 +78,11 @@ $routes->group('admin', function($routes){
     $routes->get('teacher/deleted', 'Admin\Teacher::getDeleted');
     $routes->post('teacher/restore', 'Admin\Teacher::restoreTeacher');
     //session
-    $routes->get('session', 'Admin\Session::index');
+    $routes->get('session/index/(:num)',  'Admin\Session::index/$1'); 
     $routes->post('session/create', 'Admin\Session::createSession');
     $routes->post('session/update', 'Admin\Session::updateSession');
     $routes->post('session/delete', 'Admin\Session::deleteSession');
-    $routes->get('session/deleted', 'Admin\Session::getDeleted');
+    $routes->get('session/deleted/(:num)','Admin\Session::getDeleted/$1');
     $routes->post('session/restore', 'Admin\Session::restoreSession');
     //formation
     $routes->get('formation/index', 'Admin\Formation::index');

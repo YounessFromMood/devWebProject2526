@@ -3,41 +3,49 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-use \App\Models\InscriptionModel;
-use CodeIgniter\HTTP\RedirectResponse;
+use App\Models\InscriptionModel;
+use CodeIgniter\HTTP\ResponseInterface;
 
-class Payment extends BaseController {
+class Payment extends BaseController
+{
     /**
-     * Point d'entrée pour le panel de gestion des paiements de l'administrateur
+     * Affiche la liste des paiements en attente de confirmation,
+     * c'est-à-dire les inscriptions où l'élève a signalé avoir payé
+     * mais où l'administrateur n'a pas encore confirmé la réception
      *
-     * @return string La vue du panel de gestion des paiements
+     * @return string
      */
-    function index() :string {
-        $inscriptionsModel = new InscriptionModel();
-        $data['payments'] = $inscriptionsModel->getPendingPayments();
+    public function index(): string
+    {
+        $inscriptionModel = new InscriptionModel();
+        $pendingPayments  = $inscriptionModel->getPendingPayments();
 
-        return view('admin/payment/index', $data); 
+        return view('admin/payment', ['pendingPayments' => $pendingPayments]);
     }
+
     /**
-     * Confirme un paiement en mettant à jour le statut de paiement dans la base de données
+     * Confirme la réception du paiement d'un élève pour une session donnée
+     * en passant paiement_recu à true dans la table S_inscrire
      *
-     * @return RedirectResponse
+     * @return ResponseInterface
      */
-    function confirmPayment() : RedirectResponse {
-        $studentId = $this->request->getPost('student_id');
-        $sessionId = $this->request->getPost('session_id');
+    public function confirmPayment(): ResponseInterface
+    {
+        $data = $this->request->getJSON(true);
 
-        if (!$studentId || !$sessionId) {
-            return redirect()->to('/admin/payment')->with('error', 'Données manquantes.');
+        if (empty($data['id_eleve']) || empty($data['id_session'])) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Données manquantes.',
+            ]);
         }
 
-        $inscriptionsModel = new InscriptionModel();
-        $result = $inscriptionsModel->confirmPayment((int)$studentId, (int)$sessionId);
+        $inscriptionModel = new InscriptionModel();
+        $success = $inscriptionModel->confirmPayment(
+            (int) $data['id_eleve'],
+            (int) $data['id_session']
+        );
 
-        if (!$result) {
-            return redirect()->to('/admin/payment')->with('error', 'Une erreur est survenue.');
-        }
-
-        return redirect()->to('/admin/payment')->with('success', 'Paiement confirmé.');
+        return $this->response->setJSON(['success' => $success]);
     }
 }

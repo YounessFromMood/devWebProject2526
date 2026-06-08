@@ -4,7 +4,9 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\SessionModel;
-use CodeIgniter\HTTP\RedirectResponse;
+use App\Models\FormateurModel;
+use App\Models\ModaliteModel;
+use CodeIgniter\HTTP\ResponseInterface;
 
 class Session extends BaseController{
 
@@ -17,93 +19,163 @@ class Session extends BaseController{
      * @return string la vue affichant la liste des sessions de la formation et les options de I/U/D pour chaque session
      */
     function index(int $id_formation) :string {
-        $sessionModel = new SessionModel();
-        $sessions = $sessionModel->where('id_formation', $id_formation)->findAll();
-     
-        return view('admin/session/index', ['sessions' => $sessions, 'id_formation' => $id_formation]);
+        $sessionModel   = new SessionModel();
+        $formateurModel = new FormateurModel();
+        $modaliteModel  = new ModaliteModel();
+
+        $sessions   = $sessionModel->getSessionsWithDetails($id_formation);
+        $formateurs = $formateurModel->findAll();
+        $modalites  = $modaliteModel->findAll();
+
+        return view('admin/session/index', [
+            'sessions'     => $sessions,
+            'formateurs'   => $formateurs,
+            'modalites'    => $modalites,
+            'id_formation' => $id_formation,
+        ]);
     }
+
     /**
      * Récupère les données du formulaire de création d'une session et
      * crée une nouvelle session pour la formation adéquate 
      * dans la base de données avec ces données
      *
      * @param integer $id_formation
-     * @return RedirectResponse
+     * @return ResponseInterface
      */
-    function createSession(int $id_formation) : RedirectResponse {
-        $rules = [
-            'date_debut' => 'required|valid_date',
-            'date_fin' => 'required|valid_date',
-            'prix' => 'required|regex_match[/^\d+(\.\d{1,2})?$/]|greater_than[0]',
-            'id_formateur' => 'required|integer',
-            'id_formation' => 'required|integer',
-            'id_modalite' => 'required|integer',
-        ];
-        if(!$this->validate($rules)){
-            return redirect()->back()->withInput()->with('error', 'Données invalides.');
+    function createSession() : ResponseInterface {
+        $data = $this->request->getJSON(true);
+
+        if (empty($data['date_debut']) || empty($data['date_fin'])
+            || empty($data['id_formateur']) || empty($data['id_modalite'])
+            || empty($data['id_formation'])
+        ) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Champs obligatoires manquants.',
+            ]);
         }
-    
-        $data = [
-            'date_debut' => $this->request->getPost('date_debut'),
-            'date_fin' => $this->request->getPost('date_fin'),
-            'prix' => $this->request->getPost('prix'),
-            'id_formateur' => $this->request->getPost('id_formateur'),
-            'id_formation' => $id_formation,
-            'id_modalite' => $this->request->getPost('id_modalite'),
-        ];
+
+        if ($data['date_fin'] < $data['date_debut']) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'La date de fin doit être après la date de début.',
+            ]);
+        }
 
         $sessionModel = new SessionModel();
-        $sessionModel->insert($data);
+        $sessionModel->insert([
+            'date_debut'   => $data['date_debut'],
+            'date_fin'     => $data['date_fin'],
+            'prix'         => $data['prix']         ?? null,
+            'lieu_session' => $data['lieu_session'] ?? null,
+            'id_formateur' => $data['id_formateur'],
+            'id_formation' => $data['id_formation'],
+            'id_modalite'  => $data['id_modalite'],
+        ]);
 
-        return redirect()->to("/admin/session/index/$id_formation");
+        return $this->response->setJSON(['success' => true]);
     }
+
     /**
      * Récupère les données du formulaire de mise à jour d'une session et
      * met à jour la session correspondante pour la formation adéquate
      * dans la base de données
      *
      * @param integer $id_formation
-     * @return RedirectResponse
+     * @return ResponseInterface
      */
-    function updateSession(int $id_formation) : RedirectResponse {
-        $rules = [
-            'date_debut' => 'required|valid_date',
-            'date_fin' => 'required|valid_date',
-            'prix' => 'required|regex_match[/^\d+(\.\d{1,2})?$/]|greater_than[0]',
-            'id_formateur' => 'required|integer',
-            'id_formation' => 'required|integer',
-            'id_modalite' => 'required|integer',
-        ];
-        if(!$this->validate($rules)){
-            return redirect()->back()->withInput()->with('error', 'Données invalides.');
+    function updateSession() : ResponseInterface {
+        $data = $this->request->getJSON(true);
+
+        if (empty($data['id_session'])) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Session introuvable.',
+            ]);
         }
-    
-        $data = [
-            'date_debut' => $this->request->getPost('date_debut'),
-            'date_fin' => $this->request->getPost('date_fin'),
-            'prix' => $this->request->getPost('prix'),
-            'id_formateur' => $this->request->getPost('id_formateur'),
-            'id_formation' => $id_formation,
-            'id_modalite' => $this->request->getPost('id_modalite'),
-        ];
+
+        if (!empty($data['date_debut']) && !empty($data['date_fin'])
+            && $data['date_fin'] < $data['date_debut']
+        ) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'La date de fin doit être après la date de début.',
+            ]);
+        }
 
         $sessionModel = new SessionModel();
-        $sessionModel->update($this->request->getPost('id_session'), $data);
+        $sessionModel->update($data['id_session'], [
+            'date_debut'   => $data['date_debut'],
+            'date_fin'     => $data['date_fin'],
+            'prix'         => $data['prix']         ?? null,
+            'lieu_session' => $data['lieu_session'] ?? null,
+            'id_formateur' => $data['id_formateur'],
+            'id_modalite'  => $data['id_modalite'],
+        ]);
 
-        return redirect()->to("/admin/session/index/$id_formation");
+        return $this->response->setJSON(['success' => true]);
     }
+
     /**
      * Supprime une session spécifique d'une formation
      * 
      * Côté JS la vue lui demande confirmation avant de faire la requete de suppression
      *
      * @param integer $id_formation l'id de la formation où se trouve la session à supprimer
-     * @return RedirectResponse
+     * @return ResponseInterface
      */
-    function deleteSession(int $id_formation) : RedirectResponse {
-        $sessionModel = new SessionModel();
-        $sessionModel->delete($this->request->getPost('id_session'));
+    function deleteSession() : ResponseInterface {
+        $data = $this->request->getJSON(true);
 
-        return redirect()->to("/admin/session/index/$id_formation");
+        if (empty($data['id_session'])) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Session introuvable.',
+            ]);
+        }
+
+        $sessionModel = new SessionModel();
+        $sessionModel->delete($data['id_session']);
+
+        return $this->response->setJSON(['success' => true]);
+    }
+
+    /**
+     * Récupère les sessions soft-deleted d'une formation spécifique
+     * et les retourne en JSON
+     *
+     * @param integer $id_formation
+     * @return ResponseInterface
+     */
+    function getDeleted(int $id_formation) : ResponseInterface {
+        $sessionModel = new SessionModel();
+
+        return $this->response->setJSON([
+            'success' => true,
+            'data'    => $sessionModel->getDeletedSessionsWithDetails($id_formation),
+        ]);
+    }
+
+    /**
+     * Restaure une session précédemment supprimée en remettant
+     * son champ deleted_at à NULL dans la base de données
+     *
+     * @return ResponseInterface
+     */
+    function restoreSession() : ResponseInterface {
+        $data = $this->request->getJSON(true);
+
+        if (empty($data['id_session'])) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Session introuvable.',
+            ]);
+        }
+
+        $sessionModel = new SessionModel();
+        $sessionModel->restore((int) $data['id_session']);
+
+        return $this->response->setJSON(['success' => true]);
     }
 }

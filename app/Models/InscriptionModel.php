@@ -59,7 +59,7 @@ class InscriptionModel extends UserModel{
 
     public function getPendingPayments() : array {
         return $this
-            ->select('S_inscrire.*, session.prix, formation.titre, eleve.nom AS nom_eleve')
+            ->select('S_inscrire.*, session.prix, session.date_debut, formation.titre, eleve.nom AS nom_eleve')
             ->join('session', 'session.id_session = S_inscrire.id_session')
             ->join('formation', 'formation.id_formation = session.id_formation')
             ->join('eleve', 'eleve.id_eleve = S_inscrire.id_eleve')

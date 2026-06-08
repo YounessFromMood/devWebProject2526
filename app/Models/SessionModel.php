@@ -58,4 +58,35 @@ class SessionModel extends UserModel {
         $session['lieu_session'] = null;
         return $this->update($sessionId, $session);
     }
+
+    function getSessionsWithDetails(int $id_formation): array {
+        return $this
+            ->select('session.*, 
+                      formateur.nom       AS formateur_nom,
+                      formateur.prenom    AS formateur_prenom,
+                      modalite.libelle    AS modalite_libelle')
+            ->join('formateur', 'formateur.id_formateur = session.id_formateur')
+            ->join('modalite',  'modalite.id_modalite   = session.id_modalite')
+            ->where('session.id_formation', $id_formation)
+            ->findAll();
+    }
+ 
+    function getDeletedSessionsWithDetails(int $id_formation): array {
+        return $this
+            ->select('session.*, 
+                      formateur.nom       AS formateur_nom,
+                      formateur.prenom    AS formateur_prenom,
+                      modalite.libelle    AS modalite_libelle')
+            ->join('formateur', 'formateur.id_formateur = session.id_formateur')
+            ->join('modalite',  'modalite.id_modalite   = session.id_modalite')
+            ->where('session.id_formation', $id_formation)
+            ->onlyDeleted()   // ← inverse le filtre : ne retourne QUE les lignes avec deleted_at non null
+            ->findAll();
+    }
+ 
+    function restore(int $id_session): void {
+        $this->db->table('session')
+            ->where('id_session', $id_session)
+            ->update(['deleted_at' => null]);
+    }
 }

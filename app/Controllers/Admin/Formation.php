@@ -42,7 +42,7 @@ class Formation extends BaseController {
         $formationModel = new FormationModel();
         $id = $formationModel->insert([
             'titre'       => $data['titre'],
-            'DESCRIPTION' => $data['description'],
+            'description' => $data['description'],
             'duree'       => !empty($data['duree'])  ? $data['duree']  : null,
             'prix'        => !empty($data['prix'])   ? $data['prix']   : null,
             'langue'      => !empty($data['langue']) ? $data['langue'] : null,
@@ -67,7 +67,7 @@ class Formation extends BaseController {
         $formationModel = new FormationModel();
         $formationModel->update($data['id_formation'], [
             'titre'       => $data['titre'],
-            'DESCRIPTION' => $data['description'],
+            'description' => $data['description'],
             'duree'       => !empty($data['duree'])  ? $data['duree']  : null,
             'prix'        => !empty($data['prix'])   ? $data['prix']   : null,
             'langue'      => !empty($data['langue']) ? $data['langue'] : null,

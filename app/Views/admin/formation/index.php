@@ -32,7 +32,12 @@
                     <td><?= esc($formation['duree'] ?? 'À déterminer') ?></td>
                     <td><?= $formation['prix'] ? esc($formation['prix']) . ' €' : '—' ?></td>
                     <td><?= esc($formation['langue'] ?? 'À déterminer') ?></td>
-                    <td>
+                    <td class="d-flex flex-wrap gap-1">
+                        <button class="btn btn-sm btn-outline-primary btn-manage-sessions"
+                                data-id="<?= $formation['id_formation'] ?>"
+                                title="Gérer les sessions de cette formation">
+                            Sessions
+                        </button>
                         <button class="btn btn-sm btn-outline-secondary btn-edit-formation"
                                 data-id="<?= $formation['id_formation'] ?>"
                                 data-titre="<?= esc($formation['titre']) ?>"
