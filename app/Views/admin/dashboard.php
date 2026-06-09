@@ -1,10 +1,5 @@
 <?= $this->include('includes/header') ?>
 
-<!--
-    ✅ FIX TOAST : Le conteneur de toasts DOIT être ici, directement dans le body,
-    PAS à l'intérieur de #section-ajax. Sinon loadSection() l'écrase en rechargeant le HTML.
-    L'id "toast-container-fixed" est utilisé par showToast() dans admin_dashboard.js
--->
 <div id="toast-container-fixed" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
 
 <div class="d-flex" style="min-height: calc(100vh - 56px);">

@@ -112,5 +112,6 @@
 </script>
 <script src="<?= base_url('js/dashboard/teacher_dashboard.js') ?>"></script>
 <script src="<?= base_url('js/teacher/grades.js') ?>"></script>
+<script src="<?= base_url('js/teacher/session.js') ?>"></script>
 
 <?= $this->include('includes/footer') ?>

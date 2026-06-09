@@ -33,25 +33,39 @@ class Session extends BaseController
         ]);
     }
 
-    public function createLink(int $idSession, string $link)
+    public function createLink(int $idSession)
     {
         $sessionModel = new SessionModel();
 
-        $ok = $sessionModel->updateLink($idSession, urldecode($link));
+        $data = $this->request->getJSON();
+        $lieu = $data->lieu ?? null;
+
+        if (!$lieu) {
+            return $this->response->setJSON(['success' => false, 'message' => 'Le lieu ne peut pas être vide.']);
+        }
+
+        $ok = $sessionModel->updateLink($idSession, $lieu);
 
         return $this->response->setJSON(['success' => $ok]);
     }
 
-    public function updateLink(int $idSession, string $link)
+    public function updateLink(int $idSession)
     {
         $sessionModel = new SessionModel();
 
-        $ok = $sessionModel->updateLink($idSession, urldecode($link));
+        $data = $this->request->getJSON();
+        $lieu = $data->lieu ?? null;
+
+        if (!$lieu) {
+            return $this->response->setJSON(['success' => false, 'message' => 'Le lieu ne peut pas être vide.']);
+        }
+
+        $ok = $sessionModel->updateLink($idSession, $lieu);
 
         return $this->response->setJSON(['success' => $ok]);
     }
 
-    public function deleteLink(int $idSession, string $link)
+    public function deleteLink(int $idSession)
     {
         $sessionModel = new SessionModel();
 
