@@ -59,6 +59,16 @@
                             </div>
                         </div>
 
+                        <div class="form-check mb-3">
+                            <input class="form-check-input"
+                                type="checkbox"
+                                name="remember_me"
+                                id="remember_me">
+                            <label class="form-check-label" for="remember_me">
+                                Se souvenir de moi
+                            </label>
+                        </div>
+
                         <button type="submit"
                             class="btn w-100 text-white fw-bold"
                             style="background-color: #e8630a;">
