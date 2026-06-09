@@ -1,29 +1,62 @@
-<?php 
+<?php
 
 namespace App\Controllers\Teacher;
 
 use App\Controllers\BaseController;
 use App\Models\SessionModel;
+use App\Models\NotifierModel;
 
-class Session extends BaseController {
-
-    function updateLink(int $sessionId, string $link):\CodeIgniter\HTTP\RedirectResponse {
+class Session extends BaseController
+{
+    public function index()
+    {
         $sessionModel = new SessionModel();
-        $result =$sessionModel->updateLink($sessionId, $link);
-        if(!$result){
-            return redirect()->to("/session/$sessionId")->with('error', "Une erreur s'est produite.");
+
+        $sessions = $sessionModel->getAllTeacherSessions(session('user_id'));
+
+        if ($this->request->hasHeader('X-Requested-With')) {
+            return view('teacher/sessions/index', ['sessions' => $sessions]);
         }
-        
-        return redirect()->to("/session/$sessionId")->with('success', "Le lien a été mis à jour avec succès.");
+
+        return redirect()->to(base_url('teacher/dashboard'));
     }
 
-    function deleteLink(int $sessionId) :\CodeIgniter\HTTP\RedirectResponse {
-        $sessionModel = new SessionModel();
-        $result = $sessionModel->deleteLink($sessionId);
-        if(!$result){
-            return redirect()->to("/session/$sessionId")->with('error', "Il n'existe pas de lien pour cette session ou une erreur s'est produite.");
-        }
+    public function getStudents(int $idSession)
+    {
+        $notifierModel = new NotifierModel();
 
-        return redirect()->to("/session/$sessionId")->with('success', "Le lien a été supprimé avec succès.");
+        $students = $notifierModel->getStudentsWithGrades($idSession);
+
+        return $this->response->setJSON([
+            'success' => true,
+            'data'    => $students,
+        ]);
+    }
+
+    public function createLink(int $idSession, string $link)
+    {
+        $sessionModel = new SessionModel();
+
+        $ok = $sessionModel->updateLink($idSession, urldecode($link));
+
+        return $this->response->setJSON(['success' => $ok]);
+    }
+
+    public function updateLink(int $idSession, string $link)
+    {
+        $sessionModel = new SessionModel();
+
+        $ok = $sessionModel->updateLink($idSession, urldecode($link));
+
+        return $this->response->setJSON(['success' => $ok]);
+    }
+
+    public function deleteLink(int $idSession, string $link)
+    {
+        $sessionModel = new SessionModel();
+
+        $ok = $sessionModel->deleteLink($idSession);
+
+        return $this->response->setJSON(['success' => $ok]);
     }
 }

@@ -49,12 +49,16 @@ $routes->group('student', function($routes){
 $routes->group('teacher', function($routes){
     $routes->get('dashboard', 'Teacher\Dashboard::index');
     $routes->get('history', 'Teacher\History::index');
+    $routes->get('planning', 'Teacher\Planning::index');
+    //sessions
+    $routes->get('sessions/index', 'Teacher\Session::index');
+    $routes->get('sessions/students/(:num)', 'Teacher\Session::getStudents/$1');
     //CRUDs
     //grades
     $routes->post('/grades/create/(:num)/(:num)/(:any)', 'Teacher\Grades::createGrade/$1/$2/$3');
     $routes->post('/grades/update/(:num)/(:num)/(:any)', 'Teacher\Grades::updateGrade/$1/$2/$3');
     $routes->post('/grades/delete/(:num)/(:num)/(:any)', 'Teacher\Grades::deleteGrade/$1/$2/$3');
-    //sessions
+    //session links
     $routes->post('/session/link/add-link/(:num)/(:any)/','Teacher\Session::createLink/$1/$2');
     $routes->post('/session/link/modify-link/(:num)/(:any)','Teacher\Session::updateLink/$1/$2');
     $routes->post('/session/link/delete-link/(:num)/(:any)','Teacher\Session::deleteLink/$1/$2');
