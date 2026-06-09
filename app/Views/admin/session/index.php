@@ -26,6 +26,7 @@
                     <th>Date fin</th>
                     <th>Formateur</th>
                     <th>Modalité</th>
+                    <th>Max élèves</th>
                     <th>Lieu / Lien</th>
                     <th>Prix</th>
                     <th>Actions</th>
@@ -34,7 +35,7 @@
             <tbody>
                 <?php if (empty($sessions)): ?>
                 <tr>
-                    <td colspan="7" class="text-center text-muted">Aucune session pour cette formation.</td>
+                    <td colspan="8" class="text-center text-muted">Aucune session pour cette formation.</td>
                 </tr>
                 <?php else: ?>
                 <?php foreach ($sessions as $s): ?>
@@ -43,6 +44,7 @@
                     <td><?= esc($s['date_fin']) ?></td>
                     <td><?= esc($s['formateur_prenom'] . ' ' . $s['formateur_nom']) ?></td>
                     <td><?= esc($s['modalite_libelle']) ?></td>
+                    <td><?= esc($s['nb_etudiant_max']) ?></td>
                     <td><?= esc($s['lieu_session'] ?? '—') ?></td>
                     <td><?= $s['prix'] ? esc($s['prix']) . ' €' : '—' ?></td>
                     <td>
@@ -73,7 +75,6 @@
     </div>
 </div>
 
-<!-- Données injectées pour le JS -->
 <script>
     window.SESSION_FORMATEURS = <?= json_encode($formateurs) ?>;
     window.SESSION_MODALITES  = <?= json_encode($modalites) ?>;

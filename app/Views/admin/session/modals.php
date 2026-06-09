@@ -1,6 +1,3 @@
-<!-- =============================================
-     MODAL — Créer une session
-     ============================================= -->
 <div class="modal fade" id="modalCreateSession" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -61,9 +58,6 @@
     </div>
 </div>
 
-<!-- =============================================
-     MODAL — Modifier une session
-     ============================================= -->
 <div class="modal fade" id="modalEditSession" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -121,9 +115,6 @@
     </div>
 </div>
 
-<!-- =============================================
-     MODAL — Supprimer une session
-     ============================================= -->
 <div class="modal fade" id="modalDeleteSession" tabindex="-1">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -144,9 +135,6 @@
     </div>
 </div>
 
-<!-- =============================================
-     MODAL — Sessions supprimées
-     ============================================= -->
 <div class="modal fade" id="modalDeletedSessions" tabindex="-1">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">

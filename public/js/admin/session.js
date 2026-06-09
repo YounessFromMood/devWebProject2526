@@ -22,7 +22,12 @@ function loadSessions(idFormation) {
 
         if ($.fn.DataTable && $('#dataTableSessions').length) {
             if ($('#dataTableSessions tbody tr td').length > 1) {
-                $('#dataTableSessions').DataTable();
+                $('#dataTableSessions').DataTable({
+                    columnDefs: [{
+                        targets: '_all',
+                        className: 'dt-head-left'
+                    }]
+                });
             } else {
                 showToast('Aucune session pour cette formation pour le moment.', 'danger');
             }
@@ -37,11 +42,6 @@ function loadSessions(idFormation) {
     });
 }
 
-/**
- * Remplit les <select> formateur et modalité dans les modales
- * à partir des données injectées par PHP dans window.SESSION_FORMATEURS
- * et window.SESSION_MODALITES
- */
 function populateSessionSelects() {
     const formateurs = window.SESSION_FORMATEURS ?? [];
     const modalites  = window.SESSION_MODALITES  ?? [];

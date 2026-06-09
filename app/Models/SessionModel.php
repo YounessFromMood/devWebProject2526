@@ -62,9 +62,10 @@ class SessionModel extends UserModel {
     function getSessionsWithDetails(int $id_formation): array {
         return $this
             ->select('session.*, 
-                      formateur.nom       AS formateur_nom,
-                      formateur.prenom    AS formateur_prenom,
-                      modalite.libelle    AS modalite_libelle')
+                    formateur.nom       AS formateur_nom,
+                    formateur.prenom    AS formateur_prenom,
+                    modalite.libelle    AS modalite_libelle,
+                    modalite.nb_etudiant_max AS nb_etudiant_max') // ← ajouter ça
             ->join('formateur', 'formateur.id_formateur = session.id_formateur')
             ->join('modalite',  'modalite.id_modalite   = session.id_modalite')
             ->where('session.id_formation', $id_formation)
