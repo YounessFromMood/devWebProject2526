@@ -10,8 +10,6 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
 
-helper('cookie');
-
 class RememberMeFilter implements FilterInterface
 {
     /**
@@ -19,6 +17,8 @@ class RememberMeFilter implements FilterInterface
      * Si oui et que la session est vide, on reconnecte automatiquement l'utilisateur.
      */
     public function before(RequestInterface $request, $arguments = null) {
+        
+        helper('cookie');
         if (session()->has('user_id')) {
             return;
         }
