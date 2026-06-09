@@ -1,4 +1,6 @@
-<!-- Ajouter session -->
+<!-- =============================================
+     MODAL — Créer une session
+     ============================================= -->
 <div class="modal fade" id="modalCreateSession" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -31,6 +33,9 @@
                         <select id="createSessionModalite" class="form-select">
                             <option value="">— Choisir une modalité —</option>
                         </select>
+                        <div id="createSessionMaxInfo" class="form-text d-none">
+                            Nombre max d'élèves : <strong id="createSessionMaxVal"></strong>
+                        </div>
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -55,7 +60,10 @@
         </div>
     </div>
 </div>
-<!-- Modifier session -->
+
+<!-- =============================================
+     MODAL — Modifier une session
+     ============================================= -->
 <div class="modal fade" id="modalEditSession" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -85,6 +93,9 @@
                     <div class="col-md-6">
                         <label class="form-label">Modalité <span class="text-danger">*</span></label>
                         <select id="editSessionModalite" class="form-select"></select>
+                        <div id="editSessionMaxInfo" class="form-text d-none">
+                            Nombre max d'élèves : <strong id="editSessionMaxVal"></strong>
+                        </div>
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -109,7 +120,10 @@
         </div>
     </div>
 </div>
-<!-- Supprimer session -->
+
+<!-- =============================================
+     MODAL — Supprimer une session
+     ============================================= -->
 <div class="modal fade" id="modalDeleteSession" tabindex="-1">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -129,7 +143,10 @@
         </div>
     </div>
 </div>
-<!-- Sessions supprimées -->
+
+<!-- =============================================
+     MODAL — Sessions supprimées
+     ============================================= -->
 <div class="modal fade" id="modalDeletedSessions" tabindex="-1">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">

@@ -13,6 +13,13 @@ function loadSessions(idFormation) {
         sectionAjax.style.opacity       = '1';
         sectionAjax.style.pointerEvents = 'auto';
 
+        sectionAjax.querySelectorAll('script').forEach(oldScript => {
+            const newScript = document.createElement('script');
+            newScript.textContent = oldScript.textContent;
+            document.body.appendChild(newScript);
+            document.body.removeChild(newScript);
+        });
+
         if ($.fn.DataTable && $('#dataTableSessions').length) {
             if ($('#dataTableSessions tbody tr td').length > 1) {
                 $('#dataTableSessions').DataTable();
@@ -53,10 +60,36 @@ function populateSessionSelects() {
         if (!sel) return;
         sel.innerHTML = '<option value="">— Choisir une modalité —</option>';
         modalites.forEach(m => {
-            sel.innerHTML += `<option value="${m.id_modalite}">${m.libelle}</option>`;
+            sel.innerHTML += `<option value="${m.id_modalite}">${m.libelle} (max ${m.nb_etudiant_max} élèves)</option>`;
         });
     });
 }
+
+function updateMaxInfo(selectId, infoId, valId) {
+    const sel  = document.getElementById(selectId);
+    const info = document.getElementById(infoId);
+    const val  = document.getElementById(valId);
+    if (!sel || !info || !val) return;
+
+    const idModalite = parseInt(sel.value);
+    const modalite   = (window.SESSION_MODALITES ?? []).find(m => parseInt(m.id_modalite) === idModalite);
+
+    if (modalite) {
+        val.textContent = modalite.nb_etudiant_max;
+        info.classList.remove('d-none');
+    } else {
+        info.classList.add('d-none');
+    }
+}
+
+document.addEventListener('change', function (e) {
+    if (e.target.id === 'createSessionModalite') {
+        updateMaxInfo('createSessionModalite', 'createSessionMaxInfo', 'createSessionMaxVal');
+    }
+    if (e.target.id === 'editSessionModalite') {
+        updateMaxInfo('editSessionModalite', 'editSessionMaxInfo', 'editSessionMaxVal');
+    }
+});
 
 document.addEventListener('click', function (e) {
 
@@ -85,6 +118,7 @@ document.addEventListener('click', function (e) {
         setTimeout(() => {
             document.getElementById('editSessionFormateur').value = btn.dataset.formateur;
             document.getElementById('editSessionModalite').value  = btn.dataset.modalite;
+            updateMaxInfo('editSessionModalite', 'editSessionMaxInfo', 'editSessionMaxVal');
         }, 50);
 
         new bootstrap.Modal(document.getElementById('modalEditSession')).show();

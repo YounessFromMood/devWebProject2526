@@ -165,8 +165,6 @@ document.addEventListener('click', function (e) {
             }
             const tbody = document.getElementById('deletedFormationsList');
             tbody.innerHTML = '';
-                return;
-            }
             res.data.forEach(f => {
                 tbody.innerHTML += `
                     <tr>

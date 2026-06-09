@@ -41,7 +41,7 @@
                         <button class="btn btn-sm btn-outline-secondary btn-edit-formation"
                                 data-id="<?= $formation['id_formation'] ?>"
                                 data-titre="<?= esc($formation['titre']) ?>"
-                                data-description="<?= esc($formation['DESCRIPTION']) ?>"
+                                data-description="<?= esc($formation['description']) ?>"
                                 data-duree="<?= esc($formation['duree'] ?? '') ?>"
                                 data-prix="<?= esc($formation['prix'] ?? '') ?>"
                                 data-langue="<?= esc($formation['langue'] ?? '') ?>">

@@ -41,5 +41,6 @@
         </div>
     </div>
 </footer>
+<?= $this->include('includes/flashalert') ?>
 </body>
 </html>
