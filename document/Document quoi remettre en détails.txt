@@ -1,0 +1,24 @@
+PowerPoint DevWeb - Pourquoi acheter mon site (uniquement partie présentation)
++ montrer du code dans le powerpoint ofc
+-> ce ne sera qu'un RESUME du dossier en reprenant les points important
+(15 ou 20 minutes)
+ça doit être technico-commercial (la partie commercial sera dans le point "Pourquoi acheter mon site")
+
+Entre 20 et 40 Pages
+En un seul Document en PDF:
+- Résumé de la demande
+- Les questions posées au client
+- Analyse succinte d'un ou deux use case détaillées (les plus important Use Case Diagramme éventuellement)
+- Analyse de la bdd (Merise)
+- User Guide (installation du projet)
+- Ce que j'ai appris
+- Les technologies utilisées (MVC web) avec nos exemples et nos repertoires et ce que j'ai utilisé en plus
+- Calendrier de départ VS Calendrier Reel et pourquoi
+- Ce dont j'ai pas eu le temps de réaliser éventuellement et pourquoi (temps, technique, etc)
+- Les problèmes rencontrés
+- Eventuellement une appreciation personnelles de si j'ai aimé travailler sur ce projet ou non
+- Si j'ai utilisé l'IA et pourquoi en annexe
+
+Les screenshots doivent être en annexe et le README aussi
+
+Ne jamais dire J'ai voulu mais plutot Le Client à dit

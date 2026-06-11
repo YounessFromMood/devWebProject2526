@@ -28,7 +28,7 @@
                     <th>Modalité</th>
                     <th>Max élèves</th>
                     <th>Lieu / Lien</th>
-                    <th>Prix</th>
+                    <th class="dt-type-numeric">Prix</th>
                     <th>Actions</th>
                 </tr>
             </thead>

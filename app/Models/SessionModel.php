@@ -12,12 +12,13 @@ class SessionModel extends UserModel {
 
     public function getAllStudentSessions(int $studentId) : array {
         return $this
-            ->select('session.*, formation.titre as formation_titre, formateur.nom as formateur_nom, modalite.libelle as modalite_libelle')
+            ->select('session.*, formation.titre as formation_titre, formateur.nom as formateur_nom, modalite.libelle as modalite_libelle, S_inscrire.paiement_recu')
             ->join('formation', 'formation.id_formation = session.id_formation')
             ->join('formateur', 'formateur.id_formateur = session.id_formateur')
             ->join('modalite', 'modalite.id_modalite = session.id_modalite')
             ->join('S_inscrire', 'S_inscrire.id_session = session.id_session')
             ->where('S_inscrire.id_eleve', $studentId)
+            ->where('session.date_fin >=', date('Y-m-d'))  // ← filtre : actives/à venir seulement
             ->findAll();
     }
 
@@ -110,5 +111,20 @@ class SessionModel extends UserModel {
         $this->db->table('session')
             ->where('id_session', $id_session)
             ->update(['deleted_at' => null]);
+    }
+
+    public function getStudentHistory(int $studentId) : array {
+        return $this
+            ->select('session.*, formation.titre as formation_titre, formateur.nom as formateur_nom, modalite.libelle as modalite_libelle, note_reussite.libelle as note_libelle')
+            ->join('formation', 'formation.id_formation = session.id_formation')
+            ->join('formateur', 'formateur.id_formateur = session.id_formateur')
+            ->join('modalite', 'modalite.id_modalite = session.id_modalite')
+            ->join('S_inscrire', 'S_inscrire.id_session = session.id_session')
+            ->join('notifier', 'notifier.id_session = session.id_session AND notifier.id_eleve = S_inscrire.id_eleve', 'left')
+            ->join('note_reussite', 'note_reussite.id_note_reussite = notifier.id_note_reussite', 'left')
+            ->where('S_inscrire.id_eleve', $studentId)
+            ->where('session.date_fin <', date('Y-m-d'))
+            ->orderBy('session.date_fin', 'DESC')
+            ->findAll();
     }
 }

@@ -8,6 +8,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
 use App\Models\InscriptionModel;
+use App\Models\SessionModel;
 
 class Dashboard extends BaseController {
 
@@ -50,10 +51,10 @@ class Dashboard extends BaseController {
      *                 dates de début et de fin    
      */
     function courses() :string {
-        $inscriptionModel = new InscriptionModel();
+        $sessionModel = new SessionModel();
         return view('student/dashboard/courses',
-                    ['cours' => $inscriptionModel
-                    ->getCurrentCourses($this->studentId)]);
+                    ['sessions' => $sessionModel
+                    ->getAllStudentSessions($this->studentId)]);
     }
     /** Affiche le planning de l'étudiant
      * -> Correspond a toute l'étendue qu'une session dure

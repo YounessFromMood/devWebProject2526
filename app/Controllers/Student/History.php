@@ -31,7 +31,7 @@ class History extends BaseController {
      */
     function index() :string {
         $sessionModel = new SessionModel();
-        $sessions = $sessionModel->getAllStudentSessions($this->studentId);
+        $sessions = $sessionModel->getStudentHistory($this->studentId);
 
         return view('student/history', ['sessions' => $sessions]);
     }
