@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 11 juin 2026 à 17:47
+-- Généré le : jeu. 11 juin 2026 à 13:20
 -- Version du serveur : 10.4.32-MariaDB
--- Version de PHP : 8.2.31
+-- Version de PHP : 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -204,13 +204,6 @@ CREATE TABLE `notifier` (
   `id_note_reussite` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `notifier`
---
-
-INSERT INTO `notifier` (`id_eleve`, `id_session`, `id_note_reussite`) VALUES
-(9, 1, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -230,8 +223,7 @@ CREATE TABLE `remember_tokens` (
 --
 
 INSERT INTO `remember_tokens` (`id`, `user_id`, `user_type`, `token`, `expires_at`) VALUES
-(23, 3, 'formateur', '8bad2dde3c470c3efbe04bc2f2f561e142690db35ed4d5c9f9353219acfe4333', '2026-07-09 14:00:10'),
-(26, 9, 'eleve', '23090b89be1f75cf7061e6a531b7ac158ffa0f4e4de781f263b73af172596302', '2026-07-11 14:46:28');
+(23, 3, 'formateur', '8bad2dde3c470c3efbe04bc2f2f561e142690db35ed4d5c9f9353219acfe4333', '2026-07-09 14:00:10');
 
 -- --------------------------------------------------------
 
@@ -256,9 +248,8 @@ CREATE TABLE `session` (
 --
 
 INSERT INTO `session` (`id_session`, `date_debut`, `date_fin`, `prix`, `lieu_session`, `id_formateur`, `id_formation`, `id_modalite`, `deleted_at`) VALUES
-(1, '2026-06-29', '2026-07-05', 299.00, 'Salle B3', 1, 2, 1, NULL),
-(2, '2026-06-22', '2026-06-29', 3000.00, 'Cour du Royaume des Frost', 1, 2, 1, NULL),
-(3, '2026-05-01', '2026-05-25', 299.00, 'Discord des Frost', 1, 3, 2, NULL);
+(1, '2026-06-29', '2026-07-05', 299.00, 'Salle B3', 2, 2, 1, NULL),
+(2, '2026-06-22', '2026-06-29', 3000.00, 'Cour du Royaume des Frost', 3, 2, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -272,13 +263,6 @@ CREATE TABLE `s_inscrire` (
   `paiement_recu` tinyint(1) DEFAULT 0,
   `date_inscription` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `s_inscrire`
---
-
-INSERT INTO `s_inscrire` (`id_eleve`, `id_session`, `paiement_recu`, `date_inscription`) VALUES
-(9, 1, 0, '2026-06-11');
 
 -- --------------------------------------------------------
 
@@ -476,13 +460,13 @@ ALTER TABLE `note_reussite`
 -- AUTO_INCREMENT pour la table `remember_tokens`
 --
 ALTER TABLE `remember_tokens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT pour la table `session`
 --
 ALTER TABLE `session`
-  MODIFY `id_session` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_session` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `type_formation`
