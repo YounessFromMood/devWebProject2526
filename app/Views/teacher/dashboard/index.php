@@ -109,6 +109,7 @@
 <script src="<?= base_url('js/datatables.min.js') ?>"></script>
 <script>
     const BASE_URL = "<?= base_url() ?>";
+    const ASSET_VERSION = "1.0.0"; //A incrémenter lorsqu'une nouvelle version de mes js existe pour forcer le navigateur à recharger les fichiers
 </script>
 <script src="<?= base_url('js/dashboard/teacher_dashboard.js') ?>"></script>
 <script src="<?= base_url('js/teacher/grades.js') ?>"></script>

@@ -62,7 +62,7 @@ function loadSection(section, link) {
             const script = document.createElement('script');
             script.id  = 'planningScript';
             //cache-buster
-            script.src = BASE_URL + 'js/teacher/planning.js?v=' + Date.now();
+            script.src = BASE_URL + 'js/teacher/planning.js?v=' + ASSET_VERSION;
 
             document.body.appendChild(script);
         }
