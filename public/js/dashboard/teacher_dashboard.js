@@ -54,6 +54,18 @@ function loadSection(section, link) {
                 $('#dataTableHistory').DataTable();
             }
         }
+
+        if (section === 'planning') {
+            const existing = document.getElementById('planningScript');
+            if (existing) existing.remove();
+
+            const script = document.createElement('script');
+            script.id  = 'planningScript';
+            //cache-buster
+            script.src = BASE_URL + 'js/teacher/planning.js?v=' + Date.now();
+
+            document.body.appendChild(script);
+        }
     })
     .catch(error => {
         sectionAjax.innerHTML           = `<div class="alert alert-danger">Impossible de charger la section. (${error.message})</div>`;

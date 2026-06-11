@@ -21,12 +21,33 @@ class SessionModel extends UserModel {
             ->findAll();
     }
 
+    public function getTeacherHistory(int $teacherId): array {
+        return $this
+            ->select('session.*, formation.titre as formation_titre, modalite.libelle as modalite_libelle')
+            ->join('formation', 'formation.id_formation = session.id_formation')
+            ->join('modalite', 'modalite.id_modalite = session.id_modalite')
+            ->where('session.id_formateur', $teacherId)
+            ->where('session.date_fin <', date('Y-m-d'))
+            ->orderBy('session.date_fin', 'DESC')
+            ->findAll();
+    }
+
+    public function getTeacherPlanning(int $teacherId): array {
+        return $this
+            ->select('formation.titre AS formation_titre, session.date_debut, session.date_fin, modalite.libelle AS modalite_libelle, session.lieu_session')
+            ->join('formation', 'formation.id_formation = session.id_formation')
+            ->join('modalite', 'modalite.id_modalite = session.id_modalite')
+            ->where('session.id_formateur', $teacherId)
+            ->findAll();
+    }
+
     public function getAllTeacherSessions(int $teacherId) : array {
         return $this
             ->select('session.*, formation.titre as formation_titre, modalite.libelle as modalite_libelle')
             ->join('formation', 'formation.id_formation = session.id_formation')
             ->join('modalite', 'modalite.id_modalite = session.id_modalite')
             ->where('session.id_formateur', $teacherId)
+            ->where('session.date_fin >=', date('Y-m-d'))
             ->findAll();
     }
 

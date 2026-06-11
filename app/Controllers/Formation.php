@@ -58,7 +58,7 @@ class Formation extends BaseController {
 
         return view('formation/index', $data);
     }
-    //TODO: afficher les dates de toutes les futures sessions
+
     function details(int $id) :string {
         $formationModel = new FormationModel();
         $formation = $formationModel->find($id);
