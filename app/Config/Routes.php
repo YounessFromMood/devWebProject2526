@@ -55,9 +55,9 @@ $routes->group('teacher', function($routes){
     $routes->get('sessions/students/(:num)', 'Teacher\Session::getStudents/$1');
     //CRUDs
     //grades
-    $routes->post('grades/create/(:num)/(:num)/(:any)', 'Teacher\Grades::createGrade/$1/$2/$3');
-    $routes->post('grades/update/(:num)/(:num)/(:any)', 'Teacher\Grades::updateGrade/$1/$2/$3');
-    $routes->post('grades/delete/(:num)/(:num)/(:any)', 'Teacher\Grades::deleteGrade/$1/$2/$3');
+    $routes->post('grades/create/(:num)/(:num)', 'Teacher\Grades::createGrade/$1/$2');
+    $routes->post('grades/update/(:num)/(:num)', 'Teacher\Grades::updateGrade/$1/$2');
+    $routes->post('grades/delete/(:num)/(:num)', 'Teacher\Grades::deleteGrade/$1/$2');
     //session links
     $routes->post('session/link/add-link/(:num)',    'Teacher\Session::createLink/$1');
     $routes->post('session/link/modify-link/(:num)', 'Teacher\Session::updateLink/$1');

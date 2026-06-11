@@ -1,5 +1,9 @@
-<?=  $this->include('includes/header') ?>
+<h2 class="fw-bold mb-4">Mon planning</h2>
 
-<h1>Liste des Paiements pour l'Étudiant</h1>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <button class="btn btn-sm btn-outline-secondary" id="btnPrevMonth">&#8592; Mois précédent</button>
+    <h5 class="mb-0 fw-bold" id="calendarTitle"></h5>
+    <button class="btn btn-sm btn-outline-secondary" id="btnNextMonth">Mois suivant &#8594;</button>
+</div>
 
-<?=  $this->include('includes/footer') ?>
+<div id="calendarGrid" data-sessions="<?= esc(json_encode($planning), 'attr') ?>"></div>

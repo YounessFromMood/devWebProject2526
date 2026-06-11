@@ -66,7 +66,7 @@ document.addEventListener('click', function (e) {
         const idSession = btn.dataset.idSession;
         const titre     = btn.dataset.titre;
 
-        document.getElementById('currentSessionId').value           = idSession;
+        document.getElementById('currentSessionId').value                   = idSession;
         document.getElementById('modalSessionStudentsSubtitle').textContent = titre;
 
         reloadStudentsList(idSession);
@@ -78,10 +78,10 @@ document.addEventListener('click', function (e) {
     if (e.target.closest('.btn-create-grade')) {
         const btn = e.target.closest('.btn-create-grade');
 
-        document.getElementById('createGradeIdSession').value      = btn.dataset.idSession;
-        document.getElementById('createGradeIdEleve').value        = btn.dataset.idEleve;
+        document.getElementById('createGradeIdSession').value          = btn.dataset.idSession;
+        document.getElementById('createGradeIdEleve').value            = btn.dataset.idEleve;
         document.getElementById('createGradeEtudiantName').textContent = btn.dataset.nom;
-        document.getElementById('createGradeNote').value           = '';
+        document.getElementById('createGradeNote').value               = '';
         document.getElementById('createGradeError').classList.add('d-none');
 
         new bootstrap.Modal(document.getElementById('modalCreateGrade')).show();
@@ -99,9 +99,11 @@ document.addEventListener('click', function (e) {
             return;
         }
 
-        fetch(`${BASE_URL}teacher/grades/create/${idSession}/${idEleve}/${encodeURIComponent(note)}`, {
+        // La note est maintenant dans le body JSON, plus dans l'URL
+        fetch(`${BASE_URL}teacher/grades/create/${idSession}/${idEleve}`, {
             method  : 'POST',
-            headers : { 'X-Requested-With': 'XMLHttpRequest' }
+            headers : { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+            body    : JSON.stringify({ note })
         })
         .then(r => r.json())
         .then(res => {
@@ -124,10 +126,10 @@ document.addEventListener('click', function (e) {
     if (e.target.closest('.btn-edit-grade')) {
         const btn = e.target.closest('.btn-edit-grade');
 
-        document.getElementById('editGradeIdSession').value         = btn.dataset.idSession;
-        document.getElementById('editGradeIdEleve').value           = btn.dataset.idEleve;
+        document.getElementById('editGradeIdSession').value          = btn.dataset.idSession;
+        document.getElementById('editGradeIdEleve').value            = btn.dataset.idEleve;
         document.getElementById('editGradeEtudiantName').textContent = btn.dataset.nom;
-        document.getElementById('editGradeNote').value              = btn.dataset.note;
+        document.getElementById('editGradeNote').value               = btn.dataset.note;
         document.getElementById('editGradeError').classList.add('d-none');
 
         new bootstrap.Modal(document.getElementById('modalEditGrade')).show();
@@ -145,9 +147,11 @@ document.addEventListener('click', function (e) {
             return;
         }
 
-        fetch(`${BASE_URL}teacher/grades/update/${idSession}/${idEleve}/${encodeURIComponent(note)}`, {
+        // La note est maintenant dans le body JSON, plus dans l'URL
+        fetch(`${BASE_URL}teacher/grades/update/${idSession}/${idEleve}`, {
             method  : 'POST',
-            headers : { 'X-Requested-With': 'XMLHttpRequest' }
+            headers : { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+            body    : JSON.stringify({ note })
         })
         .then(r => r.json())
         .then(res => {
@@ -170,9 +174,9 @@ document.addEventListener('click', function (e) {
     if (e.target.closest('.btn-delete-grade')) {
         const btn = e.target.closest('.btn-delete-grade');
 
-        document.getElementById('deleteGradeIdSession').value           = btn.dataset.idSession;
-        document.getElementById('deleteGradeIdEleve').value             = btn.dataset.idEleve;
-        document.getElementById('deleteGradeEtudiantName').textContent  = btn.dataset.nom;
+        document.getElementById('deleteGradeIdSession').value          = btn.dataset.idSession;
+        document.getElementById('deleteGradeIdEleve').value            = btn.dataset.idEleve;
+        document.getElementById('deleteGradeEtudiantName').textContent = btn.dataset.nom;
 
         new bootstrap.Modal(document.getElementById('modalDeleteGrade')).show();
     }
@@ -181,7 +185,7 @@ document.addEventListener('click', function (e) {
         const idSession = document.getElementById('deleteGradeIdSession').value;
         const idEleve   = document.getElementById('deleteGradeIdEleve').value;
 
-        fetch(`${BASE_URL}teacher/grades/delete/${idSession}/${idEleve}/delete`, {
+        fetch(`${BASE_URL}teacher/grades/delete/${idSession}/${idEleve}`, {
             method  : 'POST',
             headers : { 'X-Requested-With': 'XMLHttpRequest' }
         })

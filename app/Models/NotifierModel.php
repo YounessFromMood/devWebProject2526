@@ -34,18 +34,20 @@ class NotifierModel extends UserModel {
     }
 
     public function addGrade(int $studentId, int $sessionId, string $grade) : bool {
-        $gradeRecord = $this->db->table('note_reussite')->where('libelle', $grade)->get()->getRowArray();
+        $gradeRecord = $this->db->table('note_reussite')
+            ->where('libelle', $grade)
+            ->get()
+            ->getRowArray();
+
         if (!$gradeRecord) {
             return false;
         }
 
-        $data = [
+        return $this->db->table('notifier')->insert([
             'id_eleve'         => $studentId,
             'id_session'       => $sessionId,
             'id_note_reussite' => $gradeRecord['id_note_reussite']
-        ];
-
-        return $this->insert($data);
+        ]);
     }
 
     public function updateGrade(int $studentId, int $sessionId, string $grade) : bool {
