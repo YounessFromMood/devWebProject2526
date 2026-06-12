@@ -127,4 +127,21 @@ class SessionModel extends UserModel {
             ->orderBy('session.date_fin', 'DESC')
             ->findAll();
     }
+
+    public function getSessionsDisponibles(int $id_formation): array {
+        return $this
+            ->select('session.*, formateur.nom AS formateur_nom, formateur.prenom AS formateur_prenom, modalite.libelle AS modalite_libelle, modalite.nb_etudiant_max AS nb_etudiant_max')
+            ->join('formateur', 'formateur.id_formateur = session.id_formateur')
+            ->join('modalite', 'modalite.id_modalite = session.id_modalite')
+            ->where('session.id_formation', $id_formation)
+            ->where('session.date_debut >', date('Y-m-d'))
+            ->orderBy('session.date_debut', 'ASC')
+            ->findAll();
+    }
+ 
+    public function countInscrits(int $id_session): int {
+        return $this->db->table('S_inscrire')
+            ->where('id_session', $id_session)
+            ->countAllResults();
+    }
 }

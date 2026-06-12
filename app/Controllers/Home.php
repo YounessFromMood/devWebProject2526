@@ -2,17 +2,24 @@
 
 namespace App\Controllers;
 
+use App\Models\FormationModel;
+
 class Home extends BaseController
 {
     public function index(): string
     {
-        return view('index');
-    }
+        $formationModel = new FormationModel();
 
-    public function details(): string
-    {
-        $data["myMessage"] = "Message.exe en cours de lancement...<br><br>Veuillez patienter.";
-        return view('details', $data);
-    }
+        $formations = $formationModel->findAll();
 
+        shuffle($formations);
+        $randomToShow = array_slice($formations, 0, 4);
+
+        $data = [
+            'pageTitle'  => 'Accueil',
+            'formations' => $randomToShow,
+        ];
+
+        return view('home', $data);
+    }
 }

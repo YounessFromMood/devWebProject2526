@@ -58,9 +58,10 @@ class FormationModel extends UserModel {
 
     public function search(array $filtres) : array {
         $builder = $this->db->table('formation');
-        $builder->join('Typer', 'Typer.id_formation = formation.id_formation')
-                ->join('type_formation', 'type_formation.id_type_formation = Typer.id_type_formation')
-                ->select('formation.*, type_formation.libelle AS type_libelle');
+        $builder->join('Typer', 'Typer.id_formation = formation.id_formation', 'left')
+                ->join('type_formation', 'type_formation.id_type_formation = Typer.id_type_formation', 'left')
+                ->select('formation.*, type_formation.libelle AS type_libelle')
+                ->where('formation.deleted_at', null);
 
         if (!empty($filtres['titre'])) {
             $builder->like('formation.titre', $filtres['titre']);
@@ -80,6 +81,7 @@ class FormationModel extends UserModel {
 
         return $builder->get()->getResultArray();
     }
+
     /**
      * Restaure une formation supprimée en mettant deleted_at à null
      *

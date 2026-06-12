@@ -1,72 +1,97 @@
-<?php 
+<?php
 
 namespace App\Controllers;
 
 use App\Models\FormationModel;
 use App\Models\TypeFormationModel;
+use App\Models\TyperModel;
+use App\Models\SessionModel;
+use CodeIgniter\Exceptions\PageNotFoundException;
 
-class Formation extends BaseController {
-    /**
-     * Retourne a la vue toutes les données de mes formations trié par id croissant
-     *
-     * @return string un tableau de formation contenant toutes les données de mes formations
-     */
-    function index() :string {
-        //je crée une nouvelle instance de mon modèle
-        $formationModel = new FormationModel();
-        //je demande toutes les données de mon modèle
-        $formations = $formationModel->findAll();
-        /*Je stocke dans un tableau associatif tout les éléments
-        trouvés dans ma bdd*/
-        $data['listeFormation'] = $formations;
-        //y'a plus qu'a tout régurgiter a la view
-        return view('formation/index', $data);
-    }
-    /**
-     * Une fonction de recherche selon des critères prédisposé à l'utilisateur
-     * Le titre, La langue, Le prix maximum, La durée et le type de formation (Cybersec, Programmation, etc)
-     *
-     * @return string la liste de toutes les formations correspondants aux critères exigés
-     */
-    function search() :string {
-        $rules = [
-            'titre' => 'permit_empty|string|max_length[200]',
-            'langue' => 'permit_empty|string|max_length[50]',
-            'prix_max' => 'permit_empty|numeric',
-            'duree' => 'permit_empty|string|max_length[50]',
-            'id_type_formation' => 'permit_empty|integer',
-        ];
-        /*garde-fou si les données encodées ne respecte pas les
-         règles pré-citées*/
-        if (!$this->validate($rules)) {
-            return $this->index();
-        }
-        //On recup ce qu'on envoie avec le get
-        $filtres = [
-            'titre' => $this->request->getGet('titre'),
-            'langue' => $this->request->getGet('langue'),
-            'prix_max' => $this->request->getGet('prix_max'),
-            'duree' => $this->request->getGet('duree'),
-            'id_type_formation' => $this->request->getGet('id_type_formation'),
-        ];
-
-        $formationModel = new FormationModel();
+class Formation extends BaseController{
+    public function index(): string{
         $typeModel = new TypeFormationModel();
 
-        $data['listeFormation'] = $formationModel->search($filtres);
-        $data['types']          = $typeModel->findAll();
+        $data = [
+            'pageTitle' => 'Rechercher une formation',
+            'types'     => $typeModel->findAll(),
+        ];
 
         return view('formation/index', $data);
     }
 
-    function details(int $id) :string {
+    public function search() {
+        $rules = [
+            'titre'    => 'permit_empty|string|max_length[200]',
+            'prix_max' => 'permit_empty|numeric',
+            'types'    => 'permit_empty',
+            'types.*'  => 'permit_empty|integer',
+        ];
+
+        if (!$this->validate($rules)) {
+            return $this->response
+                ->setStatusCode(400)
+                ->setJSON([]);
+        }
+
+        $formationModel = new FormationModel();
+
+        $filtres = [
+            'titre'             => $this->request->getGet('titre'),
+            'prix_max'          => $this->request->getGet('prix_max'),
+            'id_type_formation' => $this->request->getGet('types'),
+        ];
+
+        $resultats = $formationModel->search($filtres);
+
+        $formations = [];
+
+        foreach ($resultats as $ligne) {
+            $id = $ligne['id_formation'];
+
+            if (!isset($formations[$id])) {
+                $formations[$id] = $ligne;
+                $formations[$id]['types'] = [];
+                unset($formations[$id]['type_libelle']);
+            }
+
+            if (!empty($ligne['type_libelle']) && !in_array($ligne['type_libelle'], $formations[$id]['types'], true)) {
+                $formations[$id]['types'][] = $ligne['type_libelle'];
+            }
+        }
+
+        return $this->response->setJSON(array_values($formations));
+    }
+
+    public function details(int $id): string {
         $formationModel = new FormationModel();
         $formation = $formationModel->find($id);
 
         if ($formation === null) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('Formation non trouvée.');
+            throw new PageNotFoundException('Formation non trouvée.');
         }
-        $data['formation'] = $formation;
+
+        $typerModel = new TyperModel();
+        $types = $typerModel
+            ->select('type_formation.libelle')
+            ->join('type_formation', 'type_formation.id_type_formation = Typer.id_type_formation')
+            ->where('Typer.id_formation', $id)
+            ->findAll();
+
+        $sessionModel = new SessionModel();
+        $sessions = $sessionModel->getSessionsDisponibles($id);
+
+        foreach ($sessions as &$session) {
+            $nbInscrits = $sessionModel->countInscrits($session['id_session']);
+            $session['places_restantes'] = $session['nb_etudiant_max'] - $nbInscrits;
+        }
+
+        $data = [
+            'pageTitle' => $formation['titre'],
+            'formation' => $formation,
+            'types'     => array_column($types, 'libelle'),
+            'sessions'  => $sessions,
+        ];
 
         return view('formation/details', $data);
     }
