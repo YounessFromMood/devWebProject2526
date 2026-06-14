@@ -8,8 +8,10 @@ use App\Models\TyperModel;
 use App\Models\SessionModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
-class Formation extends BaseController{
-    public function index(): string{
+class Formation extends BaseController
+{
+    public function index(): string
+    {
         $typeModel = new TypeFormationModel();
 
         $data = [
@@ -20,7 +22,8 @@ class Formation extends BaseController{
         return view('formation/index', $data);
     }
 
-    public function search() {
+    public function search()
+    {
         $rules = [
             'titre'    => 'permit_empty|string|max_length[200]',
             'prix_max' => 'permit_empty|numeric',
@@ -63,7 +66,8 @@ class Formation extends BaseController{
         return $this->response->setJSON(array_values($formations));
     }
 
-    public function details(int $id): string {
+    public function details(int $id): string
+    {
         $formationModel = new FormationModel();
         $formation = $formationModel->find($id);
 
@@ -81,9 +85,16 @@ class Formation extends BaseController{
         $sessionModel = new SessionModel();
         $sessions = $sessionModel->getSessionsDisponibles($id);
 
+        $dejainscrit = [];
+        if (session()->get('role') === 'eleve') {
+            $inscriptionModel = new \App\Models\InscriptionModel();
+            $dejainscrit = $inscriptionModel->getIdSessionsByEleve(session()->get('user_id'));
+        }
+
         foreach ($sessions as &$session) {
             $nbInscrits = $sessionModel->countInscrits($session['id_session']);
             $session['places_restantes'] = $session['nb_etudiant_max'] - $nbInscrits;
+            $session['deja_inscrit'] = in_array($session['id_session'], $dejainscrit);
         }
 
         $data = [

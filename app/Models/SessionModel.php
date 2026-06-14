@@ -18,7 +18,7 @@ class SessionModel extends UserModel {
             ->join('modalite', 'modalite.id_modalite = session.id_modalite')
             ->join('S_inscrire', 'S_inscrire.id_session = session.id_session')
             ->where('S_inscrire.id_eleve', $studentId)
-            ->where('session.date_fin >=', date('Y-m-d'))  // ← filtre : actives/à venir seulement
+            ->where('session.date_fin >=', date('Y-m-d')) 
             ->findAll();
     }
 
@@ -87,7 +87,7 @@ class SessionModel extends UserModel {
                     formateur.nom       AS formateur_nom,
                     formateur.prenom    AS formateur_prenom,
                     modalite.libelle    AS modalite_libelle,
-                    modalite.nb_etudiant_max AS nb_etudiant_max') // ← ajouter ça
+                    modalite.nb_etudiant_max AS nb_etudiant_max') 
             ->join('formateur', 'formateur.id_formateur = session.id_formateur')
             ->join('modalite',  'modalite.id_modalite   = session.id_modalite')
             ->where('session.id_formation', $id_formation)
@@ -103,7 +103,7 @@ class SessionModel extends UserModel {
             ->join('formateur', 'formateur.id_formateur = session.id_formateur')
             ->join('modalite',  'modalite.id_modalite   = session.id_modalite')
             ->where('session.id_formation', $id_formation)
-            ->onlyDeleted()   // ← inverse le filtre : ne retourne QUE les lignes avec deleted_at non null
+            ->onlyDeleted() 
             ->findAll();
     }
  
@@ -143,5 +143,18 @@ class SessionModel extends UserModel {
         return $this->db->table('S_inscrire')
             ->where('id_session', $id_session)
             ->countAllResults();
+    }
+
+    public function getSessionsDisponibles_byId(int $id_session): ?array{
+        $result = $this
+            ->select('session.*, formateur.nom AS formateur_nom, formateur.prenom AS formateur_prenom, modalite.libelle AS modalite_libelle, modalite.nb_etudiant_max AS nb_etudiant_max, formation.titre AS formation_titre')
+            ->join('formateur', 'formateur.id_formateur = session.id_formateur')
+            ->join('modalite', 'modalite.id_modalite = session.id_modalite')
+            ->join('formation', 'formation.id_formation = session.id_formation')
+            ->where('session.id_session', $id_session)
+            ->where('session.date_debut >', date('Y-m-d'))
+            ->first();
+
+        return $result ?: null;
     }
 }

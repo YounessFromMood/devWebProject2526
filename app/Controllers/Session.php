@@ -27,9 +27,21 @@ class Session extends BaseController {
      */
     function registerPage(int $id) :string {
 
-        $session = (new SessionModel())->find($id);
-        
-        return view('session_index', ['session' => $session]);
+        $sessionModel = new SessionModel();
+        $session = $sessionModel->getSessionsDisponibles_byId($id);
+
+        if ($session === null) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Session introuvable.');
+        }
+
+        $nbInscrits = $sessionModel->countInscrits($id);
+        $session['places_restantes'] = $session['nb_etudiant_max'] - $nbInscrits;
+
+        $data = [
+            'session' => $session,
+        ];
+
+        return view('session_index', $data);
     }
     /**
      * Permet l'enregistrement d'un élève a une session si:
@@ -66,15 +78,10 @@ class Session extends BaseController {
             return redirect()->back()->with('error', "Cette session est complète.");
         }
         //ajout du goy quand tout est ok
-        $data = [
-            'id_session' => $idSession,
-            'id_eleve' => $idEleve,
-        ];
-
         $inscriptionModel = new InscriptionModel();
-        $inscriptionModel->insert($data);
+        $inscriptionModel->inscrire($idEleve, $idSession);
         
-        return redirect()->to("/payment/$idSession");
+        return redirect()->to("/student/payment/$idSession");
     }
     /**
      * Gère la desinscription d'un élève si

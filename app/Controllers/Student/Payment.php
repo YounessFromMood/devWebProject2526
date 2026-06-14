@@ -9,6 +9,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
 use App\Models\InscriptionModel;
+use App\Models\SessionModel;
 
 class Payment extends BaseController {
      private int $studentId;
@@ -24,18 +25,41 @@ class Payment extends BaseController {
         $this->studentId = session()->get('user_id');
     }
 
-    function paymentPage() :string {
-        return view('student/payment');
+    function paymentPage(int $idSession) :string {
+        $sessionModel = new SessionModel();
+        $session = $sessionModel->getSessionsDisponibles_byId($idSession);
+
+        if ($session === null) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Session introuvable.');
+        }
+
+        $base = str_pad($this->studentId, 5, '0', STR_PAD_LEFT)
+              . str_pad($idSession, 5, '0', STR_PAD_LEFT);
+
+        $modulo = (int) $base % 97;
+        $cle    = $modulo === 0 ? 97 : $modulo;
+
+        $communication = '+++'
+            . substr($base, 0, 3) . '/'
+            . substr($base, 3, 4) . '/'
+            . substr($base, 7, 3) . str_pad($cle, 2, '0', STR_PAD_LEFT)
+            . '+++';
+
+        $data = [
+            'session'       => $session,
+            'communication' => $communication,
+        ];
+
+        return view('student/payment', $data);
     }
     /**
      * Lorsque l'étudiant confirme avoir envoyé le paiement, l'admin verra une ligne dans sa liste en attente de validation du paiement.
      *
      * @return \CodeIgniter\HTTP\RedirectResponse redirige vers le dashboard de l'élève avec un message de succès
      */
-    function confirmPayment() :\CodeIgniter\HTTP\RedirectResponse {
+    function confirmPayment(int $idSession) :\CodeIgniter\HTTP\RedirectResponse {
         $inscriptionModel = new InscriptionModel();
-        $isSessionConfirmed = $inscriptionModel->confirmPayment($this->studentId,
-                                                                $this->request->getPost('id_session'));
+        $isSessionConfirmed = $inscriptionModel->confirmPayment($this->studentId, $idSession);
 
         if(!$isSessionConfirmed) {
             return redirect()->to('/student/dashboard')->with('error', "Une erreur est survenue lors de la confirmation de votre paiement.");

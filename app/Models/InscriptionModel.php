@@ -66,4 +66,19 @@ class InscriptionModel extends UserModel{
             ->where('S_inscrire.paiement_recu', false)
             ->findAll();
     }
+
+    public function inscrire(int $idEleve, int $idSession): bool{
+        return $this->db->table('S_inscrire')->insert([
+            'id_eleve'         => $idEleve,
+            'id_session'       => $idSession,
+            'paiement_recu'    => 0,
+            'date_inscription' => date('Y-m-d'),
+        ]);
+    }
+
+    public function getIdSessionsByEleve(int $idEleve): array
+    {
+        $inscriptions = $this->where('id_eleve', $idEleve)->findAll();
+        return array_column($inscriptions, 'id_session');
+    }
 }

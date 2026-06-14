@@ -142,6 +142,10 @@
                                     <button type="button" class="btn btn-sm btn-secondary w-100" disabled>
                                         Réservé aux étudiants
                                     </button>
+                                <?php elseif ($session['deja_inscrit']) : ?>
+                                    <button type="button" class="btn btn-sm btn-secondary w-100" disabled>
+                                        Vous êtes déjà inscrit à cette session !
+                                    </button>
                                 <?php elseif ($estComplete) : ?>
                                     <button type="button" class="btn btn-sm btn-secondary w-100" disabled>
                                         Inscription impossible

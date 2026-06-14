@@ -23,8 +23,7 @@
 
                     <form action="<?= base_url('/login') ?>" method="POST">
                         <?= csrf_field() ?>
-                        <form action="<?= base_url('/login') ?>" method="POST">
-                        <?= csrf_field() ?>
+                        <input type="hidden" name="redirect" value="<?= esc($_GET['redirect'] ?? '') ?>">
 
 
                         <div class="mb-3">

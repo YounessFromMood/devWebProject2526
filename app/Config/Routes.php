@@ -96,7 +96,4 @@ $routes->group('admin', function($routes){
     $routes->get('formation/deleted', 'Admin\Formation::getDeleted');
     $routes->post('formation/restore', 'Admin\Formation::restoreFormation');
     $routes->get('formation/types/(:num)', 'Admin\Formation::getTypes/$1');
-    //payments management
-    $routes->get('payment', 'Admin\Payment::index');
-    $routes->post('payment/confirmPayment', 'Admin\Payment::confirmPayment');
 });
