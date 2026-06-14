@@ -25,21 +25,30 @@ class InscriptionModel extends UserModel{
     }
 
     public function getPlanningEtudiant(int $studentId) : array {
-    return $this
-        ->select('session.*, formation.titre')
-        ->join('session', 'session.id_session = S_inscrire.id_session')
-        ->join('formation', 'formation.id_formation = session.id_formation')
-        ->where('S_inscrire.id_eleve', $studentId)
-        ->where('session.date_debut >=', date('Y-m-d'))
-        ->orderBy('session.date_debut', 'ASC')
-        ->findAll();
+        return $this
+            ->select('session.*, formation.titre')
+            ->join('session', 'session.id_session = S_inscrire.id_session')
+            ->join('formation', 'formation.id_formation = session.id_formation')
+            ->where('S_inscrire.id_eleve', $studentId)
+            ->where('session.date_debut >=', date('Y-m-d'))
+            ->orderBy('session.date_debut', 'ASC')
+            ->findAll();
+    }
+
+    public function signalPayment(int $studentId, int $sessionId) : bool {
+        return $this
+            ->where('id_eleve', $studentId)
+            ->where('id_session', $sessionId)
+            ->set(['paiement_recu' => 1])
+            ->update();
     }
 
     public function confirmPayment(int $studentId, int $sessionId) : bool {
-        $data = [
-            'paiement_recu' => true
-        ];
-        return $this->update(['id_eleve' => $studentId, 'id_session' => $sessionId], $data);
+        return $this
+            ->where('id_eleve', $studentId)
+            ->where('id_session', $sessionId)
+            ->set(['paiement_recu' => 2])
+            ->update();
     }
 
     public function deleteRegistration(int $studentId, int $sessionId) : bool {
@@ -63,7 +72,6 @@ class InscriptionModel extends UserModel{
             ->join('session', 'session.id_session = S_inscrire.id_session')
             ->join('formation', 'formation.id_formation = session.id_formation')
             ->join('eleve', 'eleve.id_eleve = S_inscrire.id_eleve')
-            ->where('S_inscrire.paiement_recu', false)
             ->findAll();
     }
 
@@ -76,8 +84,7 @@ class InscriptionModel extends UserModel{
         ]);
     }
 
-    public function getIdSessionsByEleve(int $idEleve): array
-    {
+    public function getIdSessionsByEleve(int $idEleve): array{
         $inscriptions = $this->where('id_eleve', $idEleve)->findAll();
         return array_column($inscriptions, 'id_session');
     }

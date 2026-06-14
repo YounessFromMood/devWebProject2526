@@ -110,6 +110,13 @@
 
 </div>
 
+<?php if (session()->getFlashdata('success')): ?>
+    <div id="flash-success" 
+         data-message="<?= esc(session()->getFlashdata('success')) ?>" 
+         style="display:none;">
+    </div>
+<?php endif; ?>
+
 <?= $this->include('admin/teacher/modals') ?>
 <?= $this->include('admin/student/modals') ?>
 <?= $this->include('admin/formation/modals') ?>

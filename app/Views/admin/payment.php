@@ -24,12 +24,22 @@
                     <td><?= esc($p['date_debut'] ?? '—') ?></td>
                     <td><?= $p['prix'] ? esc($p['prix']) . ' €' : '—' ?></td>
                     <td>
-                        <button class="btn btn-sm btn-success btn-confirm-payment"
-                                data-eleve="<?= $p['id_eleve'] ?>"
-                                data-session="<?= $p['id_session'] ?>">
-                            ✓ A payé
-                        </button>
-                    </td>
+                        <?php if ($p['paiement_recu'] == 2): ?>
+                            <span class="badge bg-success">Paiement Confirmé</span>
+                        <?php elseif ($p['paiement_recu'] == 1): ?>
+                            <span class="badge bg-warning text-dark me-2">Virement signalé</span>
+                            <button class="btn btn-sm btn-confirm-payment text-white fw-bold"
+                                    data-eleve="<?= $p['id_eleve'] ?>"
+                                    data-session="<?= $p['id_session'] ?>"
+                                    style="background-color: #e8630a; border: none; transition: background-color 0.2s ease;"
+                                    onmouseover="this.style.backgroundColor='#c4510a'"
+                                    onmouseout="this.style.backgroundColor='#e8630a'">
+                                Confirmer le paiement
+                            </button>
+                        <?php else: ?>
+                            <span class="badge bg-secondary">En attente de signalement</span>
+                        <?php endif; ?>
+                    </td>                
                 </tr>
                 <?php endforeach; ?>
             </tbody>

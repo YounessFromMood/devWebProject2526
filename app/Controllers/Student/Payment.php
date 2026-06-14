@@ -59,11 +59,11 @@ class Payment extends BaseController {
      */
     function confirmPayment(int $idSession) :\CodeIgniter\HTTP\RedirectResponse {
         $inscriptionModel = new InscriptionModel();
-        $isSessionConfirmed = $inscriptionModel->confirmPayment($this->studentId, $idSession);
+        $isSessionConfirmed = $inscriptionModel->signalPayment($this->studentId, $idSession);
 
         if(!$isSessionConfirmed) {
             return redirect()->to('/student/dashboard')->with('error', "Une erreur est survenue lors de la confirmation de votre paiement.");
         }
-        return redirect()->to('/student/dashboard')->with('success', "En attente de confirmation de votre paiement.");
+        return redirect()->to('/student/dashboard')->with('success', "Paiement signalé ! En attente de confirmation de l'administration.");
     }
 }

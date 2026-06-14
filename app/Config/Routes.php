@@ -38,12 +38,12 @@ $routes->group('student', function($routes){
     //concerning grades
     $routes->get('grades', 'Student\Grades::index');                         //controller: done
     //routes for student to check it's grades
-    $routes->get('/my-grades', 'Student\Grades::index');                     //controller: done 
+    $routes->get('my-grades', 'Student\Grades::index');                     //controller: done 
     //unsubscribe to a session
-    $routes->post('/session/unsubscribe/(:num)', 'Session::unsubscribe/$1'); //controller: done
+    $routes->post('session/unsubscribe/(:num)', 'Session::unsubscribe/$1'); //controller: done
     //students payment pages
-    $routes->get('/payment/(:num)', 'Student\Payment::paymentPage/$1');      //controller: done
-    $routes->post('/payment/(:num)', 'Student\Payment::confirmPayment/$1');  //controller: done
+    $routes->get('payment/(:num)', 'Student\Payment::paymentPage/$1');      //controller: done
+    $routes->post('payment/(:num)', 'Student\Payment::confirmPayment/$1');  //controller: done
 });
 //TEACHER
 $routes->group('teacher', function($routes){
@@ -96,4 +96,7 @@ $routes->group('admin', function($routes){
     $routes->get('formation/deleted', 'Admin\Formation::getDeleted');
     $routes->post('formation/restore', 'Admin\Formation::restoreFormation');
     $routes->get('formation/types/(:num)', 'Admin\Formation::getTypes/$1');
+    //payments management
+    $routes->get('payment', 'Admin\Payment::index');
+    $routes->post('payment', 'Admin\Payment::confirmPayment');
 });

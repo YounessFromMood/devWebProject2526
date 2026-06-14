@@ -13,14 +13,9 @@ document.addEventListener('click', function (e) {
         .then(r => r.json())
         .then(res => {
             if (res.success) {
-                document.getElementById(`payment-row-${idEleve}-${idSession}`).remove();
+                const cell = document.querySelector(`#payment-row-${idEleve}-${idSession} td:last-child`);
+                cell.innerHTML = '<span class="badge bg-success">Paiement Confirmé</span>';
                 showToast('Paiement confirmé avec succès.', 'success');
-
-                const tbody = document.querySelector('#dataTablePayments tbody');
-                if (tbody && tbody.querySelectorAll('tr').length === 0) {
-                    showToast('Aucun paiement en attente.', 'danger');
-                    loadSection('paiements', document.querySelector('[data-section="paiements"]'));
-                }
             } else {
                 showToast('Une erreur est survenue.', 'danger');
             }

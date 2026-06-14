@@ -2,6 +2,14 @@ const sectionProfil = document.getElementById('section-profil');
 const sectionAjax   = document.getElementById('section-ajax');
 const sidebarLinks  = document.querySelectorAll('.sidebar-link');
 
+// Au chargement de la page, vérifie si un flash success existe
+document.addEventListener('DOMContentLoaded', function () {
+    const flash = document.getElementById('flash-success');
+    if (flash) {
+        showToast(flash.dataset.message, 'success');
+    }
+});
+
 function setActiveLink(activeLink) {
     sidebarLinks.forEach(link => {
         link.classList.remove('active');

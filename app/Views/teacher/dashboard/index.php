@@ -106,6 +106,13 @@
 
 <?= $this->include('teacher/modals') ?>
 
+<?php if (session()->getFlashdata('success')): ?>
+    <div id="flash-success" 
+         data-message="<?= esc(session()->getFlashdata('success')) ?>" 
+         style="display:none;">
+    </div>
+<?php endif; ?>
+
 <script src="<?= base_url('js/datatables.min.js') ?>"></script>
 <script>
     const BASE_URL = "<?= base_url() ?>";
