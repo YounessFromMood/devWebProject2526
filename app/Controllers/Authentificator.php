@@ -67,6 +67,12 @@ class Authentificator extends BaseController {
             $this->handleRememberMe($userId, $role);
         }
 
+        $redirect = $this->request->getPost('redirect');
+
+        if (!empty($redirect) && str_starts_with($redirect, '/') && !str_starts_with($redirect, '//')) {
+            return redirect()->to(base_url($redirect));
+        }
+
         return redirect()->to('/dashboard');
     }
 

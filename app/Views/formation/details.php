@@ -133,7 +133,16 @@
                                     <?php endif; ?>
                                 </div>
 
-                                <?php if ($estComplete) : ?>
+                                <?php if (!session()->has('user_id')) : ?>
+                                    <a href="<?= base_url('/login') ?>?redirect=<?= rawurlencode('/session/registration/' . $session['id_session']) ?>"
+                                       class="btn btn-sm w-100" style="background-color: #e8630a; color: #fff;">
+                                        Connecte-toi pour t'inscrire
+                                    </a>
+                                <?php elseif (session()->get('role') !== 'eleve') : ?>
+                                    <button type="button" class="btn btn-sm btn-secondary w-100" disabled>
+                                        Réservé aux étudiants
+                                    </button>
+                                <?php elseif ($estComplete) : ?>
                                     <button type="button" class="btn btn-sm btn-secondary w-100" disabled>
                                         Inscription impossible
                                     </button>

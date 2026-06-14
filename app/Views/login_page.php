@@ -23,6 +23,9 @@
 
                     <form action="<?= base_url('/login') ?>" method="POST">
                         <?= csrf_field() ?>
+                        <form action="<?= base_url('/login') ?>" method="POST">
+                        <?= csrf_field() ?>
+
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
