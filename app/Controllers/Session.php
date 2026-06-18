@@ -18,7 +18,7 @@ class Session extends BaseController {
     function index(int $id) :string {
         $session = (new SessionModel())->find($id);
         
-        return view('session_index', ['session' => $session]);
+        return view('session_index', ['session' => $session, 'pageTitle' => 'Détails de la session']);
     }
     /**
      * Charge la page d'inscription et les informations de la session 
@@ -39,6 +39,7 @@ class Session extends BaseController {
 
         $data = [
             'session' => $session,
+            'pageTitle' => 'Inscription à la session',
         ];
 
         return view('session_index', $data);

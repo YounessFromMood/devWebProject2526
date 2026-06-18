@@ -33,6 +33,6 @@ class History extends BaseController {
         $sessionModel = new SessionModel();
         $sessions = $sessionModel->getTeacherHistory($this->teacherId);
 
-        return view('teacher/history', ['sessions' => $sessions]);
+        return view('teacher/history', ['sessions' => $sessions, 'pageTitle' => 'Mon historique']);
     }
 }

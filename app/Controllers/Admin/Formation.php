@@ -25,6 +25,7 @@ class Formation extends BaseController {
             return view('admin/formation/index', [
                 'formations' => $formations,
                 'types'      => $types,
+                'pageTitle'  => 'Gestion des formations',
             ]);
         }
 

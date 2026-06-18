@@ -12,7 +12,7 @@ class Teacher extends BaseController {
         $teachers = $formateurModel->findAll();
 
         if ($this->request->isAJAX()) {
-            return view('admin/teacher/index', ['teachers' => $teachers]);
+            return view('admin/teacher/index', ['teachers' => $teachers, 'pageTitle' => 'Gestion des formateurs']);
         }
 
         return redirect()->to('/admin/dashboard');

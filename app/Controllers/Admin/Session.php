@@ -32,6 +32,7 @@ class Session extends BaseController{
             'formateurs'   => $formateurs,
             'modalites'    => $modalites,
             'id_formation' => $id_formation,
+            'pageTitle'    => 'Gestion des sessions',
         ]);
     }
 

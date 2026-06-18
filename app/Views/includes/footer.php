@@ -10,23 +10,11 @@
                     <a class="nav-link text-white" href="<?= base_url('/') ?>">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="<?= base_url('/formations') ?>">Formations</a>
+                    <a class="nav-link text-white" href="<?= base_url('/legal/conditions') ?>">Conditions d'utilisation</a>
                 </li>
-                <?php if (session()->has('user_id')) : ?>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="<?= base_url('/dashboard') ?>">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="<?= base_url('/logout') ?>">Déconnexion</a>
-                    </li>
-                <?php else : ?>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="<?= base_url('/login') ?>">Connexion</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="<?= base_url('/register') ?>">Inscription</a>
-                    </li>
-                <?php endif; ?>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="<?= base_url('/legal/confidentialite') ?>">Confidentialité</a>
+                </li>
             </ul>
 
             <div class="d-flex align-items-center gap-3">

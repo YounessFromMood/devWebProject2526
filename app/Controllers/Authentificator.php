@@ -14,7 +14,7 @@ class Authentificator extends BaseController {
      * se connecter a son compte si existant
      */
     public function loginPage() :string {
-        return view('login_page');
+        return view('login_page', ['pageTitle' => 'Connexion']);
     }
 
     /**
@@ -82,7 +82,7 @@ class Authentificator extends BaseController {
      * se créer un compte élève
      */
     public function registerPage() :string {
-        return view('register_page');
+        return view('register_page', ['pageTitle' => 'Inscription']);
     }
 
     /**
@@ -212,7 +212,7 @@ class Authentificator extends BaseController {
      * Affiche la page "mot de passe oublie"
      */
     public function forgotPasswordPage() :string {
-        return view('forgot_password');
+        return view('forgot_password', ['pageTitle' => 'Mot de passe oublié']);
     }
  
     /**

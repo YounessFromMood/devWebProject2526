@@ -12,7 +12,7 @@ class Grades extends BaseController {
         $sessionModel = new SessionModel();
         $sessions = $sessionModel->getAllTeacherSessions(session()->get('user_id'));
 
-        return view('teacher/grades', ['sessions' => $sessions]);
+        return view('teacher/grades', ['sessions' => $sessions, 'pageTitle' => 'Gestion des notes']);
     }
 
     public function getListStudentForSession(int $sessionId) :\CodeIgniter\HTTP\RedirectResponse {

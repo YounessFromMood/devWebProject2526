@@ -40,6 +40,7 @@ class Dashboard extends BaseController {
             'nom' => session()->get('nom'),
             'prenom' => session()->get('prenom'),
             'email' => session()->get('email'),
+            'pageTitle' => 'Mon tableau de bord'
         ];
         return view('student/dashboard/index', $data);
     }
@@ -54,7 +55,7 @@ class Dashboard extends BaseController {
         $sessionModel = new SessionModel();
         return view('student/dashboard/courses',
                     ['sessions' => $sessionModel
-                    ->getAllStudentSessions($this->studentId)]);
+                    ->getAllStudentSessions($this->studentId), 'pageTitle' => 'Mes cours']);
     }
     /** Affiche le planning de l'étudiant
      * -> Correspond a toute l'étendue qu'une session dure
@@ -67,6 +68,6 @@ class Dashboard extends BaseController {
         $inscriptionModel = new InscriptionModel();
         return view('student/dashboard/planning', 
                     ['planning' => $inscriptionModel
-                    ->getPlanningEtudiant($this->studentId)]);
+                    ->getPlanningEtudiant($this->studentId), 'pageTitle' => 'Mon planning']);
     }  
 }

@@ -39,6 +39,7 @@ class Dashboard extends BaseController {
             'nom' => session()->get('nom'),
             'prenom' => session()->get('prenom'),
             'email' => session()->get('email'),
+            'pageTitle' => 'Mon tableau de bord'
         ];
         return view('teacher/dashboard/index', $data);
     }
@@ -54,6 +55,6 @@ class Dashboard extends BaseController {
         $inscriptionModel = new InscriptionModel();
         return view('teacher/dashboard/planning', 
                     ['planning' => $inscriptionModel
-                    ->getPlanningFormateur($this->teacherId)]);
+                    ->getPlanningFormateur($this->teacherId), 'pageTitle' => 'Mon planning']);
     }  
 }

@@ -14,7 +14,7 @@ class Session extends BaseController {
         $sessions = $sessionModel->getAllTeacherSessions(session('user_id'));
 
         if ($this->request->hasHeader('X-Requested-With')) {
-            return view('teacher/sessions/index', ['sessions' => $sessions]);
+            return view('teacher/sessions/index', ['sessions' => $sessions, 'pageTitle' => 'Mes sessions']);
         }
 
         return redirect()->to(base_url('teacher/dashboard'));

@@ -12,7 +12,7 @@ class Student extends BaseController {
         $students = $eleveModel->findAll();
 
         if ($this->request->isAJAX()) {
-            return view('admin/student/index', ['students' => $students]);
+            return view('admin/student/index', ['students' => $students, 'pageTitle' => 'Gestion des étudiants']);
         }
 
         return redirect()->to('/admin/dashboard');

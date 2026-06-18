@@ -31,7 +31,7 @@ class Planning extends BaseController {
         $sessions = $sessionModel->getTeacherPlanning($this->teacherId);
 
         if ($this->request->hasHeader('X-Requested-With')) {
-            return view('teacher/planning', ['sessions' => $sessions]);
+            return view('teacher/planning', ['sessions' => $sessions, 'pageTitle' => 'Mon planning']);
         }
 
         return redirect()->to(base_url('teacher/dashboard'));

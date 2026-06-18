@@ -20,7 +20,7 @@ class Payment extends BaseController
         $inscriptionModel = new InscriptionModel();
         $pendingPayments  = $inscriptionModel->getPendingPayments();
 
-        return view('admin/payment', ['pendingPayments' => $pendingPayments]);
+        return view('admin/payment', ['pendingPayments' => $pendingPayments, 'pageTitle' => 'Gestion des paiements']);
     }
 
     /**

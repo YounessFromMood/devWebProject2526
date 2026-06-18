@@ -48,6 +48,7 @@ class Payment extends BaseController {
         $data = [
             'session'       => $session,
             'communication' => $communication,
+            'pageTitle'     => 'Mes paiements',
         ];
 
         return view('student/payment', $data);

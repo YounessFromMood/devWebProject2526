@@ -37,7 +37,7 @@ class Grades extends BaseController {
         $notifierModel = new NotifierModel();
         $grades = $notifierModel->getGradesForStudent($this->studentId);
 
-        return view('student/grades', ['grades' => $grades]);
+        return view('student/grades', ['grades' => $grades, 'pageTitle' => 'Mes notes']);
     }
 
 }

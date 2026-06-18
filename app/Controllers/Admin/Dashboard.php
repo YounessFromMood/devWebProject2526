@@ -51,6 +51,7 @@ class Dashboard extends BaseController
             'prenom'           => session()->get('prenom'),
             'email'            => session()->get('email'),
             'types_formation'  => $typeFormationModel->findAll(),
+            'pageTitle'        => 'Tableau de bord administrateur',
         ];
         
         return view('admin/dashboard', $data);

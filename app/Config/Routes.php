@@ -32,6 +32,9 @@ $routes->post('/profile/update-photo', 'Profile::updatePhoto');
 //when password is forgotten
 $routes->get('/forgot-password',  'Authentificator::forgotPasswordPage');
 $routes->post('/forgot-password', 'Authentificator::toResetPassword');
+//legal views
+$routes->get('/legal/conditions', 'Legal::conditions');
+$routes->get('/legal/confidentialite', 'Legal::confidentialite');
 
 //STUDENT
 $routes->group('student', function($routes){
