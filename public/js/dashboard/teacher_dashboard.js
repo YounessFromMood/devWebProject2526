@@ -56,10 +56,14 @@ function loadSection(section, link) {
 
         if ($.fn.DataTable) {
             if ($('#dataTableSessions').length) {
-                $('#dataTableSessions').DataTable();
+                $('#dataTableSessions').DataTable({
+                    columnDefs: [{ targets: '_all', className: 'dt-left' }]
+                });
             }
             if ($('#dataTableHistory').length) {
-                $('#dataTableHistory').DataTable();
+                $('#dataTableHistory').DataTable({
+                    columnDefs: [{ targets: '_all', className: 'dt-left' }]
+                });
             }
         }
 

@@ -55,12 +55,13 @@ class Authentificator extends BaseController {
 
         $userId = $user[$primaryKeys[$role]];
 
-        session()->set([
-            'user_id' => $userId,
-            'role'    => $role,
-            'nom'     => $user['nom'],
-            'prenom'  => $user['prenom'],
-            'email'   => $email,
+         session()->set([
+            'user_id'      => $userId,
+            'role'         => $role,
+            'nom'          => $user['nom'],
+            'prenom'       => $user['prenom'],
+            'email'        => $email,
+            'photo_profil' => $user['photo_profil'] ?? null, 
         ]);
 
         if ($this->request->getPost('remember_me')) {
@@ -206,5 +207,62 @@ class Authentificator extends BaseController {
             false,
             true
         );
+    }
+        /**
+     * Affiche la page "mot de passe oublie"
+     */
+    public function forgotPasswordPage() :string {
+        return view('forgot_password');
+    }
+ 
+    /**
+     * Reinitialise directement le mot de passe
+     * Identifie le compte par son email dans les 3 tables, puis enregistre
+     * le nouveau mot de passe hache.
+     */
+    public function toResetPassword() :\CodeIgniter\HTTP\RedirectResponse {
+        $rules = [
+            'email'       => 'required|valid_email',
+            'mdp'         => 'required|string|min_length[8]|max_length[72]',
+            'mdp_confirm' => 'required|matches[mdp]',
+        ];
+ 
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('error', 'Donnees invalides.');
+        }
+ 
+        $email  = $this->request->getPost('email');
+        $result = $this->findUserByEmail($email);
+        $user   = $result['user'];
+ 
+        if (!$user) {
+            return redirect()->back()->withInput()->with('error', 'Aucun compte ne correspond a cet email.');
+        }
+ 
+        $role = $result['role'];
+ 
+        $models = [
+            'eleve'     => new EleveModel(),
+            'formateur' => new FormateurModel(),
+            'admin'     => new AdminModel(),
+        ];
+        $primaryKeys = [
+            'eleve'     => 'id_eleve',
+            'formateur' => 'id_formateur',
+            'admin'     => 'id_administrateur',
+        ];
+ 
+        $userId = $user[$primaryKeys[$role]];
+ 
+        $models[$role]->update($userId, [
+            'mdp' => password_hash($this->request->getPost('mdp'), PASSWORD_DEFAULT),
+        ]);
+ 
+        // Par securite : on invalide les "remember me" existants de ce compte
+        $rememberModel = new RememberTokenModel();
+        $userType      = $role === 'admin' ? 'administrateur' : $role;
+        $rememberModel->deleteForUser($userId, $userType);
+ 
+        return redirect()->to('/login')->with('success', 'Mot de passe réinitialisé, vous pouvez vous connecter.');
     }
 }

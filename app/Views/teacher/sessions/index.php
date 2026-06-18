@@ -33,12 +33,6 @@
                                 data-titre="<?= esc($s['formation_titre']) ?> — <?= esc($s['date_debut']) ?>">
                             Étudiants
                         </button>
-                        <button class="btn btn-sm btn-outline-secondary btn-manage-link"
-                                data-id-session="<?= $s['id_session'] ?>"
-                                data-titre="<?= esc($s['formation_titre']) ?> — <?= esc($s['date_debut']) ?>"
-                                data-lieu="<?= esc($s['lieu_session'] ?? '') ?>">
-                            Lieu / Lien
-                        </button>
                     </td>
                 </tr>
                 <?php endforeach; ?>

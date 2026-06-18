@@ -1,8 +1,10 @@
+=========================A ne pas en tenir compte================================
 PowerPoint DevWeb - Pourquoi acheter mon site (uniquement partie présentation)
 + montrer du code dans le powerpoint ofc
 -> ce ne sera qu'un RESUME du dossier en reprenant les points important
 (15 ou 20 minutes)
 ça doit être technico-commercial (la partie commercial sera dans le point "Pourquoi acheter mon site")
+===========================================================================
 
 Entre 20 et 40 Pages
 En un seul Document en PDF:

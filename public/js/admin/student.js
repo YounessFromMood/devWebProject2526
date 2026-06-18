@@ -8,7 +8,6 @@ document.addEventListener('click', function (e) {
         document.getElementById('editStudentNom').value    = btn.dataset.nom;
         document.getElementById('editStudentEmail').value  = btn.dataset.email;
         document.getElementById('editStudentTel').value    = btn.dataset.tel;
-        document.getElementById('editStudentMdp').value    = '';
         document.getElementById('editStudentError').classList.add('d-none');
 
         new bootstrap.Modal(document.getElementById('modalEditStudent')).show();
@@ -70,7 +69,6 @@ document.addEventListener('click', function (e) {
             nom     : document.getElementById('editStudentNom').value.trim(),
             email   : document.getElementById('editStudentEmail').value.trim(),
             num_tel : document.getElementById('editStudentTel').value.trim(),
-            mdp     : document.getElementById('editStudentMdp').value,
         };
 
         if (!data.prenom || !data.nom || !data.email) {

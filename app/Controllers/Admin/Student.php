@@ -53,10 +53,6 @@ class Student extends BaseController {
             'num_tel' => !empty($data['num_tel']) ? $data['num_tel'] : null,
         ];
 
-        if (!empty($data['mdp'])) {
-            $update['mdp'] = password_hash($data['mdp'], PASSWORD_DEFAULT);
-        }
-
         $eleveModel = new EleveModel();
         $eleveModel->update($data['id_eleve'], $update);
 

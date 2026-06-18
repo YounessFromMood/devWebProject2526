@@ -83,6 +83,9 @@
                         Pas encore de compte ?
                         <a href="<?= base_url('/register') ?>" style="color: #e8630a;">S'inscrire</a>
                     </p>
+                    <div class="text-center mt-3">
+                        <a href="<?= base_url('/forgot-password') ?>" class="text-muted small">Mot de passe oublié ?</a>
+                    </div>
 
                 </div>
             </div>

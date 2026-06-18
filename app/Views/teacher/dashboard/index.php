@@ -52,52 +52,9 @@
 
         <div id="mainContent">
 
-            <div id="section-profil">
-
-                <h2 class="fw-bold mb-4">Mon profil</h2>
-
-                <div class="card shadow-sm border-0" style="max-width: 500px;">
-                    <div class="card-body p-4">
-
-                        <div class="d-flex align-items-center mb-4 gap-3">
-                            <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold fs-4"
-                                 style="width: 64px; height: 64px; background-color: #e8630a;">
-                                <?= strtoupper(substr(session('prenom'), 0, 1) . substr(session('nom'), 0, 1)) ?>
-                            </div>
-                            <div>
-                                <div class="fw-bold fs-5"><?= esc(session('prenom')) ?> <?= esc(session('nom')) ?></div>
-                                <span class="badge text-white" style="background-color: #e8630a;">Formateur</span>
-                            </div>
-                        </div>
-
-                        <table class="table table-borderless mb-0">
-                            <tbody>
-                                <tr>
-                                    <td class="text-muted" style="width: 120px;">Prénom</td>
-                                    <td class="fw-semibold"><?= esc(session('prenom')) ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-muted">Nom</td>
-                                    <td class="fw-semibold"><?= esc(session('nom')) ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-muted">Email</td>
-                                    <td class="fw-semibold"><?= esc(session('email')) ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-muted">Rôle</td>
-                                    <td class="fw-semibold">Formateur</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div>
-
-            </div>
-
+            <?= $this->include('includes/profile_section') ?>
             <div id="section-ajax" style="display: none;"></div>
-
+            
         </div>
 
     </main>
@@ -118,6 +75,7 @@
     const BASE_URL = "<?= base_url() ?>";
     const ASSET_VERSION = "1.0.0"; //A incrémenter lorsqu'une nouvelle version de mes js existe pour forcer le navigateur à recharger les fichiers
 </script>
+<script src="<?= base_url('js/profile.js') ?>"></script>
 <script src="<?= base_url('js/dashboard/teacher_dashboard.js') ?>"></script>
 <script src="<?= base_url('js/teacher/grades.js') ?>"></script>
 <script src="<?= base_url('js/teacher/session.js') ?>"></script>

@@ -94,40 +94,6 @@
     </div>
 </div>
 
-<!-- Gérer le lieu / lien d'une session -->
-<div class="modal fade" id="modalSessionLink" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div>
-                    <h5 class="modal-title">Lieu / Lien de la session</h5>
-                    <small class="text-muted" id="modalSessionLinkSubtitle"></small>
-                </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div id="sessionLinkError" class="alert alert-danger d-none"></div>
-                <input type="hidden" id="linkSessionId">
-                <div class="mb-3">
-                    <label class="form-label">Lieu ou lien <span class="text-danger">*</span></label>
-                    <input type="text" id="linkSessionValue" class="form-control"
-                           placeholder="ex: Salle B3 ou https://meet.google.com/...">
-                </div>
-            </div>
-            <div class="modal-footer d-flex justify-content-between">
-                <button type="button" class="btn btn-outline-danger" id="btnDeleteLink">
-                    Supprimer le lien
-                </button>
-                <div class="d-flex gap-2">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn text-white" style="background-color: #e8630a;"
-                            id="btnConfirmSaveLink">Enregistrer</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Supprimer une note -->
 <div class="modal fade" id="modalDeleteGrade" tabindex="-1">
     <div class="modal-dialog modal-sm">

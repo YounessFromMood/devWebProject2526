@@ -6,10 +6,9 @@ use App\Controllers\BaseController;
 use App\Models\SessionModel;
 use App\Models\NotifierModel;
 
-class Session extends BaseController
-{
-    public function index()
-    {
+class Session extends BaseController {
+    
+    public function index() {
         $sessionModel = new SessionModel();
 
         $sessions = $sessionModel->getAllTeacherSessions(session('user_id'));
@@ -21,8 +20,7 @@ class Session extends BaseController
         return redirect()->to(base_url('teacher/dashboard'));
     }
 
-    public function getStudents(int $idSession)
-    {
+    public function getStudents(int $idSession) {
         $notifierModel = new NotifierModel();
 
         $students = $notifierModel->getStudentsWithGrades($idSession);
@@ -31,46 +29,5 @@ class Session extends BaseController
             'success' => true,
             'data'    => $students,
         ]);
-    }
-
-    public function createLink(int $idSession)
-    {
-        $sessionModel = new SessionModel();
-
-        $data = $this->request->getJSON();
-        $lieu = $data->lieu ?? null;
-
-        if (!$lieu) {
-            return $this->response->setJSON(['success' => false, 'message' => 'Le lieu ne peut pas être vide.']);
-        }
-
-        $ok = $sessionModel->updateLink($idSession, $lieu);
-
-        return $this->response->setJSON(['success' => $ok]);
-    }
-
-    public function updateLink(int $idSession)
-    {
-        $sessionModel = new SessionModel();
-
-        $data = $this->request->getJSON();
-        $lieu = $data->lieu ?? null;
-
-        if (!$lieu) {
-            return $this->response->setJSON(['success' => false, 'message' => 'Le lieu ne peut pas être vide.']);
-        }
-
-        $ok = $sessionModel->updateLink($idSession, $lieu);
-
-        return $this->response->setJSON(['success' => $ok]);
-    }
-
-    public function deleteLink(int $idSession)
-    {
-        $sessionModel = new SessionModel();
-
-        $ok = $sessionModel->deleteLink($idSession);
-
-        return $this->response->setJSON(['success' => $ok]);
     }
 }

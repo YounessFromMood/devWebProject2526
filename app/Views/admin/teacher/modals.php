@@ -62,10 +62,6 @@
                     <label class="form-label">Téléphone <span class="text-muted">(optionnel)</span></label>
                     <input type="text" id="editTel" class="form-control">
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Nouveau mot de passe <span class="text-muted">(laisser vide pour ne pas changer)</span></label>
-                    <input type="password" id="editMdp" class="form-control" placeholder="••••••••">
-                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>

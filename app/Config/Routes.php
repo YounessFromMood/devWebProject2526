@@ -26,6 +26,12 @@ $routes->get('/history', 'History::index');                                 //co
 //routes for a student to subscribe to a session
 $routes->get('/session/registration/(:num)', 'Session::registerPage/$1');    //controller: done
 $routes->post('/session/registration/(:num)', 'Session::toRegister/$1');     //controller: done
+//routes for editing user profile
+$routes->post('/profile/update-info',  'Profile::updateInfo');
+$routes->post('/profile/update-photo', 'Profile::updatePhoto');
+//when password is forgotten
+$routes->get('/forgot-password',  'Authentificator::forgotPasswordPage');
+$routes->post('/forgot-password', 'Authentificator::toResetPassword');
 
 //STUDENT
 $routes->group('student', function($routes){

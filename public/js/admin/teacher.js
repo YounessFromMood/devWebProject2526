@@ -8,7 +8,6 @@ document.addEventListener('click', function (e) {
         document.getElementById('editNom').value    = btn.dataset.nom;
         document.getElementById('editEmail').value  = btn.dataset.email;
         document.getElementById('editTel').value    = btn.dataset.tel;
-        document.getElementById('editMdp').value    = '';
         document.getElementById('editTeacherError').classList.add('d-none');
 
         new bootstrap.Modal(document.getElementById('modalEditTeacher')).show();
@@ -70,7 +69,6 @@ document.addEventListener('click', function (e) {
             nom     : document.getElementById('editNom').value.trim(),
             email   : document.getElementById('editEmail').value.trim(),
             num_tel : document.getElementById('editTel').value.trim(),
-            mdp     : document.getElementById('editMdp').value,
         };
 
         if (!data.prenom || !data.nom || !data.email) {
