@@ -1,4 +1,4 @@
-=========================A ne pas en tenir compte================================
+==============================Partie Orale====================================
 PowerPoint DevWeb - Pourquoi acheter mon site (uniquement partie présentation)
 + montrer du code dans le powerpoint ofc
 -> ce ne sera qu'un RESUME du dossier en reprenant les points important
@@ -6,6 +6,8 @@ PowerPoint DevWeb - Pourquoi acheter mon site (uniquement partie présentation)
 ça doit être technico-commercial (la partie commercial sera dans le point "Pourquoi acheter mon site")
 ===========================================================================
 
+
+================================Compte Rendu=======================================
 Entre 20 et 40 Pages
 En un seul Document en PDF:
 - Résumé de la demande
@@ -20,7 +22,35 @@ En un seul Document en PDF:
 - Les problèmes rencontrés
 - Eventuellement une appreciation personnelles de si j'ai aimé travailler sur ce projet ou non
 - Si j'ai utilisé l'IA et pourquoi en annexe
+==================================================================================
 
+====================Tips=======================
 Les screenshots doivent être en annexe et le README aussi
 
 Ne jamais dire J'ai voulu mais plutot Le Client à dit
+==============================================
+
+
+1. Résumé de la demande
+2. Échanges avec le Client
+3. Analyse de la demande
+ 	3.1 Use Case détaillée
+	3.2 Use Case Diagram
+ 	3.3 Diagramme MERISE
+4. User Guide
+5. Calendrier de départ VS Calendrier réel
+6. Les technologies utilisées
+ 	6.1 Modèle MVC
+ 	6.2 HTLM/Bootstrap
+ 	6.3 PHP
+ 	6.4 Famille Javascript
+    		6.4.1 JS
+    		6.4.2 DOM 
+    		6.4.3 AJAX 
+    		6.4.4 Jquery
+ 	6.5 Elements de CyberSécurité
+ 	6.6 Upload d’Images
+7. Les problèmes rencontrés
+8. Manquements
+9. Appréciation personnelle sur la réalisation du projet
+10. Notice sur l’IA

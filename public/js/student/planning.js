@@ -3,7 +3,7 @@
     // Le script peut donc être réinjecté plusieurs fois sans erreur de redéclaration.
 
     const grid = document.getElementById('calendarGrid');
-    if (!grid) return; // sécurité : si la section n'est pas chargée, on ne fait rien
+    if (!grid) return;
 
     const sessions = JSON.parse(grid.dataset.sessions || '[]');
     let currentDate = new Date();

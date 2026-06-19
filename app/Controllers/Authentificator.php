@@ -31,10 +31,8 @@ class Authentificator extends BaseController {
      * quel Dashboard présenter selon le rôle
      */
     public function toLogIn() :\CodeIgniter\HTTP\RedirectResponse {
-
         $email = $this->request->getPost('email');
         $mdp   = $this->request->getPost('mdp');
-
         $result = $this->findUserByEmail($email);
         $user   = $result['user'];
 
@@ -49,7 +47,7 @@ class Authentificator extends BaseController {
 
         $primaryKeys = [
             'eleve'      => 'id_eleve',
-            'formateur'  => 'id_formateur',
+        'formateur'  => 'id_formateur',
             'admin'      => 'id_administrateur',
         ];
 

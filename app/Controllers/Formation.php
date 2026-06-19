@@ -76,11 +76,7 @@ class Formation extends BaseController
         }
 
         $typerModel = new TyperModel();
-        $types = $typerModel
-            ->select('type_formation.libelle')
-            ->join('type_formation', 'type_formation.id_type_formation = Typer.id_type_formation')
-            ->where('Typer.id_formation', $id)
-            ->findAll();
+        $types = $typerModel->getTypesByFormation($id);
 
         $sessionModel = new SessionModel();
         $sessions = $sessionModel->getSessionsDisponibles($id);

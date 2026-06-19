@@ -145,7 +145,7 @@ document.getElementById('registerForm').addEventListener('submit', function (e) 
     } else {
         setValid('prenom');
     }
-
+    
     const nom = document.getElementById('nom').value.trim();
     if (nom === '') {
         setError('nom', 'Le nom est obligatoire.');
